@@ -10,8 +10,11 @@ public class InitMap : MonoBehaviour
         {
             for (int j = 0; j < width; j++)
             {
-                WayPoint newWaypoint = new WayPoint();
+                GameObject newGameObject = new GameObject();
+                newGameObject.AddComponent<WayPoint>();
+                WayPoint newWaypoint = newGameObject.GetComponent<WayPoint>();
                 newWaypoint.casePosition = new int[2] { i, j };
+                newWaypoint.name = newWaypoint.casePosition[0] + " " + newWaypoint.casePosition[1];
                 map.Add(newWaypoint);
                 foreach (WayPoint wayPoint in map)
                 {

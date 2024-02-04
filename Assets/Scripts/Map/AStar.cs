@@ -5,13 +5,28 @@ public class AStar : MonoBehaviour
 {
     private WayPoint _target;
     private List<WayPoint> _path = new List<WayPoint>();
-    private List<WayPoint> _openWaypoints = new List<WayPoint>();
+    public List<WayPoint> _openWaypoints = new List<WayPoint>();
     private List<WayPoint> _closeWaypoints = new List<WayPoint>();
     private MapMain _map;
+    private bool _findTheTarget;
+
+    public void Init(MapMain main)
+    {
+        _map = main;
+        _map.aStar = this;
+    }
+
+    public List<WayPoint> GiveThePath(WayPoint waypointToStart, WayPoint waypointToFinish)
+    {
+        _target = waypointToFinish;
+        InitAStar(waypointToStart);
+        return _path;
+    }
 
     private void InitAStar(WayPoint waypointToStart)
     {
         _closeWaypoints.Add(waypointToStart);
+        _findTheTarget = false;
         foreach (WayPoint waypoint in waypointToStart.neighbour)
         {
             _openWaypoints.Add(waypoint);
@@ -22,36 +37,21 @@ public class AStar : MonoBehaviour
         SearchRoad();
     }
 
-    public List<WayPoint> GiveThePath(WayPoint waypointToStart, WayPoint waypointToFinish)
-    {
-        _target = waypointToFinish;
-        InitAStar(waypointToStart);
-        return _openWaypoints;
-    }
-
     private void SearchRoad()
     {
-        //A changer en mettant un init de astar en passant directement dans le map main le open 
-        _openWaypoints = _map.config.allWayPoints;
-        List<WayPoint> _wayPointToCheck = _openWaypoints;
-        while (_openWaypoints.Count > 0)
+        List<WayPoint> _wayPointToCheck = new List<WayPoint>();
+        _wayPointToCheck.AddRange(_openWaypoints);
+        while (_openWaypoints.Count > 0 && !_findTheTarget)
         {
             WayPoint _currentWaypoint = _openWaypoints[0];
 
             for (int i = 0; i < _openWaypoints.Count; i++)
             {
-                /*if (_openWaypoints[i] == waypointChosen)
-                {
-
-                }
-
-                if (_openWaypoints[i].fCost < _currentWaypoint.fCost || (openList[i].fCost == _currentWaypoint.fCost && openList[i].hCase < _currentWaypoint.hCase))
+                if (_openWaypoints[i] == _target)
                 {
                     _currentWaypoint = _openWaypoints[i];
-                }*/
-                if (_openWaypoints[i] == _currentWaypoint)
-                {
-                    //ne rien faire
+                    _findTheTarget = true;
+                    break;
                 }
 
                 if (_openWaypoints[i].caseCost < _currentWaypoint.caseCost)
@@ -59,11 +59,6 @@ public class AStar : MonoBehaviour
                     _currentWaypoint = _openWaypoints[i];
                 }
             }
-
-            /*if (_currentWaypoint == waypointChosen.GetComponent<WayPoint>())
-            {
-                FindThePath();
-            }*/
 
             _closeWaypoints.Add(_currentWaypoint);
             _openWaypoints.Remove(_currentWaypoint);
@@ -73,6 +68,8 @@ public class AStar : MonoBehaviour
                 CheckNeighbour(_currentWaypoint);
             }
         }
+
+        FindThePath();
     }
 
     private void CheckNeighbour(WayPoint _currentWaypoint)
@@ -97,6 +94,24 @@ public class AStar : MonoBehaviour
     private void ChangeParent(WayPoint newWaypoint, WayPoint parent)
     {
         newWaypoint.parent = parent;
-        newWaypoint.caseCost = parent.caseCost;
+        newWaypoint.caseCost = parent.caseCost + 1;
+    }
+
+    private void FindThePath()
+    {
+        _path.Add(_target);
+        WayPoint newParent = _target.parent;
+        while (newParent.parent != null)
+        {
+            _path.Add(newParent);
+            newParent = newParent.parent;
+        }
+
+        _path.Add(newParent);
+        _path.Reverse();
+        foreach (WayPoint waypoint in _path)
+        {
+            Debug.Log(waypoint.name);
+        }
     }
 }

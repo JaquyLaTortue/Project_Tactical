@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 996016091}
   - component: {fileID: 996016090}
   - component: {fileID: 996016089}
+  - component: {fileID: 996016093}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -423,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 0}
   init: {fileID: 0}
+  aStar: {fileID: 0}
 --- !u!114 &996016091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +455,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996016093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996016088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5917643a623f1354bbf51c2c3a2d4bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _openWaypoints: []
 --- !u!1 &1671866791
 GameObject:
   m_ObjectHideFlags: 0

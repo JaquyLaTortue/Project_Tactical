@@ -16,14 +16,14 @@ public class MapConfig : MonoBehaviour
     public void CreateWaypoint()
     {
         allWayPoints = _main.init.InitTheMap(_length, _width);
-        foreach (WayPoint waypoint in allWayPoints)
+      /*  foreach (WayPoint waypoint in allWayPoints)
         {
             Debug.Log("MAin" + waypoint.casePosition[0] + "" + waypoint.casePosition[1]);
             foreach (WayPoint way in waypoint.neighbour)
             {
                 Debug.Log(way.casePosition[0] + "" + way.casePosition[1]);
             }
-        }
+        }*/
     }
 
     public void Init(MapMain main)

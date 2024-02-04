@@ -5,11 +5,16 @@ public class MapMain : MonoBehaviour
 {
     public MapConfig config;
     public InitMap init;
-    private AStar aStar;
+    public AStar aStar;
+
+    private void Awake()
+    {
+        InitGameObject();
+    }
 
     private void Start()
     {
-        InitGameObject();
+        Debug.Log(UseAStar());
     }
 
     private void InitGameObject()
@@ -20,13 +25,10 @@ public class MapMain : MonoBehaviour
 
     public List<WayPoint> UseAStar()
     {
-        if (aStar == null)
-        {
-            aStar = new AStar();
-        }
-
-        WayPoint start = new WayPoint();
-        WayPoint end = new WayPoint();
+        WayPoint start = config.allWayPoints[Random.Range(0, config.allWayPoints.Count)];
+        Debug.Log(start.name);
+        WayPoint end = config.allWayPoints[Random.Range(0, config.allWayPoints.Count)];
+        Debug.Log(end.name);
         return aStar.GiveThePath(start, end);
     }
 }
