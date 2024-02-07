@@ -84,6 +84,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SelectMap",
+            "id": "7fc8efb0-9dcc-43d4-bab8-1066752932d6",
+            "actions": [
+                {
+                    "name": "ClickOnCase",
+                    "type": "Button",
+                    "id": "aec8ac99-97e0-4afc-947f-e3f3dcc14a1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "06307642-d025-4f9a-bbc3-688498e07f06",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClickOnCase",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

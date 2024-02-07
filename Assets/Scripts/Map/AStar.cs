@@ -25,6 +25,17 @@ public class AStar : MonoBehaviour
 
     private void InitAStar(WayPoint waypointToStart)
     {
+        foreach (WayPoint path in _path)
+        {
+            path.parent = null;
+            path.caseCost = 0;
+            _map._clickedCase.ChangeColorOfWaypointToOld(path.GetComponent<MeshRenderer>());
+        }
+
+        _path.Clear();
+        _openWaypoints.Clear();
+        _closeWaypoints.Clear();
+
         _closeWaypoints.Add(waypointToStart);
         _findTheTarget = false;
         foreach (WayPoint waypoint in waypointToStart.neighbour)
