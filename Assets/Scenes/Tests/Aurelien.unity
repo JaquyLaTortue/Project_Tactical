@@ -209,13 +209,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.27344736, y: -0, z: -0, w: 0.96188694}
+  m_LocalPosition: {x: 2.01, y: 3.8, z: -2.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.739, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +410,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601b428629329cf4faf68f0eab62ad0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _length: 0
+  _width: 0
+  _prefabCase: {fileID: 3049629281842861629, guid: eb74ed11c93d7fc4bb23dd83e91c1b00,
+    type: 3}
 --- !u!114 &996016090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,8 +441,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081270e19f9e46c4db7348661a2b3596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _length: 3
-  _width: 5
+  _lengthCase: 3
+  _widthCase: 5
   allWayPoints: []
 --- !u!4 &996016092
 Transform:

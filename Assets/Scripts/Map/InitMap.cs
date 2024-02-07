@@ -3,15 +3,28 @@ using UnityEngine;
 
 public class InitMap : MonoBehaviour
 {
-    public List<WayPoint> InitTheMap(int length, int width)
+    [SerializeField]
+    private int _length;
+
+    [SerializeField]
+    private int _width;
+
+    [SerializeField]
+    private GameObject _prefabCase;
+
+    public List<WayPoint> InitTheMap(int lengthCase, int widthCase)
     {
+        BoxCollider collision = _prefabCase.GetComponent<BoxCollider>();
+        float prefabWidth = collision.size.z;
+        float prefabLength = collision.size.x;
+
         List<WayPoint> map = new List<WayPoint>();
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < lengthCase; i++)
         {
-            for (int j = 0; j < width; j++)
+            for (int j = 0; j < widthCase; j++)
             {
-                GameObject newGameObject = new GameObject();
-                newGameObject.AddComponent<WayPoint>();
+                GameObject newGameObject = Instantiate(_prefabCase);
+                newGameObject.transform.position += new Vector3((i + 1) * prefabLength, 0, (j + 1) * prefabWidth);
                 WayPoint newWaypoint = newGameObject.GetComponent<WayPoint>();
                 newWaypoint.casePosition = new int[2] { i, j };
                 newWaypoint.name = newWaypoint.casePosition[0] + " " + newWaypoint.casePosition[1];

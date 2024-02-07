@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class MapConfig : MonoBehaviour
 {
-    [SerializeField]
-    private int _length;
 
     [SerializeField]
-    private int _width;
+    private int _lengthCase;
+
+    [SerializeField]
+    private int _widthCase;
 
     public List<WayPoint> allWayPoints = new List<WayPoint>();
 
@@ -15,7 +16,7 @@ public class MapConfig : MonoBehaviour
 
     public void CreateWaypoint()
     {
-        allWayPoints = _main.init.InitTheMap(_length, _width);
+        allWayPoints = _main.init.InitTheMap(_lengthCase, _widthCase);
       /*  foreach (WayPoint waypoint in allWayPoints)
         {
             Debug.Log("MAin" + waypoint.casePosition[0] + "" + waypoint.casePosition[1]);
