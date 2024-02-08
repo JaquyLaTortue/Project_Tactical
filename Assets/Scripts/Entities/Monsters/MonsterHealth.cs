@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonsterHealth : MonoBehaviour
 {
-    public MonsterMain _monsterMain;
+    [SerializeField]
+    private MonsterMain _monsterMain;
 
     public void TakeDamage(int damage)
     {
         Debug.Log("HP before attack : " + _monsterMain.hpCurrent);
-        _monsterMain.hpCurrent -= damage;
+        _monsterMain.hpCurrent -= Mathf.RoundToInt(damage * (100f / (100f + _monsterMain.def)));
         Debug.Log("HP after attack : " + _monsterMain.hpCurrent);
         if (_monsterMain.hpCurrent <= 0)
         {

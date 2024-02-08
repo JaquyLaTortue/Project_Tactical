@@ -3,17 +3,17 @@
 public class MonsterMain : Entity
 {
     [Header("Character Components")]
-    public MonsterCapacity CharacterCapacity;
-    public MonsterHealth CharacterHealth;
-    public MonsterBase CharacterBase;
+    public MonsterCapacity MonsterCapacity;
+    public MonsterHealth MonsterHealth;
+    public MonsterBase MonsterBase;
 
     private void Awake()
     {
-        hpMax = CharacterBase.HpMax;
-        hpCurrent = CharacterBase.HpMax;
-        paMax = CharacterBase.PaMax;
-        paCurrent = CharacterBase.PaMax;
-        atk = CharacterBase.Atk;
-        def = CharacterBase.Def;
+        hpMax = MonsterBase.HpMax;
+        hpCurrent = MonsterBase.HpMax;
+        paMax = MonsterBase.PaMax;
+        paCurrent = MonsterBase.PaMax;
+        atk = MonsterBase.Atk;
+        def = MonsterBase.Def;
     }
 }
