@@ -8,15 +8,14 @@ public class CastActions : MonoBehaviour
     {
         if (_turnManager.TargetPosition != null)
         {
-            CharacterMain character = _turnManager.Character;
             Debug.Log("Move");
-            character.CharacterCapacity.Move(character.position);
+            _turnManager.Character.CharacterCapacity.Move(_turnManager.TargetPosition);
         }
     }
 
     public void Attack()
     {
-        if (_turnManager.Target!= null)
+        if (_turnManager.Target != null)
         {
             _turnManager.Character.Attack(_turnManager.Target);
         }

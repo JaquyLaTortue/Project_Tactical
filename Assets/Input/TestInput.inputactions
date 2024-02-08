@@ -106,7 +106,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "SelectDestination",
                     "isComposite": false,
                     "isPartOfComposite": false
