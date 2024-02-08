@@ -6,17 +6,27 @@ public class CastActions : MonoBehaviour
 
     public void Move()
     {
-        Debug.Log("Move");
-        _turnManager.Character.Move();
+        if (_turnManager.TargetPosition != null)
+        {
+            CharacterMain character = _turnManager.Character;
+            Debug.Log("Move");
+            //character.Move(character.position);
+        }
     }
 
     public void Attack()
     {
-        _turnManager.Character.Attack(_turnManager.Target);
+        if (_turnManager.Target!= null)
+        {
+            _turnManager.Character.Attack(_turnManager.Target);
+        }
     }
 
     public void Special()
     {
-        _turnManager.Character.Special(_turnManager.Target);
+        if (_turnManager.Target != null)
+        {
+            _turnManager.Character.Special(_turnManager.Target);
+        }
     }
 }
