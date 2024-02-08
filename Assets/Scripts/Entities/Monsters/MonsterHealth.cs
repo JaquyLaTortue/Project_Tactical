@@ -8,7 +8,7 @@ public class MonsterHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log("HP before attack : " + _monsterMain.hpCurrent);
-        _monsterMain.hpCurrent -= damage;
+        _monsterMain.hpCurrent -= damage * (100 / (100 + _monsterMain.def));
         Debug.Log("HP after attack : " + _monsterMain.hpCurrent);
         if (_monsterMain.hpCurrent <= 0)
         {
