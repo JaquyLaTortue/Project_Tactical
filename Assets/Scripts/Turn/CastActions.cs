@@ -10,7 +10,7 @@ public class CastActions : MonoBehaviour
         {
             CharacterMain character = _turnManager.Character;
             Debug.Log("Move");
-            //character.Move(character.position);
+            character.CharacterCapacity.Move(character.position);
         }
     }
 

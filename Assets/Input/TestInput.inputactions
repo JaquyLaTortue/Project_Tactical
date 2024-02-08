@@ -86,7 +86,35 @@
             ]
         },
         {
-            "name": "SelectMap",
+            "name": "SelectDestination",
+            "id": "49e9a0c6-4542-40a5-89d5-1705ec0bda82",
+            "actions": [
+                {
+                    "name": "SelectDestination",
+                    "type": "Button",
+                    "id": "aedd7b2b-4999-40f4-8a01-5a2c4063eeeb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9f77aa9b-574c-43c9-a260-3d1b5b7de0b6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectDestination",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Astar",
             "id": "7fc8efb0-9dcc-43d4-bab8-1066752932d6",
             "actions": [
                 {
