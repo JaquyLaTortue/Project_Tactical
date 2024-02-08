@@ -9,7 +9,7 @@ public class CharacterCapacity : MonoBehaviour
     {
         // Attack with normal attack
         Debug.Log("Attack: " + target);
-        target.MonsterHealth.TakeDamage(_characterMain.atk);
+        target.MonsterHealth.TakeDamage(_characterMain.Atk);
     }
 
     public void Move(WayPoint destination)

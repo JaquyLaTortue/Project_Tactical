@@ -2,18 +2,20 @@
 
 public class MonsterMain : Entity
 {
-    [Header("Character Components")]
-    public MonsterCapacity MonsterCapacity;
-    public MonsterHealth MonsterHealth;
-    public MonsterBase MonsterBase;
+    public MonsterCapacity MonsterCapacity { get; private set; }
+
+    public MonsterHealth MonsterHealth { get; private set; }
+
+    [field: SerializeField]
+    public MonsterBase MonsterBase { get; private set; }
 
     private void Awake()
     {
-        hpMax = MonsterBase.HpMax;
-        hpCurrent = MonsterBase.HpMax;
-        paMax = MonsterBase.PaMax;
-        paCurrent = MonsterBase.PaMax;
-        atk = MonsterBase.Atk;
-        def = MonsterBase.Def;
+        HpMax = MonsterBase.HpMax;
+        HpCurrent = MonsterBase.HpMax;
+        PaMax = MonsterBase.PaMax;
+        PaCurrent = MonsterBase.PaMax;
+        Atk = MonsterBase.Atk;
+        Def = MonsterBase.Def;
     }
 }
