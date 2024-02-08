@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonsterCapacity : MonoBehaviour
 {
     [SerializeField]
-    private MonsterMain _characterMain;
+    private MonsterMain _monsterMain;
 
-    public void Attack(Entity target)
+    public void Attack(CharacterMain target)
     {
         // Attack with normal attack
         Debug.Log("Attack: " + target);
+        target.CharacterHealth.TakeDamage(_monsterMain.atk);
     }
 
     public void Move(int distance)

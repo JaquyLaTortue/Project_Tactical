@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonsterHealth : MonoBehaviour
 {
-    public MonsterMain _monsterMain;
+    [SerializeField]
+    private MonsterMain _monsterMain;
 
     public void TakeDamage(int damage)
     {
