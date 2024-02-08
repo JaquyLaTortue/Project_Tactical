@@ -8,7 +8,7 @@ public class CharacterHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log("HP before attack : " + _characterMain.hpCurrent);
-        _characterMain.hpCurrent -= damage;
+        _characterMain.hpCurrent -= damage * (100 / (100 + _characterMain.def));
         Debug.Log("HP after attack : " + _characterMain.hpCurrent);
         if (_characterMain.hpCurrent <= 0)
         {
@@ -27,6 +27,7 @@ public class CharacterHealth : MonoBehaviour
     {
         if (_characterMain.hpCurrent == _characterMain.hpMax)
         {
+            Debug.Log("HP is already full");
             return;
         }
 
