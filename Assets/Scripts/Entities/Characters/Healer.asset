@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe5e79c639f11145939a714153d25cb, type: 3}
   m_Name: Healer
   m_EditorClassIdentifier: 
-  atk: 3
-  def: 3
-  hpMax: 10
-  HpCurrent: 0
-  paMax: 6
-  PaCurrent: 0
-  position: {fileID: 0}
+  Atk: 0
+  Def: 0
+  HpMax: 0
+  HpCurrent: 100
+  PaMax: 0
+  PaCurrent: 6
+  Position: {fileID: 0}

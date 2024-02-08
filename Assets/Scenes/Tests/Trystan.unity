@@ -675,16 +675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c31bbbbbf31e4d448e6f6a62b56af0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atk: 0
-  def: 0
-  hpMax: 0
-  hpCurrent: 0
-  paMax: 0
-  paCurrent: 0
-  position: {fileID: 0}
-  CharacterCapacity: {fileID: 725152279}
-  CharacterHealth: {fileID: 725152278}
-  CharacterBase: {fileID: 11400000, guid: 05ba98c0fe1d51c4c97ccdd3db449725, type: 2}
+  <CharacterBase>k__BackingField: {fileID: 11400000, guid: 1c5199c04e4d4ba408041df8c45287b0,
+    type: 2}
 --- !u!65 &725152281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1166,16 +1158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d93bad0aeee47e4ca0eb90995a52cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atk: 1000
-  def: 1000
-  hpMax: 1000
-  hpCurrent: 1000
-  paMax: 1000
-  paCurrent: 1000
-  position: {fileID: 0}
-  MonsterCapacity: {fileID: 1757503749}
-  MonsterHealth: {fileID: 1757503748}
-  MonsterBase: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1, type: 2}
+  <MonsterBase>k__BackingField: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1,
+    type: 2}
 --- !u!135 &1757503751
 SphereCollider:
   m_ObjectHideFlags: 0
