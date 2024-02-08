@@ -2,8 +2,10 @@
 
 public class MonsterMain : Entity
 {
+    [field: SerializeField]
     public MonsterCapacity MonsterCapacity { get; private set; }
 
+    [field: SerializeField]
     public MonsterHealth MonsterHealth { get; private set; }
 
     [field: SerializeField]

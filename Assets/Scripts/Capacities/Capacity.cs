@@ -7,4 +7,6 @@ public class Capacity : ScriptableObject
     public string name;
     public string description;
     public int cost;
+    public int damage;
+    public int range;
 }

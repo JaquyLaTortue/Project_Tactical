@@ -2,8 +2,10 @@
 
 public class CharacterMain : Entity
 {
+    [field: SerializeField]
     public CharacterCapacity CharacterCapacity { get; private set; }
 
+    [field: SerializeField]
     public CharacterHealth CharacterHealth { get; private set; }
 
     [field: SerializeField]
