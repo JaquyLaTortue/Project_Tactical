@@ -12,10 +12,10 @@ public class MonsterCapacity : MonoBehaviour
         target.CharacterHealth.TakeDamage(_monsterMain.atk);
     }
 
-    public void Move(int distance)
+    public void Move(WayPoint destination)
     {
         // Move to a new position
-        Debug.Log("Move: " + distance);
+        Debug.Log("Move: " + destination);
     }
 
     public void Special(Entity target)
