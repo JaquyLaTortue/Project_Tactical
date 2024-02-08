@@ -1527,6 +1527,76 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: aedd7b2b-4999-40f4-8a01-5a2c4063eeeb
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: SelectDestination/SelectDestination[/Mouse/leftButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 901211731}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 901211731}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 901211731}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectDestination
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Select, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894896259542927751, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4730910521055954671, guid: 766f08cf1ee0cc049a2413c06c0a55bc,
         type: 3}
       propertyPath: m_LocalPosition.x
