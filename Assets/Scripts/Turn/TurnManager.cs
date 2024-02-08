@@ -8,9 +8,9 @@ public class TurnManager : MonoBehaviour
 
     public bool PlayerTurn { get; private set; } = true;
 
-    public GameObject Character { get; private set; }
+    public CharacterMain Character { get; private set; }
 
-    public GameObject Target { get; private set; }
+    public MonsterMain Target { get; private set; }
 
     [field: SerializeField]
     public PlayerInput InputManager { get; private set; }
@@ -18,14 +18,14 @@ public class TurnManager : MonoBehaviour
     public void SetCharacter(GameObject character)
     {
         string oldcharacter = Character == null ? "null" : Character.name;
-        Character = character;
+        Character = character.GetComponent<CharacterMain>();
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {character.name}");
     }
 
     public void SetTarget(GameObject target)
     {
         string oldtarget = Target == null ? "null" : Target.name;
-        Target = target;
+        Target = target.GetComponent<MonsterMain>();
         Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
     }
 
