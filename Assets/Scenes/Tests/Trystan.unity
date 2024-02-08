@@ -684,7 +684,7 @@ MonoBehaviour:
   position: {fileID: 0}
   CharacterCapacity: {fileID: 725152279}
   CharacterHealth: {fileID: 725152278}
-  CharacterBase: {fileID: 11400000, guid: 1c5199c04e4d4ba408041df8c45287b0, type: 2}
+  CharacterBase: {fileID: 11400000, guid: 05ba98c0fe1d51c4c97ccdd3db449725, type: 2}
 --- !u!65 &725152281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   position: {fileID: 0}
   MonsterCapacity: {fileID: 1757503749}
   MonsterHealth: {fileID: 1757503748}
-  MonsterBase: {fileID: 0}
+  MonsterBase: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1, type: 2}
 --- !u!135 &1757503751
 SphereCollider:
   m_ObjectHideFlags: 0
