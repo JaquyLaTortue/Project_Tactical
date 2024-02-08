@@ -2,14 +2,15 @@
 
 public class CharacterHealth : MonoBehaviour
 {
-    public CharacterMain CharacterMain;
+    [SerializeField]
+    private CharacterMain _characterMain;
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("HP before attack : " + CharacterMain.hpCurrent);
-        CharacterMain.hpCurrent -= damage;
-        Debug.Log("HP after attack : " + CharacterMain.hpCurrent);
-        if (CharacterMain.hpCurrent <= 0)
+        Debug.Log("HP before attack : " + _characterMain.hpCurrent);
+        _characterMain.hpCurrent -= damage;
+        Debug.Log("HP after attack : " + _characterMain.hpCurrent);
+        if (_characterMain.hpCurrent <= 0)
         {
             Die();
         }
@@ -24,13 +25,13 @@ public class CharacterHealth : MonoBehaviour
 
     public void HealHealth(int heal)
     {
-        if (CharacterMain.hpCurrent == CharacterMain.hpMax)
+        if (_characterMain.hpCurrent == _characterMain.hpMax)
         {
             return;
         }
 
-        Debug.Log("HP before heal : " + CharacterMain.hpCurrent);
-        CharacterMain.hpCurrent += heal;
-        Debug.Log("HP after heal : " + CharacterMain.hpCurrent);
+        Debug.Log("HP before heal : " + _characterMain.hpCurrent);
+        _characterMain.hpCurrent += heal;
+        Debug.Log("HP after heal : " + _characterMain.hpCurrent);
     }
 }
