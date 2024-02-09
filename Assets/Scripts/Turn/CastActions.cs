@@ -17,7 +17,8 @@ public class CastActions : MonoBehaviour
     {
         if (_turnManager.Target != null)
         {
-            _turnManager.Character.Attack(_turnManager.Target);
+            Debug.Log("Attack");
+            _turnManager.Character.CharacterCapacity.Attack(_turnManager.Target);
         }
     }
 
@@ -25,7 +26,7 @@ public class CastActions : MonoBehaviour
     {
         if (_turnManager.Target != null)
         {
-            _turnManager.Character.Special(_turnManager.Target);
+            _turnManager.Character.CharacterCapacity.Special(_turnManager.Target);
         }
     }
 }
