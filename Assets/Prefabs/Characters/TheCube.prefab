@@ -123,7 +123,7 @@ MonoBehaviour:
   <Position>k__BackingField: {fileID: 0}
   <CharacterCapacity>k__BackingField: {fileID: 683215051445704321}
   <CharacterHealth>k__BackingField: {fileID: 5904705534956967025}
-  <CharacterBase>k__BackingField: {fileID: 11400000, guid: 1c5199c04e4d4ba408041df8c45287b0,
+  <CharacterBase>k__BackingField: {fileID: 11400000, guid: 829835cefb55f3a43a1e88a868e0aa14,
     type: 2}
 --- !u!114 &683215051445704321
 MonoBehaviour:
