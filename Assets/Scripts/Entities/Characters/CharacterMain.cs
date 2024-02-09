@@ -11,6 +11,11 @@ public class CharacterMain : Entity
     [field: SerializeField]
     public CharacterBase CharacterBase { get; private set; }
 
+    public void InitCharacter(MapMain map)
+    {
+        CharacterCapacity._map = map;
+    }
+
     private void Awake()
     {
         HpMax = CharacterBase.HpMax;

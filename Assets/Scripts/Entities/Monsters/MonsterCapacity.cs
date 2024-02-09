@@ -9,8 +9,7 @@ public class MonsterCapacity : MonoBehaviour
     [SerializeField]
     private Capacity _capacity;
 
-    [SerializeField]
-    private MapMain _mapMain;
+    public MapMain _mapMain;
 
     public void Attack(Entity target)
     {
@@ -42,8 +41,10 @@ public class MonsterCapacity : MonoBehaviour
             {
                 for (int i = 0; i < path.Count; i++)
                 {
-                    this._monsterMain.Position = path[i];
-                    this.transform.position = path[i].transform.position;
+                    ChangeWaypoint(path[i]);
+
+                    // this._monsterMain.Position = path[i];
+                    // this.transform.position = path[i].transform.position;
                     this._monsterMain.PaCurrent--;
                 }
             }
@@ -56,6 +57,12 @@ public class MonsterCapacity : MonoBehaviour
         {
             Debug.Log("No more PA");
         }
+    }
+
+    public void ChangeWaypoint(WayPoint waypointToMoveTo)
+    {
+        this._monsterMain.Position = waypointToMoveTo;
+        this.transform.position = waypointToMoveTo.transform.position;
     }
 
     public void Special(Entity target)

@@ -9,8 +9,7 @@ public class CharacterCapacity : MonoBehaviour
     [SerializeField]
     private Capacity _capacity;
 
-    [SerializeField]
-    private MapMain _map;
+    public MapMain _map;
 
     public void Attack(MonsterMain target)
     {
@@ -40,8 +39,10 @@ public class CharacterCapacity : MonoBehaviour
             {
                 for (int i = 0; i < path.Count; i++)
                 {
-                    this._characterMain.Position = path[i];
-                    this.transform.position = path[i].transform.position;
+                    ChangeWaypoint(path[i]);
+
+                    // this._characterMain.Position = path[i];
+                    // this.transform.position = path[i].transform.position;
                     this._characterMain.PaCurrent--;
                 }
             }
@@ -55,6 +56,12 @@ public class CharacterCapacity : MonoBehaviour
             Debug.Log("Not enough PA to start");
         }
 
+    }
+
+    public void ChangeWaypoint(WayPoint waypointToMoveTo)
+    {
+        this._characterMain.Position = waypointToMoveTo;
+        this.transform.position = waypointToMoveTo.transform.position;
     }
 
     public void Special(Entity target)
@@ -72,6 +79,6 @@ public class CharacterCapacity : MonoBehaviour
             {
                 Debug.Log("Not enough PA");
             }
-        }        
+        }
     }
 }

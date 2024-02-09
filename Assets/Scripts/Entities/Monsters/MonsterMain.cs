@@ -11,6 +11,11 @@ public class MonsterMain : Entity
     [field: SerializeField]
     public MonsterBase MonsterBase { get; private set; }
 
+    public void InitMonster(MapMain map)
+    {
+        MonsterCapacity._mapMain = map;
+    }
+
     private void Awake()
     {
         HpMax = MonsterBase.HpMax;

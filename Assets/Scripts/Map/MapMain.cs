@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class MapMain : MonoBehaviour
@@ -8,33 +7,23 @@ public class MapMain : MonoBehaviour
     public InitMap init;
     public AStar aStar;
 
+    private ManagerMain managerMain;
+
     public WayPoint wayPointStart;
 
-    //ClickedCase n'existera pas à la fin du projet, cet un outil de test
+    // ClickedCase n'existera pas à la fin du projet, cet un outil de test
     public ClickedCase _clickedCase;
 
-    private void Awake()
+    public void InitManager(ManagerMain MM)
     {
-        InitGameObject();
-    }
-
-    private void Start()
-    {
-        wayPointStart = config.allWayPoints[Random.Range(0, config.allWayPoints.Count)];
-        _clickedCase = GetComponent<ClickedCase>();
-        _clickedCase.Init(this);
-    }
-
-    private void InitGameObject()
-    {
-        SendMessage("Init", this);
-        config.CreateWaypoint();
+        MM.mapMain = this;
+        managerMain = MM;
     }
 
     /// <summary>
     /// Cette fonction ne sert que pour les tests de début de projet, à utiliser que pour le astar.
     /// </summary>
-    /// <param name="end"></param>
+    /// <param name="end">La fin de notre chemin.</param>
     public void Test(WayPoint end)
     {
         if (wayPointStart == end)
@@ -64,5 +53,24 @@ public class MapMain : MonoBehaviour
         }
 
         return aStartWaypoint;
+    }
+
+    private void Awake()
+    {
+        InitGameObject();
+    }
+
+    private void Start()
+    {
+        wayPointStart = config.allWayPoints[Random.Range(0, config.allWayPoints.Count)];
+        _clickedCase = GetComponent<ClickedCase>();
+        _clickedCase.Init(this);
+        managerMain.entitiesManager.InitEntities();
+    }
+
+    private void InitGameObject()
+    {
+        SendMessage("Init", this);
+        config.CreateWaypoint();
     }
 }
