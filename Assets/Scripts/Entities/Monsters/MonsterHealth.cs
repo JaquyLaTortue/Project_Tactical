@@ -19,8 +19,8 @@ public class MonsterHealth : MonoBehaviour
     public void Die()
     {
         Debug.Log("Die");
-        // TP to spawn point
-        // Desactivate the character
+        //this.transform.position = _monsterMain.SpawnPoint.transform.position;
+        this.gameObject.SetActive(false);
     }
 
     //public void HealHealth(int heal)

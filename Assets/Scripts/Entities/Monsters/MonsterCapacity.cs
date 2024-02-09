@@ -26,13 +26,16 @@ public class MonsterCapacity : MonoBehaviour
 
         if (target is CharacterMain tmp)
         {
-            // Attack with normal attack
             Debug.Log("Attack: " + target);
             if (this._monsterMain.PaCurrent > 0)
             {
-                tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
-                this._monsterMain.PaCurrent--;
-                _hasAttacked = true;
+                //if (target.Position.casePosition[0] <= _monsterMain.Position.casePosition[0] + _monsterMain.Range ||
+                //    target.Position.casePosition[1] <= _monsterMain.Position.casePosition[1] + _monsterMain.Range)
+                //{
+                //    tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
+                //    this._monsterMain.PaCurrent--;
+                //    _hasAttacked = true;
+                //}
             }
             else
             {
