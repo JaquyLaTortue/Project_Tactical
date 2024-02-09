@@ -88,27 +88,27 @@ public class MonsterCapacity : MonoBehaviour
         this.transform.position = waypointToMoveTo.transform.position;
     }
 
-    public void Special(Entity target)
-    {
-        if (_hasSpecialAttacking)
-        {
-            Debug.Log("Already special attacked");
-            return;
-        }
+    //public void Special(Entity target)
+    //{
+    //    if (_hasSpecialAttacking)
+    //    {
+    //        Debug.Log("Already special attacked");
+    //        return;
+    //    }
 
-        Debug.Log("Special: " + target);
-        if (target is CharacterMain tmp)
-        {
-            if (this._monsterMain.PaCurrent > 0)
-            {
-                tmp.CharacterHealth.TakeDamage(_capacity.damage);
-                this._monsterMain.PaCurrent -= _capacity.cost;
-                _hasSpecialAttacking = true;
-            }
-            else
-            {
-                Debug.Log("No more PA");
-            }
-        }
-    }
+    //    Debug.Log("Special: " + target);
+    //    if (target is CharacterMain tmp)
+    //    {
+    //        if (this._monsterMain.PaCurrent > 0)
+    //        {
+    //            tmp.CharacterHealth.TakeDamage(_capacity.damage);
+    //            this._monsterMain.PaCurrent -= _capacity.cost;
+    //            _hasSpecialAttacking = true;
+    //        }
+    //        else
+    //        {
+    //            Debug.Log("No more PA");
+    //        }
+    //    }
+    //}
 }
