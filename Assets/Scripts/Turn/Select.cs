@@ -6,87 +6,90 @@ public class Select : MonoBehaviour
     [SerializeField] private TurnManager _turnManager;
     private Ray _ray;
 
-    public void SelectPlayer(InputAction.CallbackContext ctx)
+    public void OnInput(InputAction.CallbackContext ctx)
     {
         if (ctx.started && _turnManager.PlayerTurn)
         {
-            Debug.Log("Selecting Player");
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(_ray, out hit))
+            if (_turnManager.CharacterSelection)
             {
-                GameObject current = hit.transform.gameObject;
-                Debug.Log("Hit: " + current.name);
+                SelectCharacter();
+            }
+            else if (_turnManager.TargetSelection)
+            {
+                SelectTarget();
+            }
+            else if (_turnManager.DestinationSelection)
+            {
+                SelectDestination();
+            }
 
-                if (_turnManager.Character != current && current.CompareTag("Character"))
-                {
+            return;
+        }
+    }
+
+
+    public void SelectCharacter()
+    {
+        Debug.Log("Selecting Player");
+        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(_ray, out hit))
+        {
+            GameObject current = hit.transform.gameObject;
+            if (!current.CompareTag("Character"))
+            {
+                Debug.Log("Not a character");
+                return;
+            }
+
+            switch (_turnManager.Character)
+            {
+                case null:
+                    Debug.Log("Setting character");
                     _turnManager.SetCharacter(current);
-                }
+                    break;
+                case not null:
+                    Debug.Log("Changing character");
+                    if (_turnManager.Character.gameObject != current)
+                    {
+                        _turnManager.SetCharacter(current);
+                    }
 
-                _turnManager.InputManager.SwitchCurrentActionMap("EmptyActionMap");
+                    break;
             }
-        }
-        else if (ctx.started && !_turnManager.PlayerTurn)
-        {
-            Debug.Log("Not Player's Turn");
-            _turnManager.InputManager.SwitchCurrentActionMap("EmptyActionMap");
         }
     }
 
-    public void SelectTarget(InputAction.CallbackContext ctx)
+    public void SelectTarget()
     {
-        if (ctx.started && _turnManager.PlayerTurn)
-        {
-            Debug.Log("Selecting Target");
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        Debug.Log("Selecting Target");
+        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-            if (Physics.Raycast(_ray, out hit))
+        if (Physics.Raycast(_ray, out hit))
+        {
+            GameObject current = hit.transform.gameObject;
+            if (_turnManager.Target != current && current.CompareTag("Ennemy"))
             {
-                GameObject current = hit.transform.gameObject;
-                Debug.Log($"Hit: {current.name}");
-
-                if (_turnManager.Target != current && current.CompareTag("Ennemy"))
-                {
-                    _turnManager.SetTarget(current);
-                }
-
-                _turnManager.InputManager.SwitchCurrentActionMap("EmptyActionMap");
+                _turnManager.SetTarget(current);
             }
-        }
-        else if (ctx.started && !_turnManager.PlayerTurn)
-        {
-            Debug.Log("Not Player's Turn");
-            _turnManager.InputManager.SwitchCurrentActionMap("EmptyActionMap");
         }
     }
 
-    public void SelectDestination(InputAction.CallbackContext ctx)
+    public void SelectDestination()
     {
-        if (ctx.started && _turnManager.PlayerTurn)
-        {
-            Debug.Log("Selecting Destination on map");
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        Debug.Log("Selecting Destination on map");
+        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-            if (Physics.Raycast(_ray, out hit))
+        if (Physics.Raycast(_ray, out hit))
+        {
+            GameObject current = hit.transform.gameObject;
+            if (current.CompareTag("Map"))
             {
-                GameObject current = hit.transform.gameObject;
-                Debug.Log($"Hit: {current.name}");
-
-                if (current.CompareTag("Map"))
-                {
-                    _turnManager.SetTargetPosition(current.GetComponent<WayPoint>());
-                }
-
-                _turnManager.InputManager.SwitchCurrentActionMap("EmptyActionMap");
+                _turnManager.SetDestination(current.GetComponent<WayPoint>());
             }
-        }
-        else if (ctx.started && !_turnManager.PlayerTurn)
-        {
-            Debug.Log("Not Player's Turn");
-            _turnManager.InputManager.SwitchCurrentActionMap("EmptyActionMap");
         }
     }
 }
