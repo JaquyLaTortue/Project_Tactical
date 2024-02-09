@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe5e79c639f11145939a714153d25cb, type: 3}
   m_Name: Dev
   m_EditorClassIdentifier: 
-  Atk: 0
-  Def: 0
-  HpMax: 0
-  HpCurrent: 0
-  PaMax: 0
-  PaCurrent: 0
+  Atk: 100
+  Def: 100
+  HpMax: 100
+  HpCurrent: 100
+  PaMax: 100
+  PaCurrent: 100
