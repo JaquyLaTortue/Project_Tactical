@@ -5,6 +5,7 @@ public class MonsterBase : ScriptableObject
 {
     public int Atk;
     public int Def;
+    public int Range;
 
     public int HpMax;
     public int HpCurrent;
