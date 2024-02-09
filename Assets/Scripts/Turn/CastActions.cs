@@ -6,10 +6,10 @@ public class CastActions : MonoBehaviour
 
     public void Move()
     {
-        if (_turnManager.TargetPosition != null)
+        if (_turnManager.Destination != null)
         {
             Debug.Log("Move");
-            _turnManager.Character.CharacterCapacity.Move(_turnManager.TargetPosition);
+            _turnManager.Character.CharacterCapacity.Move(_turnManager.Destination);
         }
     }
 

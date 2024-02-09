@@ -5,6 +5,7 @@ public class Select : MonoBehaviour
 {
     [SerializeField] private TurnManager _turnManager;
     private Ray _ray;
+    private RaycastHit _hit;
 
     public void OnInput(InputAction.CallbackContext ctx)
     {
@@ -27,16 +28,14 @@ public class Select : MonoBehaviour
         }
     }
 
-
     public void SelectCharacter()
     {
         Debug.Log("Selecting Player");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
-        if (Physics.Raycast(_ray, out hit))
+        if (Physics.Raycast(_ray, out _hit))
         {
-            GameObject current = hit.transform.gameObject;
+            GameObject current = _hit.transform.gameObject;
             if (!current.CompareTag("Character"))
             {
                 Debug.Log("Not a character");
@@ -56,6 +55,7 @@ public class Select : MonoBehaviour
                         _turnManager.SetCharacter(current);
                     }
 
+                    _turnManager.EndCharacterSelectionPhase();
                     break;
             }
         }
@@ -65,30 +65,61 @@ public class Select : MonoBehaviour
     {
         Debug.Log("Selecting Target");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
-        if (Physics.Raycast(_ray, out hit))
+        if (Physics.Raycast(_ray, out _hit))
         {
-            GameObject current = hit.transform.gameObject;
-            if (_turnManager.Target != current && current.CompareTag("Ennemy"))
+            GameObject current = _hit.transform.gameObject;
+            if (!current.CompareTag("Ennemy"))
             {
-                _turnManager.SetTarget(current);
+                Debug.Log("Not an ennemy");
+                return;
+            }
+
+            switch (_turnManager.Target)
+            {
+                case null:
+                    Debug.Log("Setting target");
+                    _turnManager.SetTarget(current);
+                    break;
+                case not null:
+                    Debug.Log("Changing target");
+                    if (_turnManager.Target.gameObject != current)
+                    {
+                        _turnManager.SetTarget(current);
+                    }
+
+                    _turnManager.EndTargetSelectionPhase();
+                    break;
             }
         }
     }
 
     public void SelectDestination()
     {
-        Debug.Log("Selecting Destination on map");
+        Debug.Log("Selecting Destination");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
-        if (Physics.Raycast(_ray, out hit))
+        if (Physics.Raycast(_ray, out _hit))
         {
-            GameObject current = hit.transform.gameObject;
+            GameObject current = _hit.transform.gameObject;
             if (current.CompareTag("Map"))
             {
-                _turnManager.SetDestination(current.GetComponent<WayPoint>());
+                switch (_turnManager.Destination)
+                {
+                    case null:
+                        Debug.Log("Setting destination");
+                        _turnManager.SetDestination(current.GetComponent<WayPoint>());
+                        break;
+                    case not null:
+                        Debug.Log("Changing destination");
+                        if (_turnManager.Destination.gameObject != current)
+                        {
+                            _turnManager.SetDestination(current.GetComponent<WayPoint>());
+                        }
+
+                        _turnManager.EndDestinationSelectionPhase();
+                        break;
+                }
             }
         }
     }

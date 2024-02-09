@@ -21,7 +21,7 @@ public class TurnManager : MonoBehaviour
 
     public MonsterMain Target { get; private set; }
 
-    public WayPoint TargetPosition { get; private set; }
+    public WayPoint Destination { get; private set; }
 
     [field: SerializeField]
     public PlayerInput InputManager { get; private set; }
@@ -37,9 +37,19 @@ public class TurnManager : MonoBehaviour
         CharacterSelection = true;
     }
 
+    public void EndCharacterSelectionPhase()
+    {
+        CharacterSelection = false;
+    }
+
     public void TargetSelectionPhase()
     {
         TargetSelection = true;
+    }
+
+    public void EndTargetSelectionPhase()
+    {
+        TargetSelection = false;
     }
 
     public void DestinationSelectionPhase()
@@ -47,12 +57,16 @@ public class TurnManager : MonoBehaviour
         DestinationSelection = true;
     }
 
+    public void EndDestinationSelectionPhase()
+    {
+        DestinationSelection = false;
+    }
+
     public void SetCharacter(GameObject character)
     {
         string oldcharacter = Character == null ? "null" : Character.name;
-        CharacterMain cmTmp = character.GetComponent<CharacterMain>();
-        Character = cmTmp;
-        // Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
+        Character = character.GetComponent<CharacterMain>();
+        Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
         CharacterSelection = false;
     }
@@ -68,7 +82,7 @@ public class TurnManager : MonoBehaviour
 
     public void SetDestination(WayPoint targetPosition)
     {
-        TargetPosition = targetPosition;
+        Destination = targetPosition;
         Debug.Log($"Target Position changement, new position : {targetPosition.name}");
         DestinationSelection = false;
     }
