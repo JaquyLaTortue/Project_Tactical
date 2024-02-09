@@ -19,6 +19,6 @@ public class MonsterMain : Entity
         PaCurrent = MonsterBase.PaMax;
         Atk = MonsterBase.Atk;
         Def = MonsterBase.Def;
-        //Range = MonsterBase.Range;
+        Range = MonsterBase.Range;
     }
 }
