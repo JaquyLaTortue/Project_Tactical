@@ -10,4 +10,7 @@ public abstract class MonsterBehaviour : MonoBehaviour
 
     [SerializeField]
     protected EntitiesManager _entitiesManager;
+
+    [SerializeField]
+    protected TurnManager _turnManager;
 }

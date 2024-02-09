@@ -2,6 +2,11 @@
 
 public class RangeBehaviour : MonsterBehaviour
 {
+    private void Start()
+    {
+       _turnManager.OnMonsterTurn += DetectePlayer;
+    }
+
     private void DetectePlayer()
     {
         int distance = 1000;

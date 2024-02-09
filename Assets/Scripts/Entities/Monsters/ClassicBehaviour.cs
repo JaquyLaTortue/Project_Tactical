@@ -2,9 +2,11 @@
 
 public class ClassicBehaviour : MonsterBehaviour
 {
-    // detecte l'ennemi le plus proche
-    // se déplace vers lui
-    // si il est à portée, attaque
+    private void Start()
+    {
+        _turnManager.OnMonsterTurn += DetectePlayer;
+    }
+
     private void DetectePlayer()
     {
         int distance = 1000;
