@@ -11,16 +11,30 @@ public class MonsterCapacity : MonoBehaviour
 
     public MapMain _mapMain;
 
+    private bool _hasAttacked = false;
+    private bool _hasMoved = false;
+    private bool _hasSpecialAttacking = false;
+
     public void Attack(Entity target)
     {
+        if (_hasAttacked)
+        {
+            Debug.Log("Already attacked");
+            return;
+        }
+
         if (target is CharacterMain tmp)
         {
-            // Attack with normal attack
             Debug.Log("Attack: " + target);
             if (this._monsterMain.PaCurrent > 0)
             {
-                tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
-                this._monsterMain.PaCurrent--;
+                if (target.Position.casePosition[0] <= _monsterMain.Position.casePosition[0] + _monsterMain.Range ||
+                    target.Position.casePosition[1] <= _monsterMain.Position.casePosition[1] + _monsterMain.Range)
+                {
+                    tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
+                    this._monsterMain.PaCurrent--;
+                    _hasAttacked = true;
+                }
             }
             else
             {
@@ -31,7 +45,12 @@ public class MonsterCapacity : MonoBehaviour
 
     public void Move(WayPoint destination)
     {
-        // Move to a new position
+        if (_hasMoved)
+        {
+            Debug.Log("Already moved");
+            return;
+        }
+
         List<WayPoint> path = new List<WayPoint>();
         Debug.Log("Move: " + destination);
         if (this._monsterMain.PaCurrent > 0)
@@ -52,6 +71,8 @@ public class MonsterCapacity : MonoBehaviour
             {
                 Debug.Log("No more PA");
             }
+
+            _hasMoved = true;
         }
         else
         {
@@ -67,7 +88,12 @@ public class MonsterCapacity : MonoBehaviour
 
     public void Special(Entity target)
     {
-        // Attack with special ability
+        if (_hasSpecialAttacking)
+        {
+            Debug.Log("Already special attacked");
+            return;
+        }
+
         Debug.Log("Special: " + target);
         if (target is CharacterMain tmp)
         {
@@ -75,6 +101,7 @@ public class MonsterCapacity : MonoBehaviour
             {
                 tmp.CharacterHealth.TakeDamage(_capacity.damage);
                 this._monsterMain.PaCurrent -= _capacity.cost;
+                _hasSpecialAttacking = true;
             }
             else
             {

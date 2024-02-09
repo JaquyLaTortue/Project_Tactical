@@ -24,5 +24,6 @@ public class CharacterMain : Entity
         PaCurrent = CharacterBase.PaMax;
         Atk = CharacterBase.Atk;
         Def = CharacterBase.Def;
+        Range = CharacterBase.Range;
     }
 }

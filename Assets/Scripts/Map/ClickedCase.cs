@@ -27,7 +27,7 @@ public class ClickedCase : MonoBehaviour
         {
             ChangeColorOfWaypointToRed(hit.collider.GetComponent<MeshRenderer>());
             _mapMain.Test(hit.collider.GetComponent<WayPoint>());
-            //Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(_hit.collider.gameObject.name);
         }
     }
 
