@@ -1,26 +1,77 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class CharacterCapacity : MonoBehaviour
 {
     [SerializeField]
     private CharacterMain _characterMain;
 
+    [SerializeField]
+    private Capacity _capacity;
+
+    [SerializeField]
+    private MapMain _map;
+
     public void Attack(MonsterMain target)
     {
         // Attack with normal attack
         Debug.Log("Attack: " + target);
-        target.MonsterHealth.TakeDamage(_characterMain.atk);
+        if (this._characterMain.PaCurrent > 0)
+        {
+            Debug.Log("MonsterHealth : " + target.MonsterHealth);
+            Debug.Log("Stats attack : " + _characterMain.Atk);
+            target.MonsterHealth.TakeDamage(_characterMain.Atk);
+            this._characterMain.PaCurrent--;
+        }
+        else
+        {
+            Debug.Log("Not enough PA");
+        }
     }
 
     public void Move(WayPoint destination)
     {
-        // Move to a new position
+        List<WayPoint> path = new List<WayPoint>();
         Debug.Log("Move to : " + destination);
+        if (this._characterMain.PaCurrent > 0)
+        {
+            path = _map.aStar.GiveThePath(_characterMain.Position, destination);
+            if (path.Count <= this._characterMain.PaCurrent)
+            {
+                for (int i = 0; i < path.Count; i++)
+                {
+                    this._characterMain.Position = path[i];
+                    this.transform.position = path[i].transform.position;
+                    this._characterMain.PaCurrent--;
+                }
+            }
+            else
+            {
+                Debug.Log("Not enough PA to finish");
+            }
+        }
+        else
+        {
+            Debug.Log("Not enough PA to start");
+        }
+
     }
 
     public void Special(Entity target)
     {
         // Attack with special ability
         Debug.Log("Special: " + target);
+        if (target is MonsterMain tmp)
+        {
+            if (this._characterMain.PaCurrent > 0)
+            {
+                tmp.MonsterHealth.TakeDamage(_capacity.damage);
+                this._characterMain.PaCurrent -= _capacity.cost;
+            }
+            else
+            {
+                Debug.Log("Not enough PA");
+            }
+        }        
     }
 }

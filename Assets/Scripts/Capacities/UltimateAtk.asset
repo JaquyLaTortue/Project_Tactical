@@ -16,3 +16,5 @@ MonoBehaviour:
   name: Ultimate Attack
   description: Ultimate Attack [WIP]
   cost: 3
+  damage: 200
+  range: 10

@@ -2,18 +2,22 @@
 
 public class CharacterMain : Entity
 {
-    [Header("Character Components")]
-    public CharacterCapacity CharacterCapacity;
-    public CharacterHealth CharacterHealth;
-    public CharacterBase CharacterBase;
+    [field: SerializeField]
+    public CharacterCapacity CharacterCapacity { get; private set; }
+
+    [field: SerializeField]
+    public CharacterHealth CharacterHealth { get; private set; }
+
+    [field: SerializeField]
+    public CharacterBase CharacterBase { get; private set; }
 
     private void Awake()
     {
-        hpMax = CharacterBase.hpMax;
-        hpCurrent = CharacterBase.hpMax;
-        paMax = CharacterBase.paMax;
-        paCurrent = CharacterBase.paMax;
-        atk = CharacterBase.atk;
-        def = CharacterBase.def;
+        HpMax = CharacterBase.HpMax;
+        HpCurrent = CharacterBase.HpMax;
+        PaMax = CharacterBase.PaMax;
+        PaCurrent = CharacterBase.PaMax;
+        Atk = CharacterBase.Atk;
+        Def = CharacterBase.Def;
     }
 }
