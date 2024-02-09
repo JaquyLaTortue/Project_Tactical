@@ -10,6 +10,7 @@ public class MapMain : MonoBehaviour
 
     public WayPoint wayPointStart;
 
+    //ClickedCase n'existera pas à la fin du projet, cet un outil de test
     public ClickedCase _clickedCase;
 
     private void Awake()
@@ -31,7 +32,7 @@ public class MapMain : MonoBehaviour
     }
 
     /// <summary>
-    /// Cette fonction ne sert que pour les tests de début de projet, à utiliser que pour le astar
+    /// Cette fonction ne sert que pour les tests de début de projet, à utiliser que pour le astar.
     /// </summary>
     /// <param name="end"></param>
     public void Test(WayPoint end)
