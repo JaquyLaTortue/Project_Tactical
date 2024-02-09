@@ -11,6 +11,4 @@ public class MonsterBase : ScriptableObject
 
     public int PaMax;
     public int PaCurrent;
-
-    public WayPoint Position;
 }
