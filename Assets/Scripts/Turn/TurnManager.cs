@@ -16,6 +16,7 @@ public class TurnManager : MonoBehaviour
 
     public bool PlayerTurn { get; private set; } = true;
 
+    [field: SerializeField]
     public CharacterMain Character { get; private set; }
 
     public MonsterMain Target { get; private set; }
@@ -25,13 +26,35 @@ public class TurnManager : MonoBehaviour
     [field: SerializeField]
     public PlayerInput InputManager { get; private set; }
 
+    public bool CharacterSelection { get; private set; } = false;
+
+    public bool TargetSelection { get; private set; } = false;
+
+    public bool DestinationSelection { get; private set; } = false;
+
+    public void CharacterSelectionPhase()
+    {
+        CharacterSelection = true;
+    }
+
+    public void TargetSelectionPhase()
+    {
+        TargetSelection = true;
+    }
+
+    public void DestinationSelectionPhase()
+    {
+        DestinationSelection = true;
+    }
 
     public void SetCharacter(GameObject character)
     {
         string oldcharacter = Character == null ? "null" : Character.name;
-        Character = character.GetComponent<CharacterMain>();
-        Debug.Log($"Character changement: old character : {oldcharacter} and new character : {character.name}");
+        CharacterMain cmTmp = character.GetComponent<CharacterMain>();
+        Character = cmTmp;
+        // Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
+        CharacterSelection = false;
     }
 
     public void SetTarget(GameObject target)
@@ -40,18 +63,19 @@ public class TurnManager : MonoBehaviour
         Target = target.GetComponent<MonsterMain>();
         Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
         OnEnnemySelected?.Invoke(Target);
+        TargetSelection = false;
     }
 
-    public void SetTargetPosition(WayPoint targetPosition)
+    public void SetDestination(WayPoint targetPosition)
     {
         TargetPosition = targetPosition;
         Debug.Log($"Target Position changement, new position : {targetPosition.name}");
+        DestinationSelection = false;
     }
 
     public void EndTurn()
     {
         Turnindex++;
-        InputManager.SwitchCurrentActionMap("EmptyActionMap");
         DetermineTurn();
     }
 
@@ -71,4 +95,11 @@ public class TurnManager : MonoBehaviour
                 break;
         }
     }
+
+    private void Start()
+    {
+        OnPlayerTurn?.Invoke();
+        CharacterSelection = true;
+    }
+
 }
