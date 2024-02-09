@@ -14,6 +14,7 @@ public class Entity : MonoBehaviour
 
     public int PaCurrent { get; set; }
 
+    [field: SerializeField]
     public WayPoint Position { get; set; }
 
     public void Attack(Entity target)

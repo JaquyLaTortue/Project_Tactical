@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class CharacterCapacity : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class CharacterCapacity : MonoBehaviour
 
     [SerializeField]
     private Capacity _capacity;
+
+    [SerializeField]
+    private MapMain _map;
 
     public void Attack(MonsterMain target)
     {
@@ -27,22 +31,47 @@ public class CharacterCapacity : MonoBehaviour
 
     public void Move(WayPoint destination)
     {
-        // Move to a new position
+        List<WayPoint> path = new List<WayPoint>();
         Debug.Log("Move to : " + destination);
-    }
-
-    public void Special(MonsterMain target)
-    {
-        // Attack with special ability
-        Debug.Log("Special: " + target);
         if (this._characterMain.PaCurrent > 0)
         {
-            target.MonsterHealth.TakeDamage(_capacity.damage);
-            this._characterMain.PaCurrent -= _capacity.cost;
+            path = _map.aStar.GiveThePath(_characterMain.Position, destination);
+            if (path.Count <= this._characterMain.PaCurrent)
+            {
+                for (int i = 0; i < path.Count; i++)
+                {
+                    this._characterMain.Position = path[i];
+                    this.transform.position = path[i].transform.position;
+                    this._characterMain.PaCurrent--;
+                }
+            }
+            else
+            {
+                Debug.Log("Not enough PA to finish");
+            }
         }
         else
         {
-            Debug.Log("Not enough PA");
+            Debug.Log("Not enough PA to start");
         }
+
+    }
+
+    public void Special(Entity target)
+    {
+        // Attack with special ability
+        Debug.Log("Special: " + target);
+        if (target is MonsterMain tmp)
+        {
+            if (this._characterMain.PaCurrent > 0)
+            {
+                tmp.MonsterHealth.TakeDamage(_capacity.damage);
+                this._characterMain.PaCurrent -= _capacity.cost;
+            }
+            else
+            {
+                Debug.Log("Not enough PA");
+            }
+        }        
     }
 }

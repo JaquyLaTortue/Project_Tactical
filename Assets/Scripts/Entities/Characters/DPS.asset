@@ -16,6 +16,5 @@ MonoBehaviour:
   Def: 30
   HpMax: 100
   HpCurrent: 100
-  PaMax: 5
-  PaCurrent: 5
-  Position: {fileID: 0}
+  PaMax: 100
+  PaCurrent: 100

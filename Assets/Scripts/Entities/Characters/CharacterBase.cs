@@ -11,6 +11,4 @@ public class CharacterBase : ScriptableObject
 
     public int PaMax;
     public int PaCurrent;
-
-    public WayPoint Position;
 }
