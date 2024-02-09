@@ -7,10 +7,10 @@ public class MonsterHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("HP before attack : " + _monsterMain.hpCurrent);
-        _monsterMain.hpCurrent -= damage;
-        Debug.Log("HP after attack : " + _monsterMain.hpCurrent);
-        if (_monsterMain.hpCurrent <= 0)
+        Debug.Log("HP before attack : " + _monsterMain.HpCurrent);
+        _monsterMain.HpCurrent -= Mathf.RoundToInt(damage * (100f / (100f + _monsterMain.Def)));
+        Debug.Log("HP after attack : " + _monsterMain.HpCurrent);
+        if (_monsterMain.HpCurrent <= 0)
         {
             Die();
         }
@@ -19,8 +19,8 @@ public class MonsterHealth : MonoBehaviour
     public void Die()
     {
         Debug.Log("Die");
-        // TP to spawn point
-        // Desactivate the character
+        //this.transform.position = _monsterMain.SpawnPoint.transform.position;
+        this.gameObject.SetActive(false);
     }
 
     //public void HealHealth(int heal)

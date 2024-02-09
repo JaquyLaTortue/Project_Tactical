@@ -7,6 +7,11 @@ public class MapConfig : MonoBehaviour
     [SerializeField]
     private int _lengthCase;
 
+    public int LengthCase
+    {
+        get { return _lengthCase; }
+    }
+
     [SerializeField]
     private int _widthCase;
 

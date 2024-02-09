@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0458caaa7b956ad469a42cb6054b7b1e, type: 3}
-  m_Name: UltimateAtk
+  m_Script: {fileID: 11500000, guid: 169922451fb6d3d47b5633bbe5ada3d2, type: 3}
+  m_Name: Tank
   m_EditorClassIdentifier: 
-  id: uAtk
-  name: Ultimate Attack
-  description: Ultimate Attack [WIP]
-  cost: 3
-  damage: 200
-  range: 10
+  Atk: 5
+  Def: 15
+  HpMax: 125
+  HpCurrent: 125
+  PaMax: 12
+  PaCurrent: 12
+  Position: {fileID: 0}

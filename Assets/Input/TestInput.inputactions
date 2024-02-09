@@ -30,13 +30,13 @@
             ]
         },
         {
-            "name": "SelectPlayer",
-            "id": "a11964b9-9ebd-4381-a921-4946e6dc11cf",
+            "name": "Select",
+            "id": "031137de-849f-4f68-b1bb-cd4e4ad59019",
             "actions": [
                 {
-                    "name": "SelectCharacter",
+                    "name": "Select",
                     "type": "Button",
-                    "id": "02b12b99-d24d-4cf4-8874-699a3fb1c9e7",
+                    "id": "5a01a2c0-6a67-4e14-a481-6dfac6286b60",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -46,47 +46,19 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "0c1c1fdf-edf5-477e-b39e-7cc7ea5c399e",
+                    "id": "1b9e717b-d715-47d6-bd62-19823bcaca48",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "SelectCharacter",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "SelectTarget",
-            "id": "7a0f7179-c30e-4ddc-b914-5eb3bf2defd2",
-            "actions": [
-                {
-                    "name": "SelectTarget",
-                    "type": "Button",
-                    "id": "beaff787-6125-4dc4-94e2-613ba29a1d18",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "29b93eaa-4f96-45c1-8247-77513165ad15",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "SelectTarget",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "SelectMap",
+            "name": "Astar",
             "id": "7fc8efb0-9dcc-43d4-bab8-1066752932d6",
             "actions": [
                 {
@@ -106,7 +78,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "ClickOnCase",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -3,18 +3,13 @@
 [CreateAssetMenu(fileName = "Character", menuName = "Entities/Characters", order = 1)]
 public class CharacterBase : ScriptableObject
 {
-    [SerializeField]
-    public int atk;
-    [SerializeField]
-    public int def;
+    public int Atk;
+    public int Def;
+    public int Range;
 
-    [SerializeField]
-    public int hpMax;
+    public int HpMax;
     public int HpCurrent;
 
-    [SerializeField]
-    public int paMax;
+    public int PaMax;
     public int PaCurrent;
-
-    public WayPoint position;
 }

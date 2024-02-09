@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe5e79c639f11145939a714153d25cb, type: 3}
   m_Name: Tank
   m_EditorClassIdentifier: 
-  atk: 3
-  def: 10
-  hpMax: 15
-  HpCurrent: 0
-  paMax: 4
-  PaCurrent: 0
-  position: {fileID: 0}
+  Atk: 10
+  Def: 50
+  HpMax: 125
+  HpCurrent: 125
+  PaMax: 4
+  PaCurrent: 4
+  Position: {fileID: 0}

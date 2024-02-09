@@ -10,12 +10,22 @@ public class AStar : MonoBehaviour
     private MapMain _map;
     private bool _findTheTarget;
 
+    /// <summary>
+    /// Récupère le message du mapmain.
+    /// </summary>
+    /// <param name="main"></param>
     public void Init(MapMain main)
     {
         _map = main;
         _map.aStar = this;
     }
 
+    /// <summary>
+    /// C'est la fonction qui est appelée par mapmain pour récupérer le chemin du astar.
+    /// </summary>
+    /// <param name="waypointToStart"></param>
+    /// <param name="waypointToFinish"></param>
+    /// <returns></returns>
     public List<WayPoint> GiveThePath(WayPoint waypointToStart, WayPoint waypointToFinish)
     {
         _target = waypointToFinish;
@@ -23,6 +33,10 @@ public class AStar : MonoBehaviour
         return _path;
     }
 
+    /// <summary>
+    /// Ici on va remettre à zéro notre astar puis appelé la fonction qui va s'occuper de trouver le chemin du astar.
+    /// </summary>
+    /// <param name="waypointToStart"></param>
     private void InitAStar(WayPoint waypointToStart)
     {
         foreach (WayPoint path in _path)
@@ -48,6 +62,9 @@ public class AStar : MonoBehaviour
         SearchRoad();
     }
 
+    /// <summary>
+    /// On va chercher tout les waypoints pour faire notre chemin du astar.
+    /// </summary>
     private void SearchRoad()
     {
         List<WayPoint> _wayPointToCheck = new List<WayPoint>();
@@ -83,6 +100,10 @@ public class AStar : MonoBehaviour
         FindThePath();
     }
 
+    /// <summary>
+    /// On va vérifier les voisins des waypoints pour trouver le meilleur chemin.
+    /// </summary>
+    /// <param name="_currentWaypoint"></param>
     private void CheckNeighbour(WayPoint _currentWaypoint)
     {
         foreach (WayPoint waypoint in _currentWaypoint.neighbour)
@@ -108,6 +129,9 @@ public class AStar : MonoBehaviour
         newWaypoint.caseCost = parent.caseCost + 1;
     }
 
+    /// <summary>
+    /// On va récupérer tout les parents des waypoints qu'on a séléctionner pour créer un chemin.
+    /// </summary>
     private void FindThePath()
     {
         _path.Add(_target);
