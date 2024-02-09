@@ -12,9 +12,18 @@ public class CharacterCapacity : MonoBehaviour
     [SerializeField]
     private MapMain _map;
 
+    private bool _hasAttacked = false;
+    private bool _hasMoved = false;
+    private bool _hasSpecial = false;
+
     public void Attack(MonsterMain target)
     {
         // Attack with normal attack
+        if (_hasAttacked)
+        {
+            return;
+        }
+
         Debug.Log("Attack: " + target);
         if (this._characterMain.PaCurrent > 0)
         {
@@ -22,6 +31,7 @@ public class CharacterCapacity : MonoBehaviour
             Debug.Log("Stats attack : " + _characterMain.Atk);
             target.MonsterHealth.TakeDamage(_characterMain.Atk);
             this._characterMain.PaCurrent--;
+            _hasAttacked = true;
         }
         else
         {
@@ -31,6 +41,11 @@ public class CharacterCapacity : MonoBehaviour
 
     public void Move(WayPoint destination)
     {
+        if (_hasMoved)
+        {
+            return;
+        }
+
         List<WayPoint> path = new List<WayPoint>();
         Debug.Log("Move to : " + destination);
         if (this._characterMain.PaCurrent > 0)
@@ -49,6 +64,7 @@ public class CharacterCapacity : MonoBehaviour
             {
                 Debug.Log("Not enough PA to finish");
             }
+            _hasMoved = true;
         }
         else
         {
@@ -59,7 +75,11 @@ public class CharacterCapacity : MonoBehaviour
 
     public void Special(Entity target)
     {
-        // Attack with special ability
+        if (_hasSpecial)
+        {
+            return;
+        }
+
         Debug.Log("Special: " + target);
         if (target is MonsterMain tmp)
         {
@@ -67,11 +87,12 @@ public class CharacterCapacity : MonoBehaviour
             {
                 tmp.MonsterHealth.TakeDamage(_capacity.damage);
                 this._characterMain.PaCurrent -= _capacity.cost;
+                _hasSpecial = true;
             }
             else
             {
                 Debug.Log("Not enough PA");
             }
-        }        
+        }
     }
 }
