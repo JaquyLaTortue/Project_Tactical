@@ -2,34 +2,6 @@
     "name": "TestInput",
     "maps": [
         {
-            "name": "EmptyActionMap",
-            "id": "5a2b8df2-c3d1-42b3-8a55-6a82a33e56d0",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "4990bdc0-3342-4831-8b44-a556757f9c33",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "b9689cfd-cb53-4414-a59b-d06b88b44748",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
             "name": "Select",
             "id": "031137de-849f-4f68-b1bb-cd4e4ad59019",
             "actions": [

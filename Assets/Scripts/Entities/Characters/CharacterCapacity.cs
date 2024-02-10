@@ -26,14 +26,16 @@ public class CharacterCapacity : MonoBehaviour
         Debug.Log("Attack: " + target);
         if (this._characterMain.PaCurrent > 0)
         {
-            if (target.Position.casePosition[0] <= _characterMain.Position.casePosition[0] + _characterMain.Range
-                || target.Position.casePosition[1] <= _characterMain.Position.casePosition[1] + _characterMain.Range)
+            if (target.Position.casePosition[0] <= _characterMain.Position.casePosition[0] + _characterMain.Range)
             {
-                Debug.Log("MonsterHealth : " + target.MonsterHealth);
-                Debug.Log("Stats attack : " + _characterMain.Atk);
-                target.MonsterHealth.TakeDamage(_characterMain.Atk);
-                this._characterMain.PaCurrent--;
-                _hasAttacked = true;
+                if (target.Position.casePosition[1] <= _characterMain.Position.casePosition[1] + _characterMain.Range)
+                {
+                    Debug.Log("MonsterHealth : " + target.MonsterHealth);
+                    Debug.Log("Stats attack : " + _characterMain.Atk);
+                    target.MonsterHealth.TakeDamage(_characterMain.Atk);
+                    this._characterMain.PaCurrent--;
+                    _hasAttacked = true;
+                }
             }
         }
         else
