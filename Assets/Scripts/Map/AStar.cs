@@ -136,11 +136,19 @@ public class AStar : MonoBehaviour
     {
         _path.Add(_target);
         WayPoint newParent = _target.parent;
+        for (int i = 0; i < _target.caseCost-1; i++)
+        {
+            Debug.Log(newParent.name);
+            _path.Add(newParent);
+            newParent = newParent.parent;
+        }
+
+        /*
         while (newParent.parent != null)
         {
             _path.Add(newParent);
             newParent = newParent.parent;
-        }
+        }*/
 
         _path.Add(newParent);
         _path.Reverse();
