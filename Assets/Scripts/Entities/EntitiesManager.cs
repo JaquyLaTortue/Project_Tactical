@@ -53,6 +53,8 @@ public class EntitiesManager : MonoBehaviour
             GameObject newObj = Instantiate(obj);
             MonsterMain newMonster = newObj.GetComponent<MonsterMain>();
             newMonster.InitMonster(managerMain.mapMain);
+            MonsterBehaviour monsterBehaviour = newObj.GetComponent<MonsterBehaviour>();
+            monsterBehaviour.InitBehaviour(managerMain);
             allMonsters.Add(newMonster);
         }
 

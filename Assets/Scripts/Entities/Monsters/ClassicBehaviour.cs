@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class ClassicBehaviour : MonsterBehaviour
 {
@@ -17,13 +18,15 @@ public class ClassicBehaviour : MonsterBehaviour
         for (int i = 0; i < _entitiesManager.allCharacters.Count; i++)
         {
             path = _monsterMain.MonsterCapacity._mapMain.aStar.GiveThePath(_monsterMain.Position, _entitiesManager.allCharacters[i].Position);
-            if (distance < path.Count)
+            if (distance > path.Count)
             {
                 distance = path.Count;
                 _targetPlayer = _entitiesManager.allCharacters[i];
+                Debug.Log("Player detected" + _targetPlayer);
             }
         }
 
+        Debug.Log("Monster detected" + _monsterMain);
         if (_targetPlayer.Position.casePosition[0] <= _monsterMain.Position.casePosition[0] + _monsterMain.Range)
         {
             if (_targetPlayer.Position.casePosition[1] <= _monsterMain.Position.casePosition[1] + _monsterMain.Range)

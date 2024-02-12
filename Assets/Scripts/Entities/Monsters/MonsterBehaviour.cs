@@ -13,4 +13,10 @@ public abstract class MonsterBehaviour : MonoBehaviour
 
     [SerializeField]
     protected TurnManager _turnManager;
+
+    public void InitBehaviour(ManagerMain MM)
+    {
+        _entitiesManager = MM.entitiesManager;
+        _turnManager = MM.turnManager;
+    }
 }
