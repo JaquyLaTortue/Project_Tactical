@@ -49,11 +49,6 @@ public class MonsterCapacity : MonoBehaviour
             return;
         }
 
-        if ()
-        {
-
-        }
-
         List<WayPoint> path = new List<WayPoint>();
         if (this._monsterMain.PaCurrent > 0)
         {
