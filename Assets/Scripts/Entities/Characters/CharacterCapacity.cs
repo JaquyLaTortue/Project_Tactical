@@ -17,6 +17,7 @@ public class CharacterCapacity : MonoBehaviour
 
     public void Attack(MonsterMain target)
     {
+        Debug.Log("Has already attacked: " + _hasAttacked);
         // Attack with normal attack
         if (_hasAttacked)
         {
@@ -24,16 +25,18 @@ public class CharacterCapacity : MonoBehaviour
         }
 
         Debug.Log("Attack: " + target);
+        List<WayPoint> path = new List<WayPoint>();
         if (this._characterMain.PaCurrent > 0)
         {
-            if (target.Position.casePosition[0] <= _characterMain.Position.casePosition[0] + _characterMain.Range)
+            path = _map.aStar.GiveThePath(_characterMain.Position, target.Position);
+            Debug.Log("Path count: " + (path.Count - 1));
+            Debug.Log("Range: " + this._characterMain.Range);
+            if (path.Count - 1 <= this._characterMain.Range)
             {
-                if (target.Position.casePosition[1] <= _characterMain.Position.casePosition[1] + _characterMain.Range)
-                {
-                    target.MonsterHealth.TakeDamage(_characterMain.Atk);
-                    this._characterMain.PaCurrent--;
-                    _hasAttacked = true;
-                }
+                Debug.Log("In Range !");
+                target.MonsterHealth.TakeDamage(_characterMain.Atk);
+                this._characterMain.PaCurrent--;
+                _hasAttacked = true;
             }
         }
         else
@@ -110,18 +113,15 @@ public class CharacterCapacity : MonoBehaviour
         }
         else if (_capacity.isShielding)
         {
-            if (target is CharacterMain tmp)
+            if (this._characterMain.PaCurrent > 0)
             {
-                if (this._characterMain.PaCurrent > 0)
-                {
-                    tmp.Def += _capacity.damage;
-                    this._characterMain.PaCurrent -= _capacity.cost;
-                    _hasSpecial = true;
-                }
-                else
-                {
-                    Debug.Log("Not enough PA");
-                }
+                _characterMain.Def += _capacity.damage;
+                this._characterMain.PaCurrent -= _capacity.cost;
+                _hasSpecial = true;
+            }
+            else
+            {
+                Debug.Log("Not enough PA");
             }
         }
         else
