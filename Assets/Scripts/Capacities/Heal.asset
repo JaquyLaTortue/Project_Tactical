@@ -16,3 +16,7 @@ MonoBehaviour:
   name: Heal
   description: Heal 5 HP
   cost: 2
+  damage: 5
+  range: 0
+  isHealing: 0
+  isShielding: 0

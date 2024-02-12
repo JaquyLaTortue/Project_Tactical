@@ -28,6 +28,22 @@ public class Select : MonoBehaviour
         }
     }
 
+    public void OnMoveTheMouse()
+    {
+        if (_turnManager.DestinationSelection)
+        {
+            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(_ray, out _hit))
+            {
+                if (_hit.collider.tag == "Map")
+                {
+                    _turnManager.managerMain.mapMain.UseAStarToPremoveThePlayer(_hit.collider.GetComponent<WayPoint>());
+                }
+            }
+        }
+    }
+
     public void SelectCharacter()
     {
         Debug.Log("Selecting Player");
