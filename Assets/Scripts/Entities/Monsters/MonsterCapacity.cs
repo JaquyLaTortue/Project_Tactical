@@ -17,7 +17,6 @@ public class MonsterCapacity : MonoBehaviour
     public bool HasAttacked = false;
     [HideInInspector]
     public bool HasMoved = false;
-    private bool _hasSpecialAttacking = false;
 
     public void Attack(Entity target)
     {
@@ -29,18 +28,11 @@ public class MonsterCapacity : MonoBehaviour
 
         if (target is CharacterMain tmp)
         {
-            Debug.Log("Attack: " + target);
             if (this._monsterMain.PaCurrent > 0)
             {
-                if (target.Position.casePosition[0] <= _monsterMain.Position.casePosition[0] + _monsterMain.Range)
-                {
-                    if (target.Position.casePosition[1] <= _monsterMain.Position.casePosition[1] + _monsterMain.Range)
-                    {
-                        tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
-                        this._monsterMain.PaCurrent--;
-                        HasAttacked = true;
-                    }
-                }
+                tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
+                this._monsterMain.PaCurrent--;
+                HasAttacked = true;
             }
             else
             {
@@ -57,8 +49,12 @@ public class MonsterCapacity : MonoBehaviour
             return;
         }
 
+        if ()
+        {
+
+        }
+
         List<WayPoint> path = new List<WayPoint>();
-        Debug.Log("Move: " + destination);
         if (this._monsterMain.PaCurrent > 0)
         {
             path = _mapMain.aStar.GiveThePath(this._monsterMain.Position, destination);
@@ -97,28 +93,4 @@ public class MonsterCapacity : MonoBehaviour
         this._monsterMain.Position = waypointToMoveTo;
         this.transform.position = waypointToMoveTo.transform.position;
     }
-
-    //public void Special(Entity target)
-    //{
-    //    if (_hasSpecialAttacking)
-    //    {
-    //        Debug.Log("Already special attacked");
-    //        return;
-    //    }
-
-    //    Debug.Log("Special: " + target);
-    //    if (target is CharacterMain tmp)
-    //    {
-    //        if (this._monsterMain.PaCurrent > 0)
-    //        {
-    //            tmp.CharacterHealth.TakeDamage(_capacity.damage);
-    //            this._monsterMain.PaCurrent -= _capacity.cost;
-    //            _hasSpecialAttacking = true;
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("No more PA");
-    //        }
-    //    }
-    //}
 }

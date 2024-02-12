@@ -22,17 +22,12 @@ public class ClassicBehaviour : MonsterBehaviour
             {
                 distance = path.Count;
                 _targetPlayer = _entitiesManager.allCharacters[i];
-                Debug.Log("Player detected" + _targetPlayer);
             }
         }
 
-        Debug.Log("Monster detected" + _monsterMain);
-        if (_targetPlayer.Position.casePosition[0] <= _monsterMain.Position.casePosition[0] + _monsterMain.Range)
+        if (path.Count - 1 <= _monsterMain.Range)
         {
-            if (_targetPlayer.Position.casePosition[1] <= _monsterMain.Position.casePosition[1] + _monsterMain.Range)
-            {
                 _monsterMain.MonsterCapacity.Attack(_targetPlayer);
-            }
         }
         else
         {
