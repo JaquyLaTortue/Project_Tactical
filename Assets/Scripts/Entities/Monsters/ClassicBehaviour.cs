@@ -20,6 +20,7 @@ public class ClassicBehaviour : MonsterBehaviour
                 _targetPlayer = _entitiesManager.allCharacters[i];
             }
         }
+
         if (_targetPlayer.Position.casePosition[0] <= _monsterMain.Position.casePosition[0] + _monsterMain.Range)
         {
             if (_targetPlayer.Position.casePosition[1] <= _monsterMain.Position.casePosition[1] + _monsterMain.Range)
