@@ -89,6 +89,14 @@ public class TurnManager : MonoBehaviour
 
     public void EndTurn()
     {
+        Character = null;
+        Target = null;
+        Destination = null;
+
+        CharacterSelection = false;
+        TargetSelection = false;
+        DestinationSelection = false;
+
         Turnindex++;
         DetermineTurn();
     }
