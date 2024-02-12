@@ -37,6 +37,24 @@ public class MapMain : MonoBehaviour
         }
     }
 
+    public void UseAStarToPremoveThePlayer(WayPoint end)
+    {
+        if (wayPointStart == end)
+        {
+            Debug.Log("Les deux Waypoints sont identiques, donc on utilise pas le astar");
+        }
+        else
+        {
+            List<WayPoint> aStartWaypoint = new List<WayPoint>();
+            aStartWaypoint = aStar.GiveThePath(wayPointStart, end);
+            _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.GetComponent<MeshRenderer>());
+            foreach (WayPoint wayPoint in aStartWaypoint)
+            {
+                _clickedCase.ChangeColorOfWaypointToRed(wayPoint.GetComponent<MeshRenderer>());
+            }
+        }
+    }
+
     public List<WayPoint> UseAStar(WayPoint start, WayPoint end)
     {
         /*WayPoint start = config.allWayPoints[Random.Range(0, config.allWayPoints.Count)];

@@ -767,22 +767,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: aec8ac99-97e0-4afc-947f-e3f3dcc14a1b
     m_ActionName: Astar/ClickOnCase[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 901211731}
-        m_TargetAssemblyTypeName: Select, Assembly-CSharp
-        m_MethodName: OnMoveTheMouse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 5121bb74-0839-45da-812a-5ed1421058b5
-    m_ActionName: Select/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Select
@@ -1137,19 +1121,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901211729}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 950.81805, y: 543.37933, z: -5.9369993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 941940407}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &941940407 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1119768445240343667, guid: 3d660544971745c468768192b05944fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 1013077032}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &978070295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,11 +1337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1119768445240343667, guid: 3d660544971745c468768192b05944fe,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 901211733}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d660544971745c468768192b05944fe, type: 3}
 --- !u!1 &1026688771
@@ -2103,13 +2077,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763942101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3700492, y: -0, z: -0, w: 0.92901224}
+  m_LocalRotation: {x: 0.29295436, y: -0, z: -0, w: 0.95612645}
   m_LocalPosition: {x: 2.19, y: 3.44, z: -2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 43.437, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 34.07, y: 0, z: 0}
 --- !u!114 &1763942105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2842,6 +2816,7 @@ SceneRoots:
   - {fileID: 1763942104}
   - {fileID: 1166730392}
   - {fileID: 199360634}
+  - {fileID: 901211733}
   - {fileID: 6185745889323029481}
   - {fileID: 1013077032}
   - {fileID: 769557678}

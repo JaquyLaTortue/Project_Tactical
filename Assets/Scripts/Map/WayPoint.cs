@@ -8,4 +8,9 @@ public class WayPoint : MonoBehaviour
     public bool obstacle;
     public WayPoint parent;
     public int caseCost;
+
+    private void OnMouseOver()
+    {
+        Debug.Log(gameObject.name);
+    }
 }
