@@ -30,8 +30,6 @@ public class CharacterCapacity : MonoBehaviour
             {
                 if (target.Position.casePosition[1] <= _characterMain.Position.casePosition[1] + _characterMain.Range)
                 {
-                    Debug.Log("MonsterHealth : " + target.MonsterHealth);
-                    Debug.Log("Stats attack : " + _characterMain.Atk);
                     target.MonsterHealth.TakeDamage(_characterMain.Atk);
                     this._characterMain.PaCurrent--;
                     _hasAttacked = true;
@@ -94,17 +92,52 @@ public class CharacterCapacity : MonoBehaviour
         }
 
         Debug.Log("Special: " + target);
-        if (target is MonsterMain tmp)
+        if (_capacity.isHealing)
         {
-            if (this._characterMain.PaCurrent > 0)
+            if (target is CharacterMain tmp)
             {
-                tmp.MonsterHealth.TakeDamage(_capacity.damage);
-                this._characterMain.PaCurrent -= _capacity.cost;
-                _hasSpecial = true;
+                if (this._characterMain.PaCurrent > 0)
+                {
+                    tmp.CharacterHealth.HealHealth(_capacity.damage);
+                    this._characterMain.PaCurrent -= _capacity.cost;
+                    _hasSpecial = true;
+                }
+                else
+                {
+                    Debug.Log("Not enough PA");
+                }
             }
-            else
+        }
+        else if (_capacity.isShielding)
+        {
+            if (target is CharacterMain tmp)
             {
-                Debug.Log("Not enough PA");
+                if (this._characterMain.PaCurrent > 0)
+                {
+                    tmp.Def += _capacity.damage;
+                    this._characterMain.PaCurrent -= _capacity.cost;
+                    _hasSpecial = true;
+                }
+                else
+                {
+                    Debug.Log("Not enough PA");
+                }
+            }
+        }
+        else
+        {
+            if (target is MonsterMain tmp)
+            {
+                if (this._characterMain.PaCurrent > 0)
+                {
+                    tmp.MonsterHealth.TakeDamage(_capacity.damage);
+                    this._characterMain.PaCurrent -= _capacity.cost;
+                    _hasSpecial = true;
+                }
+                else
+                {
+                    Debug.Log("Not enough PA");
+                }
             }
         }
     }
