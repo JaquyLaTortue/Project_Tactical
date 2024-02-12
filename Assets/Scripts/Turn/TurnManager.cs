@@ -69,6 +69,7 @@ public class TurnManager : MonoBehaviour
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
         CharacterSelection = false;
+        DestinationSelection = true;
     }
 
     public void SetTarget(GameObject target)
