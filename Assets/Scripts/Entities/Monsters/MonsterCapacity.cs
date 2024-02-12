@@ -9,15 +9,19 @@ public class MonsterCapacity : MonoBehaviour
     [SerializeField]
     private Capacity _capacity;
 
+    private Entity _target;
+
     public MapMain _mapMain;
 
-    private bool _hasAttacked = false;
-    private bool _hasMoved = false;
+    [HideInInspector]
+    public bool HasAttacked = false;
+    [HideInInspector]
+    public bool HasMoved = false;
     private bool _hasSpecialAttacking = false;
 
     public void Attack(Entity target)
     {
-        if (_hasAttacked)
+        if (HasAttacked)
         {
             Debug.Log("Already attacked");
             return;
@@ -34,7 +38,7 @@ public class MonsterCapacity : MonoBehaviour
                     {
                         tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
                         this._monsterMain.PaCurrent--;
-                        _hasAttacked = true;
+                        HasAttacked = true;
                     }
                 }
             }
@@ -47,7 +51,7 @@ public class MonsterCapacity : MonoBehaviour
 
     public void Move(WayPoint destination)
     {
-        if (_hasMoved)
+        if (HasMoved)
         {
             Debug.Log("Already moved");
             return;
@@ -64,8 +68,8 @@ public class MonsterCapacity : MonoBehaviour
                 {
                     ChangeWaypoint(path[i]);
 
-                    // this._monsterMain.Position = path[i];
-                    // this.transform.position = path[i].transform.position;
+                    this._monsterMain.Position = path[i];
+                    this.transform.position = path[i].transform.position;
                     this._monsterMain.PaCurrent--;
                 }
             }
@@ -74,12 +78,18 @@ public class MonsterCapacity : MonoBehaviour
                 Debug.Log("No more PA");
             }
 
-            _hasMoved = true;
+            HasMoved = true;
+            AttackAfterMove();
         }
         else
         {
             Debug.Log("No more PA");
         }
+    }
+
+    private void AttackAfterMove()
+    {
+        Attack(_target);
     }
 
     public void ChangeWaypoint(WayPoint waypointToMoveTo)
