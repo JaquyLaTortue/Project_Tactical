@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class TankBehaviour : MonsterBehaviour
 {
@@ -20,16 +21,15 @@ public class TankBehaviour : MonsterBehaviour
                 _targetPlayer = _entitiesManager.allCharacters[i];
             }
         }
-        if (_targetPlayer.Position.casePosition[0] <= _monsterMain.Position.casePosition[0] + _monsterMain.Range)
+
+        if (path.Count - 1 <= _monsterMain.Range)
         {
-            if (_targetPlayer.Position.casePosition[1] <= _monsterMain.Position.casePosition[1] + _monsterMain.Range)
-            {
-                _monsterMain.MonsterCapacity.Attack(_targetPlayer);
-            }
+            _monsterMain.MonsterCapacity.Attack(_targetPlayer);
         }
         else
         {
-            _monsterMain.MonsterCapacity.Move(_targetPlayer.Position);
+            MonsterMain monsterAlly = _entitiesManager.allMonsters[Random.Range(0, _entitiesManager.allMonsters.Count)];
+            _monsterMain.MonsterCapacity.Move(monsterAlly.Position);
         }
     }
 }
