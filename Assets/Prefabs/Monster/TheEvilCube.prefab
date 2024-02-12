@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7705024007982279408}
   - component: {fileID: 878007421132788902}
   - component: {fileID: 8743866611864626666}
+  - component: {fileID: 7136113945396606355}
   m_Layer: 0
   m_Name: TheEvilCube
   m_TagString: Ennemy
@@ -121,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Position>k__BackingField: {fileID: 0}
+  <Spawnpoint>k__BackingField: {fileID: 0}
   <MonsterCapacity>k__BackingField: {fileID: 878007421132788902}
   <MonsterHealth>k__BackingField: {fileID: 8743866611864626666}
   <MonsterBase>k__BackingField: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1,
@@ -140,6 +142,8 @@ MonoBehaviour:
   _monsterMain: {fileID: 7705024007982279408}
   _capacity: {fileID: 11400000, guid: 23a0f35e8d8792142a2d69a854b440ae, type: 2}
   _mapMain: {fileID: 0}
+  HasAttacked: 0
+  HasMoved: 0
 --- !u!114 &8743866611864626666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,3 +157,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterMain: {fileID: 7705024007982279408}
+--- !u!114 &7136113945396606355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115478810088857889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4235086e879acfc4ca55484b896d9bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterMain: {fileID: 7705024007982279408}
+  _targetPlayer: {fileID: 0}
+  _entitiesManager: {fileID: 0}
+  _turnManager: {fileID: 0}

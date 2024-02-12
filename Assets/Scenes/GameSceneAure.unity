@@ -1357,6 +1357,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8466274728001126243, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: turnManager
+      value: 
+      objectReference: {fileID: 901211730}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
