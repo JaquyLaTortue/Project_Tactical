@@ -22,20 +22,7 @@ public class MonsterHealth : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Die");
-        //this.transform.position = _monsterMain.SpawnPoint.transform.position;
+        this.transform.position = _monsterMain.Spawnpoint.transform.position;
         this.gameObject.SetActive(false);
     }
-
-    //public void HealHealth(int heal)
-    //{
-    //    if (_monsterMain.hpCurrent == _monsterMain.hpMax)
-    //    {
-    //        return;
-    //    }
-
-    //    Debug.Log("HP before heal : " + _monsterMain.hpCurrent);
-    //    _monsterMain.hpCurrent += heal;
-    //    Debug.Log("HP after heal : " + _monsterMain.hpCurrent);
-    //}
 }

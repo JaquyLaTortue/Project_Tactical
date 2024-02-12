@@ -10,6 +10,9 @@ public class TankBehaviour : MonsterBehaviour
 
     private void DetectePlayer()
     {
+        _monsterMain.MonsterCapacity.HasAttacked = false;
+        _monsterMain.MonsterCapacity.HasMoved = false;
+
         int distance = 1000;
         List<WayPoint> path = new List<WayPoint>();
         for (int i = 0; i < _entitiesManager.allCharacters.Count; i++)
@@ -22,7 +25,7 @@ public class TankBehaviour : MonsterBehaviour
             }
         }
 
-        if (path.Count - 1 <= _monsterMain.Range)
+        if (path.Count <= _monsterMain.Range)
         {
             _monsterMain.MonsterCapacity.Attack(_targetPlayer);
         }
