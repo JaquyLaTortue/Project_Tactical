@@ -9,4 +9,6 @@ public class Capacity : ScriptableObject
     public int cost;
     public int damage;
     public int range;
+    public bool isHealing;
+    public bool isShielding;
 }
