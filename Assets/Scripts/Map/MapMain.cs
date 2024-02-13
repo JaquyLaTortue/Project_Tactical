@@ -47,10 +47,10 @@ public class MapMain : MonoBehaviour
         {
             List<WayPoint> aStartWaypoint = new List<WayPoint>();
             aStartWaypoint = aStar.GiveThePath(wayPointStart, end);
-            _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.GetComponent<MeshRenderer>());
+            _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.meshRenderer);
             foreach (WayPoint wayPoint in aStartWaypoint)
             {
-                _clickedCase.ChangeColorOfWaypointToRed(wayPoint.GetComponent<MeshRenderer>());
+                _clickedCase.ChangeColorOfWaypointToRed(wayPoint.meshRenderer);
             }
         }
     }
@@ -63,11 +63,11 @@ public class MapMain : MonoBehaviour
         Debug.Log(end.name);*/
         List<WayPoint> aStartWaypoint = new List<WayPoint>();
         aStartWaypoint = aStar.GiveThePath(start, end);
-        _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.GetComponent<MeshRenderer>());
+        _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.meshRenderer);
         wayPointStart = aStartWaypoint[aStartWaypoint.Count - 1];
         foreach (WayPoint wayPoint in aStartWaypoint)
         {
-            _clickedCase.ChangeColorOfWaypointToRed(wayPoint.GetComponent<MeshRenderer>());
+            _clickedCase.ChangeColorOfWaypointToRed(wayPoint.meshRenderer);
         }
 
         return aStartWaypoint;

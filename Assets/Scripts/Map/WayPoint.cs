@@ -8,6 +8,12 @@ public class WayPoint : MonoBehaviour
     public bool obstacle;
     public WayPoint parent;
     public int caseCost;
+    public MeshRenderer meshRenderer;
+
+    private void Awake()
+    {
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
 
     private void OnMouseOver()
     {
