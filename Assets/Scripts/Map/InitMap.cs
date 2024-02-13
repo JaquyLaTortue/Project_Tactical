@@ -22,7 +22,9 @@ public class InitMap : MonoBehaviour
         float prefabLength = collision.size.x;
         float totalSizeLength = prefabLength * lengthCase;
         Camera mainCam = Camera.main;
-        mainCam.transform.position = new Vector3 (totalSizeLength/2, 0, 0);
+        float pourcentY = mainCam.transform.rotation.eulerAngles.x / 90;
+        float pourcentZ = 1 - pourcentY;
+        mainCam.transform.position = new Vector3((totalSizeLength / 2) + 0.5f, (lengthCase + widthCase) * pourcentY * 2, ((lengthCase + widthCase) * -pourcentZ) / 3);
         List<WayPoint> map = new List<WayPoint>();
         for (int i = 0; i < lengthCase; i++)
         {

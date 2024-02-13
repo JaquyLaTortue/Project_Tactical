@@ -14,6 +14,8 @@ public class MapMain : MonoBehaviour
     // ClickedCase n'existera pas à la fin du projet, cet un outil de test
     public ClickedCase _clickedCase;
 
+    public int PAMax;
+
     public void InitManager(ManagerMain MM)
     {
         MM.mapMain = this;
@@ -48,10 +50,22 @@ public class MapMain : MonoBehaviour
             List<WayPoint> aStartWaypoint = new List<WayPoint>();
             aStartWaypoint = aStar.GiveThePath(wayPointStart, end);
             _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.meshRenderer);
-            foreach (WayPoint wayPoint in aStartWaypoint)
+            for (int i = 0; i < aStartWaypoint.Count; i++)
+            {
+                if (i > PAMax)
+                {
+                    _clickedCase.ChangeColorOfWaypointToRed(aStartWaypoint[i].meshRenderer);
+                }
+                else
+                {
+                    _clickedCase.ChangeColorOfWaypointToBlue(aStartWaypoint[i].meshRenderer);
+                }
+            }
+
+           /* foreach (WayPoint wayPoint in aStartWaypoint)
             {
                 _clickedCase.ChangeColorOfWaypointToRed(wayPoint.meshRenderer);
-            }
+            }*/
         }
     }
 
