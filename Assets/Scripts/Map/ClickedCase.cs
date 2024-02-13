@@ -15,6 +15,9 @@ public class ClickedCase : MonoBehaviour
     private Material _red;
 
     [SerializeField]
+    private Material _blue;
+
+    [SerializeField]
     private Material _old;
     /// <summary>
     /// Cette fonction ne sert que pour les tests de début de projet, on est sensé avoir un input général qui n'est n'inclus directement MapMain.
@@ -34,6 +37,11 @@ public class ClickedCase : MonoBehaviour
     public void ChangeColorOfWaypointToRed(MeshRenderer waypointToColor)
     {
         waypointToColor.material = _red;
+    }
+
+    public void ChangeColorOfWaypointToBlue(MeshRenderer waypointToColor)
+    {
+        waypointToColor.material = _blue;
     }
 
     public void ChangeColorOfWaypointToOld(MeshRenderer waypointToColor)

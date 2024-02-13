@@ -38,6 +38,7 @@ public class Select : MonoBehaviour
             {
                 if (_hit.collider.tag == "Map")
                 {
+                    _turnManager.managerMain.mapMain.PAMax = _turnManager.Character.PaCurrent;
                     _turnManager.managerMain.mapMain.UseAStarToPremoveThePlayer(_hit.collider.GetComponent<WayPoint>());
                 }
             }

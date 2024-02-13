@@ -43,7 +43,7 @@ public class EntitiesManager : MonoBehaviour
         {
             int waypointRandom = Random.Range(0, wayPointsToSpawn.Count);
             chara.CharacterCapacity.ChangeWaypoint(wayPointsToSpawn[waypointRandom]);
-            //chara.Position = wayPointsToSpawn[waypointRandom];
+            wayPointsToSpawn[waypointRandom].obstacle = true;
             wayPointsToSpawn.Remove(wayPointsToSpawn[waypointRandom]);
         }
 
@@ -64,6 +64,7 @@ public class EntitiesManager : MonoBehaviour
         {
             int waypointRandom = Random.Range(0, wayPointsToSpawn.Count);
             monster.MonsterCapacity.ChangeWaypoint(wayPointsToSpawn[waypointRandom]);
+            wayPointsToSpawn[waypointRandom].obstacle = true;
             wayPointsToSpawn.Remove(wayPointsToSpawn[waypointRandom]);
         }
     }

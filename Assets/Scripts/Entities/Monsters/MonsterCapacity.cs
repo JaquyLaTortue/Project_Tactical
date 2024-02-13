@@ -55,6 +55,7 @@ public class MonsterCapacity : MonoBehaviour
             path = _mapMain.aStar.GiveThePath(this._monsterMain.Position, destination);
             if (path.Count <= this._monsterMain.PaCurrent)
             {
+                this._monsterMain.Position.obstacle = false;
                 for (int i = 0; i < path.Count; i++)
                 {
                     ChangeWaypoint(path[i]);
@@ -62,6 +63,10 @@ public class MonsterCapacity : MonoBehaviour
                     this._monsterMain.Position = path[i];
                     this.transform.position = path[i].transform.position;
                     this._monsterMain.PaCurrent--;
+                    if (i == path.Count - 1)
+                    {
+                        path[i].obstacle = true;
+                    }
                 }
             }
             else

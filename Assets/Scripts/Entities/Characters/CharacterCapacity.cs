@@ -59,6 +59,7 @@ public class CharacterCapacity : MonoBehaviour
             path = _map.aStar.GiveThePath(_characterMain.Position, destination);
             if (path.Count <= this._characterMain.PaCurrent)
             {
+                _characterMain.Position.obstacle = false;
                 for (int i = 0; i < path.Count; i++)
                 {
                     ChangeWaypoint(path[i]);
@@ -66,6 +67,10 @@ public class CharacterCapacity : MonoBehaviour
                     // this._characterMain.Position = path[i];
                     // this.transform.position = path[i].transform.position;
                     this._characterMain.PaCurrent--;
+                    if (i == path.Count - 1)
+                    {
+                        path[i].obstacle = true;
+                    }
                 }
             }
             else
