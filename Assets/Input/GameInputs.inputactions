@@ -1,8 +1,8 @@
 {
-    "name": "TestInput",
+    "name": "GameInputs",
     "maps": [
         {
-            "name": "Select",
+            "name": "Game",
             "id": "031137de-849f-4f68-b1bb-cd4e4ad59019",
             "actions": [
                 {

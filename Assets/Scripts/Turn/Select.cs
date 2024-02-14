@@ -66,9 +66,9 @@ public class Select : MonoBehaviour
                     _turnManager.SetCharacter(current);
                     break;
                 case not null:
-                    Debug.Log("Changing character");
                     if (_turnManager.Character.gameObject != current)
                     {
+                        Debug.Log("Changing character");
                         _turnManager.SetCharacter(current);
                     }
 

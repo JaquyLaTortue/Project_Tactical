@@ -17,6 +17,6 @@ public class WayPoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
     }
 }

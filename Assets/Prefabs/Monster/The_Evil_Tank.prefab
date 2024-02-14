@@ -1277,7 +1277,8 @@ MonoBehaviour:
   <Spawnpoint>k__BackingField: {fileID: 0}
   <MonsterCapacity>k__BackingField: {fileID: 304466490621503385}
   <MonsterHealth>k__BackingField: {fileID: 1255049980526425748}
-  <MonsterBase>k__BackingField: {fileID: 0}
+  <MonsterBase>k__BackingField: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1,
+    type: 2}
 --- !u!114 &304466490621503385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterMain: {fileID: 5991815878627201494}
-  _capacity: {fileID: 0}
+  _capacity: {fileID: 11400000, guid: 23a0f35e8d8792142a2d69a854b440ae, type: 2}
   _mapMain: {fileID: 0}
   HasAttacked: 0
   HasMoved: 0
