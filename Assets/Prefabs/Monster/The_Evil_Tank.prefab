@@ -1239,6 +1239,7 @@ GameObject:
   - component: {fileID: 5991815878627201494}
   - component: {fileID: 304466490621503385}
   - component: {fileID: 1255049980526425748}
+  - component: {fileID: 3796743631220454560}
   m_Layer: 0
   m_Name: Script_Holder
   m_TagString: Untagged
@@ -1309,6 +1310,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterMain: {fileID: 5991815878627201494}
+--- !u!114 &3796743631220454560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064413111369326609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e222c0d9e7f09e498ff309582190983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterMain: {fileID: 5991815878627201494}
+  _targetPlayer: {fileID: 0}
+  _entitiesManager: {fileID: 0}
+  _turnManager: {fileID: 0}
 --- !u!1 &7335022121247012749
 GameObject:
   m_ObjectHideFlags: 0

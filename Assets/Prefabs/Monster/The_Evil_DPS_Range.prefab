@@ -3106,6 +3106,7 @@ GameObject:
   - component: {fileID: 4597787498481156510}
   - component: {fileID: 4361761803603063984}
   - component: {fileID: 8745966105683245073}
+  - component: {fileID: 5030567907806267340}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -3144,7 +3145,7 @@ MonoBehaviour:
   <Spawnpoint>k__BackingField: {fileID: 0}
   <MonsterCapacity>k__BackingField: {fileID: 4361761803603063984}
   <MonsterHealth>k__BackingField: {fileID: 8745966105683245073}
-  <MonsterBase>k__BackingField: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1,
+  <MonsterBase>k__BackingField: {fileID: 11400000, guid: eaac0d40f5d996f48bbc17263461d628,
     type: 2}
 --- !u!114 &4361761803603063984
 MonoBehaviour:
@@ -3176,6 +3177,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterMain: {fileID: 4597787498481156510}
+--- !u!114 &5030567907806267340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003727328951682958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9453df3afcda0f54da502e41cec299a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterMain: {fileID: 4597787498481156510}
+  _targetPlayer: {fileID: 0}
+  _entitiesManager: {fileID: 0}
+  _turnManager: {fileID: 0}
 --- !u!1 &6201940610505569196
 GameObject:
   m_ObjectHideFlags: 0
