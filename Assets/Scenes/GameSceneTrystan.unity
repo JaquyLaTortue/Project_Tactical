@@ -1550,6 +1550,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1506727361561307542, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: MapMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3072206352521230821, guid: 3d660544971745c468768192b05944fe,
         type: 3}
       propertyPath: _pauseMenu
