@@ -119,6 +119,7 @@ public class TurnManager : MonoBehaviour
 
     public void SetCharacterToMove(GameObject character)
     {
+        Debug.Log("setcharra");
         string oldcharacter;
         switch (Character)
         {
