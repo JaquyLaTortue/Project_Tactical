@@ -11,11 +11,15 @@ public class CharacterMain : Entity
     [field: SerializeField]
     public CharacterBase CharacterBase { get; private set; }
 
-    public void InitCharacter(MapMain map, EntitiesManager entitiesManager)
+    [field: SerializeField]
+    public ManagerMain ManagerMain { get; private set; }
+
+    public void InitCharacter(ManagerMain manager)
     {
-        Debug.Log(CharacterCapacity);
-        CharacterCapacity._map = map;
-        EntitiesManager = entitiesManager;
+        ManagerMain = manager;
+        CharacterCapacity._map = ManagerMain.mapMain;
+        CharacterCapacity._turnManager = ManagerMain.turnManager;
+        EntitiesManager = ManagerMain.entitiesManager;
         Spawnpoint = Position;
     }
 
@@ -33,5 +37,6 @@ public class CharacterMain : Entity
     private void OnDestroy()
     {
         EntitiesManager.allCharacters.Remove(this);
+        ManagerMain.turnManager.Character = null;
     }
 }
