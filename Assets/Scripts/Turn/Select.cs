@@ -12,7 +12,6 @@ public class Select : MonoBehaviour
     private Ray _ray;
     private RaycastHit _hit;
 
-
     public void OnInput(InputAction.CallbackContext ctx)
     {
         if (ctx.started && _turnManager.PlayerTurn)
