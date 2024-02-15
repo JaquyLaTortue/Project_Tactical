@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 8668061009904462438}
   - component: {fileID: 1093757146476104512}
   - component: {fileID: 5455603230915192561}
-  - component: {fileID: 2851428436900354679}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -189,28 +188,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2851428436900354679
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568672944632099949}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 0d927120070292f42890803974783675, type: 3}
 --- !u!1 &1013269309444306200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1435,7 @@ GameObject:
   - component: {fileID: 3717885821891092252}
   - component: {fileID: 2033128194655054330}
   - component: {fileID: 6477448494428280981}
+  - component: {fileID: 5016766675400468780}
   m_Layer: 0
   m_Name: The_Tank_Mecha
   m_TagString: Character
@@ -1528,6 +1506,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterMain: {fileID: 3717885821891092252}
+--- !u!65 &5016766675400468780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953740634360966101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6767542, y: 5.5866103, z: 1}
+  m_Center: {x: 0.0056661665, y: 2.8054378, z: 0}
 --- !u!1 &8323439953922253650
 GameObject:
   m_ObjectHideFlags: 0

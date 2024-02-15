@@ -22,6 +22,8 @@ public class Entity : MonoBehaviour
     [field: SerializeField]
     public WayPoint Spawnpoint { get; set; }
 
+    public EntitiesManager entitiesManager;
+
     public void Attack(Entity target)
     {
         // Attack with normal attack
