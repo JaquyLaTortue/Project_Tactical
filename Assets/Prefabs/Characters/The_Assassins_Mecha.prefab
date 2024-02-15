@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3085004716482541603}
   - component: {fileID: 8955202973723386579}
   - component: {fileID: 5128913334097260262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6828071194238508553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2609284361575650117}
   - component: {fileID: 3554642135512977925}
   - component: {fileID: 5337645125823419658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4455080241736509281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4601840054425370592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 7374625393108043134}
   - component: {fileID: 3639647743923337964}
   - component: {fileID: 4458892359182644238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cyan_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 1142039643025437551}
   - component: {fileID: 7524926551806539091}
   - component: {fileID: 2386867271403314369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: The_Assassins_Mecha
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -447,11 +447,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Position>k__BackingField: {fileID: 0}
   <Spawnpoint>k__BackingField: {fileID: 0}
-  entitiesManager: {fileID: 0}
+  EntitiesManager: {fileID: 0}
   <CharacterCapacity>k__BackingField: {fileID: 1142039643025437551}
   <CharacterHealth>k__BackingField: {fileID: 7524926551806539091}
   <CharacterBase>k__BackingField: {fileID: 11400000, guid: 05ba98c0fe1d51c4c97ccdd3db449725,
     type: 2}
+  <ManagerMain>k__BackingField: {fileID: 0}
 --- !u!114 &1142039643025437551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterMain: {fileID: 7360458899007004137}
   _capacity: {fileID: 11400000, guid: 0520d21967345b044b74e39eb7e5cb96, type: 2}
+  _turnManager: {fileID: 0}
   _map: {fileID: 0}
 --- !u!114 &7524926551806539091
 MonoBehaviour:
@@ -510,7 +512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3080657592219039844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ankles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2812737112258684959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +581,7 @@ GameObject:
   - component: {fileID: 7251938803572074095}
   - component: {fileID: 96367644198534791}
   - component: {fileID: 7265685205509709657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cyan_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +686,7 @@ GameObject:
   - component: {fileID: 2507731999439987328}
   - component: {fileID: 191016429291221813}
   - component: {fileID: 7397308622695775880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cyan_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +791,7 @@ GameObject:
   - component: {fileID: 7524664530543414910}
   - component: {fileID: 1067891985587952415}
   - component: {fileID: 6107930194523502782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +896,7 @@ GameObject:
   - component: {fileID: 2047315423942833319}
   - component: {fileID: 7716599059226358517}
   - component: {fileID: 1675630591666993190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cyan_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,7 +1001,7 @@ GameObject:
   - component: {fileID: 5642102540691159450}
   - component: {fileID: 1690669655922289366}
   - component: {fileID: 1842504990115330887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1106,7 @@ GameObject:
   - component: {fileID: 2861601015893496287}
   - component: {fileID: 7704511134638548838}
   - component: {fileID: 1196221198838532978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cyan_Cube_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1211,7 @@ GameObject:
   - component: {fileID: 4995481070757053206}
   - component: {fileID: 7150943140193785627}
   - component: {fileID: 5283304593332083334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cyan_Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1316,7 @@ GameObject:
   - component: {fileID: 3767375790420497584}
   - component: {fileID: 1361122487511154810}
   - component: {fileID: 3214419687679075995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cyan_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

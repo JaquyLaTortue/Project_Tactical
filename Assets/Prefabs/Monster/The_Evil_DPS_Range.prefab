@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 737806123081244790}
   - component: {fileID: 3922680455833420353}
   - component: {fileID: 5613061711402383729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: The_Evil_DPS_Range
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -74,6 +74,7 @@ MonoBehaviour:
   _mapMain: {fileID: 0}
   HasAttacked: 0
   HasMoved: 0
+  _hasSpecial: 0
 --- !u!114 &737806123081244790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ GameObject:
   - component: {fileID: 5044658006110695855}
   - component: {fileID: 618404707923786227}
   - component: {fileID: 8656439957743095653}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +242,7 @@ GameObject:
   - component: {fileID: 3830241110192497355}
   - component: {fileID: 4575315361625299715}
   - component: {fileID: 1855719000860374544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +347,7 @@ GameObject:
   - component: {fileID: 2212370178198862890}
   - component: {fileID: 4012149385513791406}
   - component: {fileID: 6646286910988757434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 44928826710480799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +486,7 @@ GameObject:
   - component: {fileID: 8656289986580675699}
   - component: {fileID: 5256817757190412745}
   - component: {fileID: 617047269730668221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +591,7 @@ GameObject:
   - component: {fileID: 3030345759749734751}
   - component: {fileID: 1085136043263399408}
   - component: {fileID: 2513911106081074606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +696,7 @@ GameObject:
   - component: {fileID: 8178618368229972570}
   - component: {fileID: 1545736313988239399}
   - component: {fileID: 1446717719807465739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +801,7 @@ GameObject:
   - component: {fileID: 9209234069296120421}
   - component: {fileID: 7667934080803330217}
   - component: {fileID: 1590989680838229282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,7 +906,7 @@ GameObject:
   - component: {fileID: 5061439422522421730}
   - component: {fileID: 7985234333143612526}
   - component: {fileID: 3139214793761676233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1011,7 @@ GameObject:
   - component: {fileID: 6005151913390167379}
   - component: {fileID: 4941868217765661776}
   - component: {fileID: 1812898972480545337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1115,7 +1116,7 @@ GameObject:
   - component: {fileID: 2476333440870269416}
   - component: {fileID: 8007206249428740937}
   - component: {fileID: 2544426544688589558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1221,7 @@ GameObject:
   - component: {fileID: 2470810339972689649}
   - component: {fileID: 2841960055326958347}
   - component: {fileID: 1838400817689785002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,7 +1323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7755611825621678361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1357,7 +1358,7 @@ GameObject:
   - component: {fileID: 2188676752904188892}
   - component: {fileID: 1229748728216963285}
   - component: {fileID: 1121132711065489148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1441,7 +1442,7 @@ GameObject:
   - component: {fileID: 3462830494675176549}
   - component: {fileID: 4531838623316528338}
   - component: {fileID: 6444457529659720342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1546,7 +1547,7 @@ GameObject:
   - component: {fileID: 8161642272684674095}
   - component: {fileID: 5465024415679489144}
   - component: {fileID: 2817001499487588553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1651,7 +1652,7 @@ GameObject:
   - component: {fileID: 5661129860617672818}
   - component: {fileID: 944952599354182687}
   - component: {fileID: 2465240271471078475}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1756,7 +1757,7 @@ GameObject:
   - component: {fileID: 7590100071399062613}
   - component: {fileID: 8447605443702591624}
   - component: {fileID: 577966051615643278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1861,7 +1862,7 @@ GameObject:
   - component: {fileID: 6157417197387842940}
   - component: {fileID: 862866535632781564}
   - component: {fileID: 2963086740550720267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1966,7 +1967,7 @@ GameObject:
   - component: {fileID: 9149734811011777922}
   - component: {fileID: 4701870917621542359}
   - component: {fileID: 999590604445714551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2068,7 +2069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6174930687569820154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2118,7 +2119,7 @@ GameObject:
   - component: {fileID: 6445872775437357932}
   - component: {fileID: 7768005177931278258}
   - component: {fileID: 57327032083225767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2223,7 +2224,7 @@ GameObject:
   - component: {fileID: 86147472738934798}
   - component: {fileID: 4972254239889489431}
   - component: {fileID: 314387049996847950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2328,7 +2329,7 @@ GameObject:
   - component: {fileID: 5562277754842929674}
   - component: {fileID: 3527283240429660026}
   - component: {fileID: 8321499440519470025}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2433,7 +2434,7 @@ GameObject:
   - component: {fileID: 4811262806206902717}
   - component: {fileID: 6512115629223515023}
   - component: {fileID: 7700210598993276737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2538,7 +2539,7 @@ GameObject:
   - component: {fileID: 2659253358716279022}
   - component: {fileID: 2181311153991140092}
   - component: {fileID: 7405066519925488602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2643,7 +2644,7 @@ GameObject:
   - component: {fileID: 2132584081110153875}
   - component: {fileID: 7279762755256867138}
   - component: {fileID: 3052707435685429063}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2748,7 +2749,7 @@ GameObject:
   - component: {fileID: 8168743651605206678}
   - component: {fileID: 7871467197194077864}
   - component: {fileID: 2092439497938247922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2853,7 +2854,7 @@ GameObject:
   - component: {fileID: 3518190523209839636}
   - component: {fileID: 5160021231201592868}
   - component: {fileID: 3402653515414689663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2955,7 +2956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7045331737951939596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2993,7 +2994,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7026289172660904059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3029,7 +3030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2178258491699494689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3069,7 +3070,7 @@ GameObject:
   - component: {fileID: 1329610503963291189}
   - component: {fileID: 3820204991124705094}
   - component: {fileID: 8509621623700495031}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3174,7 +3175,7 @@ GameObject:
   - component: {fileID: 3419826920806721934}
   - component: {fileID: 7669232039971486852}
   - component: {fileID: 3472080358186339810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3279,7 +3280,7 @@ GameObject:
   - component: {fileID: 6220938892461315923}
   - component: {fileID: 814284628444799672}
   - component: {fileID: 6313487954628001143}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3384,7 +3385,7 @@ GameObject:
   - component: {fileID: 7155995598214450840}
   - component: {fileID: 2325631514322923640}
   - component: {fileID: 8925729584557932073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3489,7 +3490,7 @@ GameObject:
   - component: {fileID: 5531444361071143426}
   - component: {fileID: 4385414212098492284}
   - component: {fileID: 6925510499870623392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3594,7 +3595,7 @@ GameObject:
   - component: {fileID: 7317842687683509265}
   - component: {fileID: 6713820514995886316}
   - component: {fileID: 8506271108659937893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3699,7 +3700,7 @@ GameObject:
   - component: {fileID: 8667889391418905434}
   - component: {fileID: 1656095115668594462}
   - component: {fileID: 1689604426897396657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3804,7 +3805,7 @@ GameObject:
   - component: {fileID: 1536396284775105693}
   - component: {fileID: 252476992586445411}
   - component: {fileID: 3982567860378825415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3909,7 +3910,7 @@ GameObject:
   - component: {fileID: 754004635110445813}
   - component: {fileID: 7546814870318058619}
   - component: {fileID: 8548668951968254725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

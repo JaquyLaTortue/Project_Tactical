@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5218438879758796446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 8194412134589235781}
   - component: {fileID: 8155662274813651755}
   - component: {fileID: 7848584156697802694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1132009953681873216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2097731873621561507}
   - component: {fileID: 1710724576167061801}
   - component: {fileID: 6211383513217214792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Cube_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 9022356965083875566}
   - component: {fileID: 6058126263530899168}
   - component: {fileID: 1554222347924181337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332785983277792886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 7636513972567850983}
   - component: {fileID: 3867279475353298363}
   - component: {fileID: 6057681346169168372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Nipples
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2972385909990117704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 4058481617012273882}
   - component: {fileID: 6128716085589484406}
   - component: {fileID: 6217981312410625022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Cube_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 9100579855957210947}
   - component: {fileID: 6497911647996333215}
   - component: {fileID: 5211520367319802319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light_Blue_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 2425428399196510827}
   - component: {fileID: 1151810795631654902}
   - component: {fileID: 939055574590255641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light_Blue_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   - component: {fileID: 4902732802333562241}
   - component: {fileID: 451828534120981887}
   - component: {fileID: 9167287705411186338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light_Blue_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 3887038342922171124}
   - component: {fileID: 6750506886151191811}
   - component: {fileID: 6704882442304772839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: The_Evil_Tank
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -1030,6 +1030,7 @@ MonoBehaviour:
   _mapMain: {fileID: 0}
   HasAttacked: 0
   HasMoved: 0
+  _hasSpecial: 0
 --- !u!114 &3887038342922171124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,7 +1093,7 @@ GameObject:
   - component: {fileID: 4641877298022676048}
   - component: {fileID: 7347721570028657039}
   - component: {fileID: 1220421879110442624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Nipples
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,7 +1198,7 @@ GameObject:
   - component: {fileID: 6497283143212744786}
   - component: {fileID: 3553744267863266416}
   - component: {fileID: 5283265825914577390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Cube_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1302,7 +1303,7 @@ GameObject:
   - component: {fileID: 8834297096058859479}
   - component: {fileID: 1387342367200697346}
   - component: {fileID: 7288265365514645784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Cube_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1408,7 @@ GameObject:
   - component: {fileID: 56184642229893293}
   - component: {fileID: 5544689254856322256}
   - component: {fileID: 3243858151330991696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

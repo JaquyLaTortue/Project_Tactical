@@ -10,6 +10,7 @@ public class CastActions : MonoBehaviour
         {
             Debug.Log("Move");
             _turnManager.Character.CharacterCapacity.Move(_turnManager.Destination);
+            _turnManager.ResetVariables();
         }
     }
 
@@ -19,6 +20,7 @@ public class CastActions : MonoBehaviour
         {
             Debug.Log("Attack");
             _turnManager.Character.CharacterCapacity.Attack(_turnManager.Target);
+            _turnManager.ResetVariables();
         }
     }
 
@@ -27,6 +29,7 @@ public class CastActions : MonoBehaviour
         if (_turnManager.Target != null)
         {
             _turnManager.Character.CharacterCapacity.Special(_turnManager.Target);
+            _turnManager.ResetVariables();
         }
     }
 }
