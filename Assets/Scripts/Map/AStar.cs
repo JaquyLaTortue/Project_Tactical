@@ -138,7 +138,6 @@ public class AStar : MonoBehaviour
         WayPoint newParent = _target.parent;
         for (int i = 0; i < _target.caseCost-1; i++)
         {
-            Debug.Log(newParent.name);
             _path.Add(newParent);
             newParent = newParent.parent;
         }
@@ -151,9 +150,5 @@ public class AStar : MonoBehaviour
         }*/
         _path.Add(newParent);
         _path.Reverse();
-        foreach (WayPoint waypoint in _path)
-        {
-            Debug.Log(waypoint);
-        }
     }
 }

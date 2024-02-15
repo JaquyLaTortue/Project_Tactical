@@ -129,6 +129,7 @@ public class InitMap : MonoBehaviour
 
             newCorner.transform.Rotate(0, rotateY, 0);
             newCorner.transform.position += new Vector3((positionLength + 1) * prefabLength, 0, (positionWidth + 1) * prefabWidth);
+            newCorner.transform.parent = caseTransformParent;
         }
 
         for (int i = 0; i < 2; i++)
@@ -150,7 +151,7 @@ public class InitMap : MonoBehaviour
 
                 newBorder.transform.Rotate(0, rotateY, 0);
                 newBorder.transform.position += new Vector3((j + 1) * prefabLength, 0, (positionWidth + 1) * prefabWidth);
-
+                newBorder.transform.parent = caseTransformParent;
             }
 
             for (int j = 0; j < widthCase; j++)
@@ -170,6 +171,7 @@ public class InitMap : MonoBehaviour
 
                 newBorder.transform.Rotate(0, rotateY, 0);
                 newBorder.transform.position += new Vector3((positionLength + 1) * prefabLength, 0, (j + 1) * prefabWidth);
+                newBorder.transform.parent = caseTransformParent;
             }
         }
 
