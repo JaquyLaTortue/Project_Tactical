@@ -81,6 +81,17 @@ public class TurnManager : MonoBehaviour
         DestinationSelection = true;
     }
 
+    public void SetCharacter1(GameObject character)
+    {
+        string oldcharacter = Character == null ? "null" : Character.name;
+        Character = character.GetComponent<CharacterMain>();
+        managerMain.mapMain.wayPointStart = Character.Position;
+        Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
+        OnCharacterSelected?.Invoke(Character);
+        CharacterSelection = false;
+        TargetSelection = true;
+    }
+
     public void SetTarget(GameObject target)
     {
         string oldtarget = Target == null ? "null" : Target.name;
