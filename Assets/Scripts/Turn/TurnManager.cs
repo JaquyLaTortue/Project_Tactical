@@ -73,6 +73,7 @@ public class TurnManager : MonoBehaviour
 
     public void SetCharacter(GameObject character)
     {
+
         string oldcharacter;
         switch (Character)
         {
@@ -80,7 +81,11 @@ public class TurnManager : MonoBehaviour
                 oldcharacter = null;
                 break;
             case not null:
-                Character.gameObject.layer = 0;
+                foreach (Transform child in Character.transform)
+                {
+                    child.gameObject.layer = 0;
+                }
+
                 oldcharacter = Character.name;
                 break;
         }
@@ -119,7 +124,11 @@ public class TurnManager : MonoBehaviour
                 break;
             case not null:
                 oldtarget = Target.name;
-                Target.gameObject.layer = 0;
+                foreach (Transform child in Target.transform)
+                {
+                    child.gameObject.layer = 0;
+                }
+
                 break;
         }
 
