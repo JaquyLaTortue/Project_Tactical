@@ -17,6 +17,7 @@ public class ClassicBehaviour : MonsterBehaviour
     {
         _monsterMain.MonsterCapacity.HasAttacked = false;
         _monsterMain.MonsterCapacity.HasMoved = false;
+        _monsterMain.MonsterCapacity._hasSpecial = false;
         _monsterMain.PaCurrent = _monsterMain.PaMax;
 
         int distance = 1000;
