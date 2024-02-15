@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterCapacity : MonoBehaviour
@@ -10,6 +11,8 @@ public class CharacterCapacity : MonoBehaviour
     private Capacity _capacity;
 
     public MapMain _map;
+
+    public event Action<int> OnPAChanged;
 
     private bool _hasAttacked = false;
     private bool _hasMoved = false;
@@ -36,6 +39,7 @@ public class CharacterCapacity : MonoBehaviour
                 Debug.Log("In Range !");
                 target.MonsterHealth.TakeDamage(_characterMain.Atk);
                 this._characterMain.PaCurrent--;
+                OnPAChanged.Invoke(this._characterMain.PaCurrent);
                 _hasAttacked = true;
             }
         }
@@ -67,6 +71,7 @@ public class CharacterCapacity : MonoBehaviour
                     // this._characterMain.Position = path[i];
                     // this.transform.position = path[i].transform.position;
                     this._characterMain.PaCurrent--;
+                    OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     if (i == path.Count - 1)
                     {
                         path[i].obstacle = true;
@@ -109,6 +114,7 @@ public class CharacterCapacity : MonoBehaviour
                 {
                     tmp.CharacterHealth.HealHealth(_capacity.damage);
                     this._characterMain.PaCurrent -= _capacity.cost;
+                    OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
                 }
                 else
@@ -123,6 +129,7 @@ public class CharacterCapacity : MonoBehaviour
             {
                 _characterMain.Def += _capacity.damage;
                 this._characterMain.PaCurrent -= _capacity.cost;
+                OnPAChanged.Invoke(this._characterMain.PaCurrent);
                 _hasSpecial = true;
             }
             else
@@ -138,6 +145,7 @@ public class CharacterCapacity : MonoBehaviour
                 {
                     tmp.MonsterHealth.TakeDamage(_capacity.damage);
                     this._characterMain.PaCurrent -= _capacity.cost;
+                    OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
                 }
                 else

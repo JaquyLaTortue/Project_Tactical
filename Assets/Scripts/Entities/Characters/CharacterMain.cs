@@ -11,9 +11,11 @@ public class CharacterMain : Entity
     [field: SerializeField]
     public CharacterBase CharacterBase { get; private set; }
 
-    public void InitCharacter(MapMain map)
+    public void InitCharacter(MapMain map, StatPlayer stat)
     {
         CharacterCapacity._map = map;
+        stat.InitUI(this);
+        
     }
 
     private void Awake()
@@ -26,4 +28,10 @@ public class CharacterMain : Entity
         Def = CharacterBase.Def;
         Range = CharacterBase.Range;
     }
+
+    public void GetStat(StatPlayer stat)
+    {
+        stat._characterMain = this;
+    }
+    
 }
