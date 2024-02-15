@@ -781,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 3b53a42a808f9494083746a78792d5f7,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -792,7 +792,31 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 901211731}
+        m_TargetAssemblyTypeName: Select, Assembly-CSharp
+        m_MethodName: OnInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5a01a2c0-6a67-4e14-a481-6dfac6286b60
+    m_ActionName: Game/Select[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5121bb74-0839-45da-812a-5ed1421058b5
+    m_ActionName: Game/MoveMouse[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aec8ac99-97e0-4afc-947f-e3f3dcc14a1b
+    m_ActionName: Astar/ClickOnCase[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game
