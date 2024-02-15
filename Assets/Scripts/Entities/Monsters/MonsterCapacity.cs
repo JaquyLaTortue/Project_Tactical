@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Gere les capacités des monstres du type attaque et mouvement.
+/// </summary>
 public class MonsterCapacity : MonoBehaviour
 {
     [SerializeField]
@@ -18,6 +21,10 @@ public class MonsterCapacity : MonoBehaviour
     [HideInInspector]
     public bool HasMoved = false;
 
+    /// <summary>
+    /// Permet de faire l' action du monstre en lui indiquant d'attaquer tout en lui enlevant des PA.
+    /// </summary>
+    /// <param name="target"></param>
     public void Attack(Entity target)
     {
         if (HasAttacked)
@@ -40,6 +47,10 @@ public class MonsterCapacity : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Permet de faire l'action du monstre en lui indiquant de se déplacer tout en lui enlevant des PA en utilisant l'A*.
+    /// </summary>
+    /// <param name="destination"></param>
     public void Move(WayPoint destination)
     {
         if (HasMoved)
@@ -64,8 +75,6 @@ public class MonsterCapacity : MonoBehaviour
                 {
                     ChangeWaypoint(path[i]);
 
-                    //this._monsterMain.Position = path[i];
-                    //this.transform.position = path[i].transform.position;
                     this._monsterMain.PaCurrent--;
                     if (i == path.Count - 1)
                     {
@@ -84,19 +93,18 @@ public class MonsterCapacity : MonoBehaviour
         }
         else
         {
-            Debug.Log("No more PA");
             Debug.Log("Destination is the same as the current position");
         }
-    }
-
-    private void AttackAfterMove()
-    {
-        Attack(_target);
     }
 
     public void ChangeWaypoint(WayPoint waypointToMoveTo)
     {
         this._monsterMain.Position = waypointToMoveTo;
         this.transform.position = waypointToMoveTo.transform.position;
+    }
+
+    private void AttackAfterMove()
+    {
+        Attack(_target);
     }
 }
