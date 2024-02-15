@@ -417,86 +417,6 @@ Transform:
   - {fileID: 8882181125033551869}
   m_Father: {fileID: 4996597788975286206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2284223661537912218
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3832830312983172417}
-  - component: {fileID: 5731266617504534081}
-  - component: {fileID: 3746197343714164097}
-  - component: {fileID: 5329655263767046592}
-  m_Layer: 0
-  m_Name: ScriptHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3832830312983172417
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284223661537912218}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4996597788975286206}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5731266617504534081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284223661537912218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c31bbbbbf31e4d448e6f6a62b56af0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Position>k__BackingField: {fileID: 0}
-  <Spawnpoint>k__BackingField: {fileID: 0}
-  <CharacterCapacity>k__BackingField: {fileID: 3746197343714164097}
-  <CharacterHealth>k__BackingField: {fileID: 5329655263767046592}
-  <CharacterBase>k__BackingField: {fileID: 11400000, guid: 1c5199c04e4d4ba408041df8c45287b0,
-    type: 2}
---- !u!114 &3746197343714164097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284223661537912218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e5d9f2f574bbb42a564584b22f7df0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterMain: {fileID: 5731266617504534081}
-  _capacity: {fileID: 11400000, guid: 0520d21967345b044b74e39eb7e5cb96, type: 2}
-  _map: {fileID: 0}
---- !u!114 &5329655263767046592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284223661537912218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3695df7ef95095f48b8a50c35809b9d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterMain: {fileID: 5731266617504534081}
 --- !u!1 &2407927672444949401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1572,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4996597788975286206}
+  - component: {fileID: 6104948551198740003}
+  - component: {fileID: 794046778774840184}
+  - component: {fileID: 3008422490872067166}
   m_Layer: 0
   m_Name: The_DPS_Mecha
   m_TagString: Character
@@ -1673,10 +1596,55 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5819756953543811468}
-  - {fileID: 3832830312983172417}
   - {fileID: 1762723628236542796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6104948551198740003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625952247603245439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c31bbbbbf31e4d448e6f6a62b56af0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Position>k__BackingField: {fileID: 0}
+  <Spawnpoint>k__BackingField: {fileID: 0}
+  <CharacterCapacity>k__BackingField: {fileID: 794046778774840184}
+  <CharacterHealth>k__BackingField: {fileID: 3008422490872067166}
+  <CharacterBase>k__BackingField: {fileID: 11400000, guid: 1c5199c04e4d4ba408041df8c45287b0,
+    type: 2}
+--- !u!114 &794046778774840184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625952247603245439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e5d9f2f574bbb42a564584b22f7df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterMain: {fileID: 6104948551198740003}
+  _capacity: {fileID: 11400000, guid: 0520d21967345b044b74e39eb7e5cb96, type: 2}
+  _map: {fileID: 0}
+--- !u!114 &3008422490872067166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625952247603245439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3695df7ef95095f48b8a50c35809b9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterMain: {fileID: 6104948551198740003}
 --- !u!1 &6896090230670878476
 GameObject:
   m_ObjectHideFlags: 0
