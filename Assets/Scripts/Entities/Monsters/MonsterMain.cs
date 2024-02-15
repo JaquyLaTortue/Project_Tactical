@@ -26,4 +26,9 @@ public class MonsterMain : Entity
         Def = MonsterBase.Def;
         Range = MonsterBase.Range;
     }
+
+    private void OnDestroy()
+    {
+        //_entitiesManager.allMonsters.Remove(this);
+    }
 }

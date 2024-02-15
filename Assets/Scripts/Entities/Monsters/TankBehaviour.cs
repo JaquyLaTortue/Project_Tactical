@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class TankBehaviour : MonsterBehaviour
 {
@@ -32,8 +33,12 @@ public class TankBehaviour : MonsterBehaviour
         }
         else
         {
-            MonsterMain monsterAlly = _entitiesManager.allMonsters[Random.Range(0, _entitiesManager.allMonsters.Count)];
-            _monsterMain.MonsterCapacity.Move(monsterAlly.Position);
+            List<MonsterMain> otherMonsters = _entitiesManager.allMonsters.Except(new List<MonsterMain>() { _monsterMain }).ToList();
+            if (otherMonsters.Count > 0)
+            {
+                MonsterMain monsterAlly = otherMonsters[Random.Range(0, otherMonsters.Count)];
+                _monsterMain.MonsterCapacity.Move(monsterAlly.Position.neighbour[0]);
+            }
         }
     }
 }

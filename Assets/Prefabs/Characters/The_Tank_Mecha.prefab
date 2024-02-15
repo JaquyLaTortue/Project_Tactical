@@ -1474,6 +1474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Position>k__BackingField: {fileID: 0}
   <Spawnpoint>k__BackingField: {fileID: 0}
+  entitiesManager: {fileID: 0}
   <CharacterCapacity>k__BackingField: {fileID: 2033128194655054330}
   <CharacterHealth>k__BackingField: {fileID: 6477448494428280981}
   <CharacterBase>k__BackingField: {fileID: 11400000, guid: aaa884ec930e8d645b2029850d103584,
