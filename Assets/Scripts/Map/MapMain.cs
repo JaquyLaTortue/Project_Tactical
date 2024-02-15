@@ -94,7 +94,6 @@ public class MapMain : MonoBehaviour
 
     private void Start()
     {
-        wayPointStart = config.allWayPoints[Random.Range(0, config.allWayPoints.Count)];
         _clickedCase = GetComponent<ClickedCase>();
         _clickedCase.Init(this);
         managerMain.entitiesManager.InitEntities();
