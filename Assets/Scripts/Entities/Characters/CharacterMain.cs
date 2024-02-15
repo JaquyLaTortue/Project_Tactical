@@ -13,6 +13,7 @@ public class CharacterMain : Entity
 
     public void InitCharacter(MapMain map)
     {
+        Debug.Log(CharacterCapacity);
         CharacterCapacity._map = map;
     }
 

@@ -447,8 +447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Position>k__BackingField: {fileID: 0}
   <Spawnpoint>k__BackingField: {fileID: 0}
-  <CharacterCapacity>k__BackingField: {fileID: 0}
-  <CharacterHealth>k__BackingField: {fileID: 0}
+  <CharacterCapacity>k__BackingField: {fileID: 1142039643025437551}
+  <CharacterHealth>k__BackingField: {fileID: 7524926551806539091}
   <CharacterBase>k__BackingField: {fileID: 11400000, guid: 05ba98c0fe1d51c4c97ccdd3db449725,
     type: 2}
 --- !u!114 &1142039643025437551
