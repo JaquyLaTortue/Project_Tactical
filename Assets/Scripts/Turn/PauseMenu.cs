@@ -21,6 +21,10 @@ public class PauseMenu : MonoBehaviour
 
         isPaused = !isPaused;
         _pauseMenu.SetActive(isPaused);
+        _managerMain.turnManager.EndCharacterSelectionPhase();
+        _managerMain.turnManager.EndTargetSelectionPhase();
+        _managerMain.turnManager.EndDestinationSelectionPhase();
+        _managerMain.turnManager.EndAllySelectionPhase();
         switch (isPaused)
         {
             case true:
@@ -36,6 +40,6 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = false;
         _pauseMenu.SetActive(false);
-        _managerMain.turnManager.InputManager.SwitchCurrentActionMap("Player");
+        _managerMain.turnManager.InputManager.SwitchCurrentActionMap("Game");
     }
 }

@@ -23,6 +23,17 @@ public class CharacterMain : Entity
         Spawnpoint = Position;
     }
 
+    public void InitCharacter(MapMain map, StatPlayer stat)
+    {
+        CharacterCapacity._map = map;
+        stat.InitUI(this);
+    }
+
+    public void GetStat(StatPlayer stat)
+    {
+        stat._characterMain = this;
+    }
+
     private void Awake()
     {
         HpMax = CharacterBase.HpMax;

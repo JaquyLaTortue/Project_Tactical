@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6240977263108139578}
   - component: {fileID: 895029973355534556}
   - component: {fileID: 8987157730515952000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 8668061009904462438}
   - component: {fileID: 1093757146476104512}
   - component: {fileID: 5455603230915192561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6567266405875381824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BotSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 4498817525187563232}
   - component: {fileID: 3693197190069728918}
   - component: {fileID: 2391255765027083513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 8969827548319077482}
   - component: {fileID: 8798658904044786791}
   - component: {fileID: 5683918323931740459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_Lighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 4302448326815806664}
   - component: {fileID: 7461462067758678645}
   - component: {fileID: 4937484286147996064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4530508876523442770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 7396527037440765335}
   - component: {fileID: 4119508557021687024}
   - component: {fileID: 1579195111139912873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8441134509189434152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 6793626807722028024}
   - component: {fileID: 2596042634487458713}
   - component: {fileID: 7692075856531312888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,7 +827,7 @@ GameObject:
   - component: {fileID: 315098484677068487}
   - component: {fileID: 9020663427516805183}
   - component: {fileID: 9006214624801732573}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5213592184238762512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8761435839879399046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: 3562322514266698346}
   - component: {fileID: 1873434169865305409}
   - component: {fileID: 5948195040122039942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blue_Cube_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,7 +1107,7 @@ GameObject:
   - component: {fileID: 504124508593892481}
   - component: {fileID: 4157142492943038094}
   - component: {fileID: 1916381715225822834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 6772508421722719659}
   - component: {fileID: 1403141081317576397}
   - component: {fileID: 2500145979580610277}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 3691607308950760433}
   - component: {fileID: 6622281983056688327}
   - component: {fileID: 8650190774799022910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 2033128194655054330}
   - component: {fileID: 6477448494428280981}
   - component: {fileID: 5016766675400468780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: The_Tank_Mecha
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -1461,11 +1461,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Position>k__BackingField: {fileID: 0}
   <Spawnpoint>k__BackingField: {fileID: 0}
-  entitiesManager: {fileID: 0}
+  EntitiesManager: {fileID: 0}
   <CharacterCapacity>k__BackingField: {fileID: 2033128194655054330}
   <CharacterHealth>k__BackingField: {fileID: 6477448494428280981}
   <CharacterBase>k__BackingField: {fileID: 11400000, guid: aaa884ec930e8d645b2029850d103584,
     type: 2}
+  <ManagerMain>k__BackingField: {fileID: 0}
 --- !u!114 &2033128194655054330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,6 +1481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterMain: {fileID: 3717885821891092252}
   _capacity: {fileID: 11400000, guid: 23a0f35e8d8792142a2d69a854b440ae, type: 2}
+  _turnManager: {fileID: 0}
   _map: {fileID: 0}
 --- !u!114 &6477448494428280981
 MonoBehaviour:
@@ -1527,7 +1529,7 @@ GameObject:
   - component: {fileID: 4540573770289275272}
   - component: {fileID: 8833238051730390625}
   - component: {fileID: 297998987640640941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blue_Cube_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1632,7 +1634,7 @@ GameObject:
   - component: {fileID: 2060015178121416201}
   - component: {fileID: 4174527720181231153}
   - component: {fileID: 2590803589185177362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

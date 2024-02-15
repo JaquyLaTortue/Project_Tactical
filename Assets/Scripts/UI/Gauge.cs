@@ -4,7 +4,7 @@ using TMPro;
 using DG.Tweening;
 using UnityEngine.TextCore.Text;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Gauge : MonoBehaviour
 {
     public float health = 75f;
     public float maxHealth = 100f;
@@ -25,9 +25,10 @@ public class NewBehaviourScript : MonoBehaviour
     public void DamageButton(int damageAmount)
     {
         health -= damageAmount;
-        truc();
+        ChangeGauge();
     }
-    void truc()
+
+    public void ChangeGauge()
     {
         float targetFillAmount = Mathf.InverseLerp(0, maxHealth, health);
 

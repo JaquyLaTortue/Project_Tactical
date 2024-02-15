@@ -6,7 +6,9 @@ public class Select : MonoBehaviour
     [SerializeField]
     private TurnManager _turnManager;
     [SerializeField]
-    private LayerMask MapMask;
+    private LayerMask mapMask;
+    [SerializeField]
+    private LayerMask entityMask;
     private Ray _ray;
     private RaycastHit _hit;
 
@@ -15,9 +17,13 @@ public class Select : MonoBehaviour
     {
         if (ctx.started && _turnManager.PlayerTurn)
         {
-            if (_turnManager.CharacterSelection)
+            if (_turnManager.CharacterSelectionToMove)
             {
-                SelectCharacter();
+                SelectCharacterToMove();
+            }
+            else if (_turnManager.CharacterSelectionToAttack)
+            {
+                SelectCharacterToAttack();
             }
             else if (_turnManager.TargetSelection)
             {
@@ -29,7 +35,7 @@ public class Select : MonoBehaviour
             }
             else if (_turnManager.AllySelection)
             {
-
+                SelectAlly();
             }
 
             return;
@@ -38,12 +44,11 @@ public class Select : MonoBehaviour
 
     public void OnMoveTheMouse()
     {
-        Debug.Log("_turnManager.DestinationSelection " + _turnManager.DestinationSelection);
         if (_turnManager.DestinationSelection)
         {
             _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(_ray, out _hit))
+            if (Physics.Raycast(_ray, out _hit, 1000, mapMask))
             {
                 if (_hit.collider.tag == "Map")
                 {
@@ -54,12 +59,12 @@ public class Select : MonoBehaviour
         }
     }
 
-    public void SelectCharacter()
+    public void SelectCharacterToMove()
     {
         Debug.Log("Selecting Player");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit))
+        if (Physics.Raycast(_ray, out _hit, 1000, entityMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (!current.CompareTag("Character"))
@@ -72,27 +77,59 @@ public class Select : MonoBehaviour
             {
                 case null:
                     Debug.Log("Setting character");
-                    _turnManager.SetCharacter(current);
+                    _turnManager.SetCharacterToMove(current);
                     break;
                 case not null:
                     if (_turnManager.Character.gameObject != current)
                     {
                         Debug.Log("Changing character");
-                        _turnManager.SetCharacter(current);
+                        _turnManager.SetCharacterToMove(current);
                     }
 
-                    _turnManager.EndCharacterSelectionPhase();
                     break;
             }
         }
     }
+
+    public void SelectCharacterToAttack()
+    {
+        Debug.Log("Selecting Player");
+        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(_ray, out _hit, 1000, entityMask))
+        {
+            GameObject current = _hit.transform.gameObject;
+            if (!current.CompareTag("Character"))
+            {
+                Debug.Log("Not a character");
+                return;
+            }
+
+            switch (_turnManager.Character)
+            {
+                case null:
+                    Debug.Log("Setting character");
+                    _turnManager.SetCharacterToAttack(current);
+                    break;
+                case not null:
+                    if (_turnManager.Character.gameObject != current)
+                    {
+                        Debug.Log("Changing character");
+                        _turnManager.SetCharacterToAttack(current);
+                    }
+
+                    break;
+            }
+        }
+    }
+
 
     public void SelectTarget()
     {
         Debug.Log("Selecting Target");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit))
+        if (Physics.Raycast(_ray, out _hit, 1000, entityMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (!current.CompareTag("Ennemy"))
@@ -125,7 +162,7 @@ public class Select : MonoBehaviour
         Debug.Log("Selecting Destination");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit, 100, MapMask))
+        if (Physics.Raycast(_ray, out _hit, 1000, mapMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (current.CompareTag("Map"))
@@ -137,9 +174,9 @@ public class Select : MonoBehaviour
                         _turnManager.SetDestination(current.GetComponent<WayPoint>());
                         break;
                     case not null:
-                        Debug.Log("Changing destination");
                         if (_turnManager.Destination.gameObject != current)
                         {
+                            Debug.Log("Changing destination");
                             _turnManager.SetDestination(current.GetComponent<WayPoint>());
                         }
 
@@ -155,7 +192,7 @@ public class Select : MonoBehaviour
         Debug.Log("Selecting Ally");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit))
+        if (Physics.Raycast(_ray, out _hit, 1000, mapMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (current.CompareTag("Character"))

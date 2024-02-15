@@ -1,10 +1,11 @@
 ﻿using System;
-using UnityEditor;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TurnManager : MonoBehaviour
 {
+    [SerializeField] private TMP_Text _turnText;
 
     public event Action OnPlayerTurn;
 
@@ -32,7 +33,9 @@ public class TurnManager : MonoBehaviour
     [field: SerializeField]
     public PlayerInput InputManager { get; private set; }
 
-    public bool CharacterSelection { get; private set; } = false;
+    public bool CharacterSelectionToMove { get; private set; } = false;
+
+    public bool CharacterSelectionToAttack { get; private set; } = false;
 
     public bool TargetSelection { get; private set; } = false;
 
@@ -40,29 +43,45 @@ public class TurnManager : MonoBehaviour
 
     public bool AllySelection { get; private set; } = false;
 
-    public void InitManager(ManagerMain MM)
+    public void InitManager(ManagerMain mM)
     {
-        MM.turnManager = this;
-        ManagerMain = MM;
+        mM.turnManager = this;
+        ManagerMain = mM;
     }
 
-    public void CharacterSelectionPhase()
+    public void CharacterSelectionToMovePhase()
     {
-        CharacterSelection = true;
+        ResetVariables();
+        CharacterSelectionToMove = true;
+        _turnText.text = "Select a character";
         EndTargetSelectionPhase();
         EndDestinationSelectionPhase();
+        EndAllySelectionPhase();
+    }
+
+    public void CharacterSelectionToAttackPhase()
+    {
+        ResetVariables();
+        CharacterSelectionToAttack = true;
+        _turnText.text = "Select a character";
+        EndTargetSelectionPhase();
+        EndDestinationSelectionPhase();
+        EndAllySelectionPhase();
     }
 
     public void EndCharacterSelectionPhase()
     {
-        CharacterSelection = false;
+        CharacterSelectionToAttack = false;
+        CharacterSelectionToMove = false;
     }
 
     public void TargetSelectionPhase()
     {
         TargetSelection = true;
+        _turnText.text = "Select a target";
         EndCharacterSelectionPhase();
         EndDestinationSelectionPhase();
+        EndAllySelectionPhase();
     }
 
     public void EndTargetSelectionPhase()
@@ -73,8 +92,10 @@ public class TurnManager : MonoBehaviour
     public void DestinationSelectionPhase()
     {
         DestinationSelection = true;
+        _turnText.text = "Select a destination";
         EndCharacterSelectionPhase();
         EndTargetSelectionPhase();
+        EndAllySelectionPhase();
     }
 
     public void EndDestinationSelectionPhase()
@@ -85,6 +106,10 @@ public class TurnManager : MonoBehaviour
     public void AllySelectionPhase()
     {
         AllySelection = true;
+        _turnText.text = "Select an ally";
+        EndCharacterSelectionPhase();
+        EndTargetSelectionPhase();
+        EndDestinationSelectionPhase();
     }
 
     public void EndAllySelectionPhase()
@@ -92,9 +117,8 @@ public class TurnManager : MonoBehaviour
         AllySelection = false;
     }
 
-    public void SetCharacter(GameObject character)
+    public void SetCharacterToMove(GameObject character)
     {
-
         string oldcharacter;
         switch (Character)
         {
@@ -120,19 +144,39 @@ public class TurnManager : MonoBehaviour
         ManagerMain.mapMain.wayPointStart = Character.Position;
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
-        CharacterSelection = false;
-        DestinationSelection = true;
+        EndCharacterSelectionPhase();
+        DestinationSelectionPhase();
     }
 
-    public void SetCharacter1(GameObject character)
+    public void SetCharacterToAttack(GameObject character)
     {
-        string oldcharacter = Character == null ? "null" : Character.name;
+        string oldcharacter;
+        switch (Character)
+        {
+            case null:
+                oldcharacter = null;
+                break;
+            case not null:
+                foreach (Transform child in Character.transform)
+                {
+                    child.gameObject.layer = 0;
+                }
+
+                oldcharacter = Character.name;
+                break;
+        }
+
         Character = character.GetComponent<CharacterMain>();
+        foreach (Transform child in character.transform)
+        {
+            child.gameObject.layer = 7;
+        }
+
         ManagerMain.mapMain.wayPointStart = Character.Position;
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
-        CharacterSelection = false;
-        TargetSelection = true;
+        EndCharacterSelectionPhase();
+        TargetSelectionPhase();
     }
 
     public void SetTarget(GameObject target)
@@ -161,13 +205,13 @@ public class TurnManager : MonoBehaviour
 
         Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
         OnEnnemySelected?.Invoke(Target);
-        TargetSelection = false;
+        EndTargetSelectionPhase();
     }
 
     public void SetAlly(GameObject ally)
     {
         Ally = ally.GetComponent<CharacterMain>();
-        AllySelection = false;
+        EndAllySelectionPhase();
     }
 
     public void SetDestination(WayPoint targetPosition)
@@ -177,15 +221,40 @@ public class TurnManager : MonoBehaviour
         DestinationSelection = false;
     }
 
-    public void EndTurn()
+    public void ResetVariables()
     {
+        if (Character != null)
+        {
+            foreach (Transform child in Character.transform)
+            {
+                child.gameObject.layer = 0;
+            }
+        }
+
+        if (Target != null)
+        {
+            foreach (Transform child in Target.transform)
+            {
+                child.gameObject.layer = 0;
+            }
+        }
+
         Character = null;
         Target = null;
         Destination = null;
+        Ally = null;
 
-        CharacterSelection = false;
-        TargetSelection = false;
-        DestinationSelection = false;
+        _turnText.text = string.Empty;
+    }
+
+    public void EndTurn()
+    {
+        ResetVariables();
+
+        EndCharacterSelectionPhase();
+        EndTargetSelectionPhase();
+        EndDestinationSelectionPhase();
+        EndAllySelectionPhase();
 
         Turnindex++;
         DetermineTurn();
@@ -211,7 +280,6 @@ public class TurnManager : MonoBehaviour
     private void Start()
     {
         OnPlayerTurn?.Invoke();
-        CharacterSelection = true;
     }
 
 }
