@@ -69,6 +69,7 @@ MonoBehaviour:
   aStar: {fileID: 0}
   wayPointStart: {fileID: 0}
   _clickedCase: {fileID: 0}
+  PAMax: 0
 --- !u!114 &7846761661424204855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,8 +84,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _length: 0
   _width: 0
-  _prefabCase: {fileID: 3049629281842861629, guid: eb74ed11c93d7fc4bb23dd83e91c1b00,
+  _prefabCase:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _borderPrefab: {fileID: 47626571314547671, guid: 5a20e3988dc68d34e8850283ab246b9d,
     type: 3}
+  _corderPrefab: {fileID: 746956395961303876, guid: 9c4571fe0c463084e9e76ae7a12a5b10,
+    type: 3}
+  caseTransformParent: {fileID: 0}
 --- !u!114 &1642223988968887189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +134,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 7fc8efb0-9dcc-43d4-bab8-1066752932d6
+  m_DefaultActionMap: Astar
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7472198668175487809
@@ -142,4 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _red: {fileID: 2100000, guid: c3996a25c842a3149a287e3a02e53a39, type: 2}
+  _blue: {fileID: 0}
   _old: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
