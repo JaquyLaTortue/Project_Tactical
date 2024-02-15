@@ -1417,13 +1417,13 @@ PrefabInstance:
     - target: {fileID: 6968274519126772774, guid: 3d660544971745c468768192b05944fe,
         type: 3}
       propertyPath: _prefabCase.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6968274519126772774, guid: 3d660544971745c468768192b05944fe,
         type: 3}
       propertyPath: _prefabCase.Array.data[0]
       value: 
-      objectReference: {fileID: 3049629281842861629, guid: eb74ed11c93d7fc4bb23dd83e91c1b00,
+      objectReference: {fileID: 3049629281842861629, guid: 72a8f24c5a50b1e418e1d97b7d4a7412,
         type: 3}
     - target: {fileID: 6968274519126772774, guid: 3d660544971745c468768192b05944fe,
         type: 3}

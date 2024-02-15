@@ -138,6 +138,30 @@ public class Select : MonoBehaviour
                         break;
                 }
             }
+
+
+            if (!current.CompareTag("Ennemy"))
+            {
+                Debug.Log("Not an ennemy");
+                return;
+            }
+
+            switch (_turnManager.Target)
+            {
+                case null:
+                    Debug.Log("Setting target");
+                    _turnManager.SetTarget(current);
+                    break;
+                case not null:
+                    Debug.Log("Changing target");
+                    if (_turnManager.Target.gameObject != current)
+                    {
+                        _turnManager.SetTarget(current);
+                    }
+
+                    _turnManager.EndTargetSelectionPhase();
+                    break;
+            }
         }
     }
 }
