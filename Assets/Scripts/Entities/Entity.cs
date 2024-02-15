@@ -22,7 +22,7 @@ public class Entity : MonoBehaviour
     [field: SerializeField]
     public WayPoint Spawnpoint { get; set; }
 
-    public EntitiesManager entitiesManager;
+    public EntitiesManager EntitiesManager;
 
     public void Attack(Entity target)
     {
