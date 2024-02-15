@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169922451fb6d3d47b5633bbe5ada3d2, type: 3}
   m_Name: Range
   m_EditorClassIdentifier: 
-  Atk: 0
-  Def: 0
-  Range: 2
-  HpMax: 0
-  HpCurrent: 0
-  PaMax: 15
-  PaCurrent: 0
+  Atk: 40
+  Def: 15
+  Range: 4
+  HpMax: 70
+  HpCurrent: 70
+  PaMax: 8
+  PaCurrent: 8

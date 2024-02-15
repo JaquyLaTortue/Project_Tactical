@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atk: 10
   Def: 10
+  Range: 1
   HpMax: 100
   HpCurrent: 100
   PaMax: 6
   PaCurrent: 6
-  Position: {fileID: 0}
