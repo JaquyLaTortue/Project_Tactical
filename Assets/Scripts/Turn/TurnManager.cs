@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,6 +25,8 @@ public class TurnManager : MonoBehaviour
 
     public MonsterMain Target { get; private set; }
 
+    public CharacterMain Ally { get; private set; }
+
     public WayPoint Destination { get; private set; }
 
     [field: SerializeField]
@@ -34,6 +37,8 @@ public class TurnManager : MonoBehaviour
     public bool TargetSelection { get; private set; } = false;
 
     public bool DestinationSelection { get; private set; } = false;
+
+    public bool AllySelection { get; private set; } = false;
 
     public void InitManager(ManagerMain MM)
     {
@@ -69,6 +74,16 @@ public class TurnManager : MonoBehaviour
     public void EndDestinationSelectionPhase()
     {
         DestinationSelection = false;
+    }
+
+    public void AllySelectionPhase()
+    {
+        AllySelection = true;
+    }
+
+    public void EndAllySelectionPhase()
+    {
+        AllySelection = false;
     }
 
     public void SetCharacter(GameObject character)
@@ -141,6 +156,12 @@ public class TurnManager : MonoBehaviour
         Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
         OnEnnemySelected?.Invoke(Target);
         TargetSelection = false;
+    }
+
+    public void SetAlly(GameObject ally)
+    {
+        Ally = ally.GetComponent<CharacterMain>();
+        AllySelection = false;
     }
 
     public void SetDestination(WayPoint targetPosition)

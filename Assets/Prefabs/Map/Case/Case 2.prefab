@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2944226434511462564}
   - component: {fileID: 906799942196396872}
   - component: {fileID: 6025893885174022492}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Case 2
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -102,6 +102,8 @@ MonoBehaviour:
   obstacle: 0
   parent: {fileID: 0}
   caseCost: 0
+  meshRenderer: {fileID: 0}
+  entity: {fileID: 0}
 --- !u!65 &6025893885174022492
 BoxCollider:
   m_ObjectHideFlags: 0
