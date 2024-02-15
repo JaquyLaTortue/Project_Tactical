@@ -20,9 +20,9 @@ public class TurnManager : MonoBehaviour
     public bool PlayerTurn { get; private set; } = true;
 
     [field: SerializeField]
-    public CharacterMain Character { get; private set; }
+    public CharacterMain Character { get; set; }
 
-    public MonsterMain Target { get; private set; }
+    public MonsterMain Target { get; set; }
 
     public WayPoint Destination { get; private set; }
 
@@ -44,6 +44,8 @@ public class TurnManager : MonoBehaviour
     public void CharacterSelectionPhase()
     {
         CharacterSelection = true;
+        EndTargetSelectionPhase();
+        EndDestinationSelectionPhase();
     }
 
     public void EndCharacterSelectionPhase()
@@ -54,6 +56,8 @@ public class TurnManager : MonoBehaviour
     public void TargetSelectionPhase()
     {
         TargetSelection = true;
+        EndCharacterSelectionPhase();
+        EndDestinationSelectionPhase();
     }
 
     public void EndTargetSelectionPhase()
@@ -64,6 +68,8 @@ public class TurnManager : MonoBehaviour
     public void DestinationSelectionPhase()
     {
         DestinationSelection = true;
+        EndCharacterSelectionPhase();
+        EndTargetSelectionPhase();
     }
 
     public void EndDestinationSelectionPhase()

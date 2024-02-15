@@ -9,11 +9,26 @@ public class CharacterCapacity : MonoBehaviour
     [SerializeField]
     private Capacity _capacity;
 
+    public TurnManager _turnManager;
+
     public MapMain _map;
 
     private bool _hasAttacked = false;
     private bool _hasMoved = false;
     private bool _hasSpecial = false;
+
+    public void Start()
+    {
+        _turnManager.OnPlayerTurn += ResetCharacter;
+    }
+
+    public void ResetCharacter()
+    {
+        _characterMain.PaCurrent = _characterMain.PaMax;
+        _hasAttacked = false;
+        _hasMoved = false;
+        _hasSpecial = false;
+    }
 
     public void Attack(MonsterMain target)
     {
@@ -76,13 +91,13 @@ public class CharacterCapacity : MonoBehaviour
                         path[i].entity = _characterMain;
                     }
                 }
+
+                _hasMoved = true;
             }
             else
             {
                 Debug.Log("Not enough PA to reach the destination");
             }
-
-            _hasMoved = true;
         }
         else
         {

@@ -32,7 +32,7 @@ public class EntitiesManager : MonoBehaviour
         {
             GameObject newObj = Instantiate(obj);
             CharacterMain newCharacter = newObj.GetComponent<CharacterMain>();
-            newCharacter.InitCharacter(managerMain.mapMain, this);
+            newCharacter.InitCharacter(managerMain);
             allCharacters.Add(newCharacter);
         }
 
@@ -53,7 +53,7 @@ public class EntitiesManager : MonoBehaviour
         {
             GameObject newObj = Instantiate(obj);
             MonsterMain newMonster = newObj.GetComponent<MonsterMain>();
-            newMonster.InitMonster(managerMain.mapMain);
+            newMonster.InitMonster(managerMain);
             MonsterBehaviour monsterBehaviour = newObj.GetComponent<MonsterBehaviour>();
             monsterBehaviour.InitBehaviour(managerMain);
             allMonsters.Add(newMonster);
