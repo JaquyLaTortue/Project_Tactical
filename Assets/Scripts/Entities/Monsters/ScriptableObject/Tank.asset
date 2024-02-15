@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Tank
   m_EditorClassIdentifier: 
   Atk: 5
-  Def: 15
+  Def: 60
   Range: 1
-  HpMax: 125
-  HpCurrent: 125
-  PaMax: 12
-  PaCurrent: 12
+  HpMax: 150
+  HpCurrent: 150
+  PaMax: 3
+  PaCurrent: 3

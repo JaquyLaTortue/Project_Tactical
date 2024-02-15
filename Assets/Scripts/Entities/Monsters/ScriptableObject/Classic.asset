@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169922451fb6d3d47b5633bbe5ada3d2, type: 3}
   m_Name: Classic
   m_EditorClassIdentifier: 
-  Atk: 0
-  Def: 0
-  Range: 2
-  HpMax: 0
-  HpCurrent: 0
-  PaMax: 20
-  PaCurrent: 0
+  Atk: 25
+  Def: 25
+  Range: 1
+  HpMax: 100
+  HpCurrent: 100
+  PaMax: 5
+  PaCurrent: 5
