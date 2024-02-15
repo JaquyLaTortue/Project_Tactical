@@ -36,17 +36,20 @@ public class ClickedCase : MonoBehaviour
 
     public void ChangeColorOfWaypointToRed(MeshRenderer waypointToColor)
     {
-        waypointToColor.material = _red;
+        waypointToColor.gameObject.layer = 6;
+       // waypointToColor.material = _red;
     }
 
     public void ChangeColorOfWaypointToBlue(MeshRenderer waypointToColor)
     {
-        waypointToColor.material = _blue;
+        waypointToColor.gameObject.layer = 7;
+       // waypointToColor.material = _blue;
     }
 
     public void ChangeColorOfWaypointToOld(MeshRenderer waypointToColor)
     {
-        waypointToColor.material = _old;
+        waypointToColor.gameObject.layer = 0;
+        //waypointToColor.material = _old;
     }
 
     IEnumerator DelayToStopError()
