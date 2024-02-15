@@ -9,6 +9,7 @@ public class WayPoint : MonoBehaviour
     public WayPoint parent;
     public int caseCost;
     public MeshRenderer meshRenderer;
+    public Entity entity;
 
     private void Awake()
     {
