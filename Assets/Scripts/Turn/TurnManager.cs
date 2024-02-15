@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,9 +21,11 @@ public class TurnManager : MonoBehaviour
     public bool PlayerTurn { get; private set; } = true;
 
     [field: SerializeField]
-    public CharacterMain Character { get; private set; }
+    public CharacterMain Character { get; set; }
 
-    public MonsterMain Target { get; private set; }
+    public MonsterMain Target { get; set; }
+
+    public CharacterMain Ally { get; private set; }
 
     public WayPoint Destination { get; private set; }
 
@@ -35,6 +38,8 @@ public class TurnManager : MonoBehaviour
 
     public bool DestinationSelection { get; private set; } = false;
 
+    public bool AllySelection { get; private set; } = false;
+
     public void InitManager(ManagerMain MM)
     {
         MM.turnManager = this;
@@ -44,6 +49,8 @@ public class TurnManager : MonoBehaviour
     public void CharacterSelectionPhase()
     {
         CharacterSelection = true;
+        EndTargetSelectionPhase();
+        EndDestinationSelectionPhase();
     }
 
     public void EndCharacterSelectionPhase()
@@ -54,6 +61,8 @@ public class TurnManager : MonoBehaviour
     public void TargetSelectionPhase()
     {
         TargetSelection = true;
+        EndCharacterSelectionPhase();
+        EndDestinationSelectionPhase();
     }
 
     public void EndTargetSelectionPhase()
@@ -64,11 +73,23 @@ public class TurnManager : MonoBehaviour
     public void DestinationSelectionPhase()
     {
         DestinationSelection = true;
+        EndCharacterSelectionPhase();
+        EndTargetSelectionPhase();
     }
 
     public void EndDestinationSelectionPhase()
     {
         DestinationSelection = false;
+    }
+
+    public void AllySelectionPhase()
+    {
+        AllySelection = true;
+    }
+
+    public void EndAllySelectionPhase()
+    {
+        AllySelection = false;
     }
 
     public void SetCharacter(GameObject character)
@@ -141,6 +162,12 @@ public class TurnManager : MonoBehaviour
         Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
         OnEnnemySelected?.Invoke(Target);
         TargetSelection = false;
+    }
+
+    public void SetAlly(GameObject ally)
+    {
+        Ally = ally.GetComponent<CharacterMain>();
+        AllySelection = false;
     }
 
     public void SetDestination(WayPoint targetPosition)

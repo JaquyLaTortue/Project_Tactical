@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Permet les refenrences de base pour les monstres.
+/// </summary>
 public class MonsterMain : Entity
 {
     [field: SerializeField]
@@ -11,9 +14,13 @@ public class MonsterMain : Entity
     [field: SerializeField]
     public MonsterBase MonsterBase { get; private set; }
 
-    public void InitMonster(MapMain map)
+    private ManagerMain _managerMain;
+
+    public void InitMonster(ManagerMain managerMain)
     {
-        MonsterCapacity._mapMain = map;
+        _managerMain = managerMain;
+        MonsterCapacity._mapMain = _managerMain.mapMain;
+        EntitiesManager = _managerMain.entitiesManager;
     }
 
     private void Awake()
@@ -30,5 +37,6 @@ public class MonsterMain : Entity
     private void OnDestroy()
     {
         EntitiesManager.allMonsters.Remove(this);
+        _managerMain.turnManager.Target = null;
     }
 }

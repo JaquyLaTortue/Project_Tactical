@@ -3,9 +3,13 @@ using UnityEngine.InputSystem;
 
 public class Select : MonoBehaviour
 {
-    [SerializeField] private TurnManager _turnManager;
+    [SerializeField]
+    private TurnManager _turnManager;
+    [SerializeField]
+    private LayerMask MapMask;
     private Ray _ray;
     private RaycastHit _hit;
+
 
     public void OnInput(InputAction.CallbackContext ctx)
     {
@@ -22,6 +26,10 @@ public class Select : MonoBehaviour
             else if (_turnManager.DestinationSelection)
             {
                 SelectDestination();
+            }
+            else if (_turnManager.AllySelection)
+            {
+
             }
 
             return;
@@ -117,7 +125,7 @@ public class Select : MonoBehaviour
         Debug.Log("Selecting Destination");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit))
+        if (Physics.Raycast(_ray, out _hit, 100, MapMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (current.CompareTag("Map"))
@@ -136,6 +144,36 @@ public class Select : MonoBehaviour
                         }
 
                         _turnManager.EndDestinationSelectionPhase();
+                        break;
+                }
+            }
+        }
+    }
+
+    public void SelectAlly()
+    {
+        Debug.Log("Selecting Ally");
+        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(_ray, out _hit))
+        {
+            GameObject current = _hit.transform.gameObject;
+            if (current.CompareTag("Character"))
+            {
+                switch (_turnManager.Ally)
+                {
+                    case null:
+                        Debug.Log("Setting ally");
+                        _turnManager.SetAlly(current);
+                        break;
+                    case not null:
+                        if (_turnManager.Ally.gameObject != current)
+                        {
+                            Debug.Log("Changing ally");
+                            _turnManager.SetAlly(current);
+                        }
+
+                        _turnManager.EndAllySelectionPhase();
                         break;
                 }
             }
