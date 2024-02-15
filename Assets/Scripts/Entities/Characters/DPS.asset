@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atk: 30
   Def: 30
+  Range: 1
   HpMax: 100
   HpCurrent: 100
   PaMax: 5

@@ -75,6 +75,7 @@ public class MapMain : MonoBehaviour
         Debug.Log(start.name);
         WayPoint end = config.allWayPoints[Random.Range(0, config.allWayPoints.Count)];
         Debug.Log(end.name);*/
+        wayPointStart = start;
         List<WayPoint> aStartWaypoint = new List<WayPoint>();
         aStartWaypoint = aStar.GiveThePath(start, end);
         _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.showPath);

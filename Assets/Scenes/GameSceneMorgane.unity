@@ -256,7 +256,7 @@ PrefabInstance:
         type: 3}
       propertyPath: caseTransformParent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 680580403}
     - target: {fileID: 6968274519126772774, guid: 3d660544971745c468768192b05944fe,
         type: 3}
       propertyPath: _prefabCase.Array.size

@@ -20,6 +20,8 @@ public class MonsterCapacity : MonoBehaviour
     public bool HasAttacked = false;
     [HideInInspector]
     public bool HasMoved = false;
+    [HideInInspector]
+    public bool _hasSpecial = false;
 
     /// <summary>
     /// Permet de faire l' action du monstre en lui indiquant d'attaquer tout en lui enlevant des PA.
@@ -39,6 +41,7 @@ public class MonsterCapacity : MonoBehaviour
                 tmp.CharacterHealth.TakeDamage(_monsterMain.Atk);
                 this._monsterMain.PaCurrent--;
                 HasAttacked = true;
+                Special(target);
             }
             else
             {
@@ -61,7 +64,7 @@ public class MonsterCapacity : MonoBehaviour
         List<WayPoint> path = new List<WayPoint>();
         if (this._monsterMain.PaCurrent > 0 && destination != this._monsterMain.Position)
         {
-            if(destination.obstacle)
+            if (destination.obstacle)
             {
                 Debug.Log("Destination is an obstacle");
                 return;
@@ -101,6 +104,46 @@ public class MonsterCapacity : MonoBehaviour
     {
         this._monsterMain.Position = waypointToMoveTo;
         this.transform.position = waypointToMoveTo.transform.position;
+    }
+
+    public void Special(Entity target)
+    {
+        Debug.Log("Special");
+
+        if (_hasSpecial)
+        {
+            return;
+        }
+
+        if (_capacity.isShielding)
+        {
+            if (this._monsterMain.PaCurrent > 0)
+            {
+                _monsterMain.Def += _capacity.damage;
+                this._monsterMain.PaCurrent -= _capacity.cost;
+                _hasSpecial = true;
+            }
+            else
+            {
+                Debug.Log("Not enough PA");
+            }
+        }
+        else
+        {
+            if (target is MonsterMain tmp)
+            {
+                if (this._monsterMain.PaCurrent > 0)
+                {
+                    tmp.MonsterHealth.TakeDamage(_capacity.damage);
+                    this._monsterMain.PaCurrent -= _capacity.cost;
+                    _hasSpecial = true;
+                }
+                else
+                {
+                    Debug.Log("Not enough PA");
+                }
+            }
+        }
     }
 
     private void AttackAfterMove()
