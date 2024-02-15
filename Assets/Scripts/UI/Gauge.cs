@@ -6,8 +6,10 @@ using UnityEngine.TextCore.Text;
 
 public class Gauge : MonoBehaviour
 {
-    public float health = 75f;
-    public float maxHealth = 100f;
+    public CharacterMain _characterMain;
+
+    /*public float health = 75f;
+    public float maxHealth = 100f;*/
 
     public int _duration;
 
@@ -19,18 +21,18 @@ public class Gauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        health = Mathf.Clamp(health, 0f, maxHealth);
+        _characterMain.HpCurrent = Mathf.Clamp(_characterMain.HpCurrent, 0, _characterMain.HpMax);
     }
 
     public void DamageButton(int damageAmount)
     {
-        health -= damageAmount;
+        _characterMain.HpCurrent -= damageAmount;
         ChangeGauge();
     }
 
     public void ChangeGauge()
     {
-        float targetFillAmount = Mathf.InverseLerp(0, maxHealth, health);
+        float targetFillAmount = Mathf.InverseLerp(0, _characterMain.HpMax, _characterMain.HpCurrent);
 
         DOTween.Sequence()
             .Append(
