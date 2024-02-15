@@ -11,6 +11,7 @@ public class RangeBehaviour : MonsterBehaviour
     {
         _monsterMain.MonsterCapacity.HasAttacked = false;
         _monsterMain.MonsterCapacity.HasMoved = false;
+        _monsterMain.PaCurrent = _monsterMain.PaMax;
 
         int distance = 1000;
         List<WayPoint> path = new List<WayPoint>();

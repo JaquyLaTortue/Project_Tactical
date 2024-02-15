@@ -22,7 +22,6 @@ public class MonsterHealth : MonoBehaviour
 
     public void Die()
     {
-        this.transform.position = _monsterMain.Spawnpoint.transform.position;
-        this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
     }
 }

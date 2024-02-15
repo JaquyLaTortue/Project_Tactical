@@ -22,7 +22,6 @@ public class MonsterCapacity : MonoBehaviour
     {
         if (HasAttacked)
         {
-            Debug.Log("Already attacked");
             return;
         }
 
@@ -45,7 +44,6 @@ public class MonsterCapacity : MonoBehaviour
     {
         if (HasMoved)
         {
-            Debug.Log("Already moved");
             return;
         }
 
