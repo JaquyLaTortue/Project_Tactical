@@ -72,18 +72,54 @@ public class TurnManager : MonoBehaviour
 
     public void SetCharacter(GameObject character)
     {
+        string oldcharacter;
+        switch (Character)
+        {
+            case null:
+                oldcharacter = null;
+                break;
+            case not null:
+                Character.gameObject.layer = 0;
+                oldcharacter = Character.name;
+                break;
+        }
+
+        Character = character.GetComponent<CharacterMain>();
+        Character.gameObject.layer = 7;
+        managerMain.mapMain.wayPointStart = Character.Position;
+        Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
+        OnCharacterSelected?.Invoke(Character);
+        CharacterSelection = false;
+        DestinationSelection = true;
+    }
+
+    public void SetCharacter1(GameObject character)
+    {
         string oldcharacter = Character == null ? "null" : Character.name;
         Character = character.GetComponent<CharacterMain>();
         managerMain.mapMain.wayPointStart = Character.Position;
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
         CharacterSelection = false;
+        TargetSelection = true;
     }
 
     public void SetTarget(GameObject target)
     {
-        string oldtarget = Target == null ? "null" : Target.name;
+        string oldtarget;
+        switch (Target)
+        {
+            case null:
+                oldtarget = null;
+                break;
+            case not null:
+                oldtarget = Target.name;
+                Target.gameObject.layer = 0;
+                break;
+        }
+
         Target = target.GetComponent<MonsterMain>();
+        Target.gameObject.layer = 6;
         Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
         OnEnnemySelected?.Invoke(Target);
         TargetSelection = false;

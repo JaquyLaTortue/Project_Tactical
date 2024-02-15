@@ -9,26 +9,34 @@ public class HpCauge : MonoBehaviour
     public Image _healthImage;
     public Image _healthImageFront;
     [SerializeField]
-    private float _duration;
+    public float _duration;
+    public int a;
+    public CharacterBase _character;
 
-    CharacterMain _character;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float h = 75;
+    public float v = 100;
 
-    // Update is called once per frame
     void Update()
     {
-        _healthImage.fillAmount = _character.HpCurrent / _character.HpMax;
+
+        /* _healthImage.fillAmount = h / v;
+         Debug.Log("aaaa");
+         OnHealthChanged();*/
+
     }
 
-
-    private void OnHealthChanged(int newHealth)
+    public void OnEnable()
     {
-        float targetFillAmount = Mathf.InverseLerp(0, _character.HpMax, newHealth);
+        //_character.HpCurrent += OnHealthChanged;
+
+        /*_character.HpCurrent -= a;
+        Debug.Log("zzz");*/
+    }
+
+    /*private void OnHealthChanged()
+    {
+       float targetFillAmount = Mathf.InverseLerp(0, _character.HpMax, _character.HpCurrent);
 
         DOTween.Sequence()
             .Append(
@@ -40,5 +48,10 @@ public class HpCauge : MonoBehaviour
                 _healthImage.DOFillAmount(targetFillAmount, _duration)
                     .SetEase(Ease.OutQuad)
             );
+    }*/
+
+    public void truc(int dam)
+    {
+        h -= dam;
     }
 }

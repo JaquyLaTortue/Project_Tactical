@@ -31,7 +31,7 @@ public class EntitiesManager : MonoBehaviour
         foreach (GameObject obj in charactersPrefabs)
         {
             GameObject newObj = Instantiate(obj);
-            CharacterMain newCharacter = newObj.GetComponent<CharacterMain>();
+            CharacterMain newCharacter = newObj.GetComponentInChildren<CharacterMain>();
             newCharacter.InitCharacter(managerMain.mapMain);
             allCharacters.Add(newCharacter);
         }
@@ -52,9 +52,9 @@ public class EntitiesManager : MonoBehaviour
         foreach (GameObject obj in monstersPrefabs)
         {
             GameObject newObj = Instantiate(obj);
-            MonsterMain newMonster = newObj.GetComponent<MonsterMain>();
+            MonsterMain newMonster = newObj.GetComponentInChildren<MonsterMain>();
             newMonster.InitMonster(managerMain.mapMain);
-            MonsterBehaviour monsterBehaviour = newObj.GetComponent<MonsterBehaviour>();
+            MonsterBehaviour monsterBehaviour = newObj.GetComponentInChildren<MonsterBehaviour>();
             monsterBehaviour.InitBehaviour(managerMain);
             allMonsters.Add(newMonster);
         }

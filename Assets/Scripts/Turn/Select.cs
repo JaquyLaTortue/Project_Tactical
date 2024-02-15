@@ -66,9 +66,9 @@ public class Select : MonoBehaviour
                     _turnManager.SetCharacter(current);
                     break;
                 case not null:
-                    Debug.Log("Changing character");
                     if (_turnManager.Character.gameObject != current)
                     {
+                        Debug.Log("Changing character");
                         _turnManager.SetCharacter(current);
                     }
 
@@ -137,6 +137,30 @@ public class Select : MonoBehaviour
                         _turnManager.EndDestinationSelectionPhase();
                         break;
                 }
+            }
+
+
+            if (!current.CompareTag("Ennemy"))
+            {
+                Debug.Log("Not an ennemy");
+                return;
+            }
+
+            switch (_turnManager.Target)
+            {
+                case null:
+                    Debug.Log("Setting target");
+                    _turnManager.SetTarget(current);
+                    break;
+                case not null:
+                    Debug.Log("Changing target");
+                    if (_turnManager.Target.gameObject != current)
+                    {
+                        _turnManager.SetTarget(current);
+                    }
+
+                    _turnManager.EndTargetSelectionPhase();
+                    break;
             }
         }
     }
