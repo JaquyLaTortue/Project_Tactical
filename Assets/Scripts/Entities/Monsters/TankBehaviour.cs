@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 public class TankBehaviour : MonsterBehaviour
 {
@@ -19,7 +19,7 @@ public class TankBehaviour : MonsterBehaviour
         List<WayPoint> path = new List<WayPoint>();
         for (int i = 0; i < _entitiesManager.allCharacters.Count; i++)
         {
-            path = _monsterMain.MonsterCapacity._mapMain.aStar.GiveThePath(_monsterMain.Position, _entitiesManager.allCharacters[i].Position);
+            path = _monsterMain.MonsterCapacity._mapMain.UseAStar(_monsterMain.Position, _entitiesManager.allCharacters[i].Position);
             if (distance < path.Count)
             {
                 distance = path.Count;
