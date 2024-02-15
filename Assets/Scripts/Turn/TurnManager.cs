@@ -43,10 +43,10 @@ public class TurnManager : MonoBehaviour
 
     public bool AllySelection { get; private set; } = false;
 
-    public void InitManager(ManagerMain MM)
+    public void InitManager(ManagerMain mM)
     {
-        MM.turnManager = this;
-        ManagerMain = MM;
+        mM.turnManager = this;
+        ManagerMain = mM;
     }
 
     public void CharacterSelectionToMovePhase()
@@ -242,8 +242,9 @@ public class TurnManager : MonoBehaviour
         Character = null;
         Target = null;
         Destination = null;
+        Ally = null;
 
-        _turnText.text = "";
+        _turnText.text = string.Empty;
     }
 
     public void EndTurn()

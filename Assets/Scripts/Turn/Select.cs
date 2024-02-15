@@ -164,7 +164,6 @@ public class Select : MonoBehaviour
 
         if (Physics.Raycast(_ray, out _hit, 1000, mapMask))
         {
-            Debug.Log("map selection Hit something");
             GameObject current = _hit.transform.gameObject;
             if (current.CompareTag("Map"))
             {
@@ -175,9 +174,9 @@ public class Select : MonoBehaviour
                         _turnManager.SetDestination(current.GetComponent<WayPoint>());
                         break;
                     case not null:
-                        Debug.Log("Changing destination");
                         if (_turnManager.Destination.gameObject != current)
                         {
+                            Debug.Log("Changing destination");
                             _turnManager.SetDestination(current.GetComponent<WayPoint>());
                         }
 
@@ -193,7 +192,7 @@ public class Select : MonoBehaviour
         Debug.Log("Selecting Ally");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit))
+        if (Physics.Raycast(_ray, out _hit, 1000, mapMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (current.CompareTag("Character"))
