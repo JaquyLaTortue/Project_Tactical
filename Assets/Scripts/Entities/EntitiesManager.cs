@@ -42,7 +42,9 @@ public class EntitiesManager : MonoBehaviour
         foreach (CharacterMain chara in allCharacters)
         {
             int waypointRandom = Random.Range(0, wayPointsToSpawn.Count);
+            float spawnHighness = wayPointsToSpawn[waypointRandom].GetComponent<BoxCollider>().size.y / 2;
             chara.CharacterCapacity.ChangeWaypoint(wayPointsToSpawn[waypointRandom]);
+            chara.transform.position = new Vector3(chara.transform.position.x, chara.transform.position.y + spawnHighness, chara.transform.position.z);
             wayPointsToSpawn[waypointRandom].obstacle = true;
             wayPointsToSpawn[waypointRandom].entity = chara;
             wayPointsToSpawn.Remove(wayPointsToSpawn[waypointRandom]);
@@ -64,7 +66,9 @@ public class EntitiesManager : MonoBehaviour
         foreach (MonsterMain monster in allMonsters)
         {
             int waypointRandom = Random.Range(0, wayPointsToSpawn.Count);
+            float spawnHighness = wayPointsToSpawn[waypointRandom].GetComponent<BoxCollider>().size.y / 2;
             monster.MonsterCapacity.ChangeWaypoint(wayPointsToSpawn[waypointRandom]);
+            monster.transform.position = new Vector3(monster.transform.position.x, monster.transform.position.y + spawnHighness, monster.transform.position.z);
             wayPointsToSpawn[waypointRandom].obstacle = true;
             wayPointsToSpawn[waypointRandom].entity = monster;
             wayPointsToSpawn.Remove(wayPointsToSpawn[waypointRandom]);

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ClickedCase : MonoBehaviour
 {
@@ -8,7 +7,6 @@ public class ClickedCase : MonoBehaviour
     public void Init(MapMain mp)
     {
         _mapMain = mp;
-        StartCoroutine(DelayToStopError());
     }
 
     [SerializeField]
@@ -19,6 +17,7 @@ public class ClickedCase : MonoBehaviour
 
     [SerializeField]
     private Material _old;
+
     /// <summary>
     /// Cette fonction ne sert que pour les tests de début de projet, on est sensé avoir un input général qui n'est n'inclus directement MapMain.
     /// </summary>
@@ -30,7 +29,6 @@ public class ClickedCase : MonoBehaviour
         {
             ChangeColorOfWaypointToRed(hit.collider.GetComponent<WayPoint>().showPath);
             _mapMain.Test(hit.collider.GetComponent<WayPoint>());
-            //Debug.Log(_hit.collider.gameObject.name);
         }
     }
 
@@ -40,7 +38,6 @@ public class ClickedCase : MonoBehaviour
         alpha.a = 1;
         showPath.color = alpha;
         showPath.color = Color.red;
-       // waypointToColor.material = _red;
     }
 
     public void ChangeColorOfWaypointToBlue(SpriteRenderer showPath)
@@ -49,7 +46,6 @@ public class ClickedCase : MonoBehaviour
         alpha.a = 1;
         showPath.color = alpha;
         showPath.color = Color.blue;
-        // waypointToColor.material = _blue;
     }
 
     public void ChangeColorOfWaypointToOld(SpriteRenderer showPath)
@@ -57,12 +53,5 @@ public class ClickedCase : MonoBehaviour
         Color alpha = showPath.color;
         alpha.a = 0;
         showPath.color = alpha;
-        //waypointToColor.material = _old;
-    }
-
-    IEnumerator DelayToStopError()
-    {
-        yield return new WaitForSeconds(0.1f);
-        ChangeColorOfWaypointToRed(_mapMain.wayPointStart.showPath);
     }
 }
