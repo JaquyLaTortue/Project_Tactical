@@ -22,11 +22,16 @@ public class CharacterMain : Entity
         EntitiesManager = ManagerMain.entitiesManager;
         Spawnpoint = Position;
     }
+
     public void InitCharacter(MapMain map, StatPlayer stat)
     {
         CharacterCapacity._map = map;
         stat.InitUI(this);
-        
+    }
+
+    public void GetStat(StatPlayer stat)
+    {
+        stat._characterMain = this;
     }
 
     private void Awake()
@@ -45,9 +50,4 @@ public class CharacterMain : Entity
         EntitiesManager.allCharacters.Remove(this);
         ManagerMain.turnManager.Character = null;
     }
-    public void GetStat(StatPlayer stat)
-    {
-        stat._characterMain = this;
-    }
-    
 }
