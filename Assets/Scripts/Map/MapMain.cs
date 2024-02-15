@@ -79,10 +79,10 @@ public class MapMain : MonoBehaviour
         aStartWaypoint = aStar.GiveThePath(start, end);
         _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.meshRenderer);
         wayPointStart = aStartWaypoint[aStartWaypoint.Count - 1];
-        foreach (WayPoint wayPoint in aStartWaypoint)
-        {
-            _clickedCase.ChangeColorOfWaypointToRed(wayPoint.meshRenderer);
-        }
+        //foreach (WayPoint wayPoint in aStartWaypoint)
+        //{
+        //    _clickedCase.ChangeColorOfWaypointToRed(wayPoint.meshRenderer);
+        //}
 
         return aStartWaypoint;
     }

@@ -17,5 +17,5 @@ MonoBehaviour:
   Range: 2
   HpMax: 0
   HpCurrent: 0
-  PaMax: 0
+  PaMax: 15
   PaCurrent: 0

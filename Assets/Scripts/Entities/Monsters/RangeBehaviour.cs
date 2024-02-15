@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class RangeBehaviour : MonsterBehaviour
 {
@@ -17,7 +18,7 @@ public class RangeBehaviour : MonsterBehaviour
         List<WayPoint> path = new List<WayPoint>();
         for (int i = 0; i < _entitiesManager.allCharacters.Count; i++)
         {
-            path = _monsterMain.MonsterCapacity._mapMain.aStar.GiveThePath(_monsterMain.Position, _entitiesManager.allCharacters[i].Position);
+            path = _monsterMain.MonsterCapacity._mapMain.UseAStar(_monsterMain.Position, _entitiesManager.allCharacters[i].Position);
             if (distance > path.Count)
             {
                 distance = path.Count;
@@ -25,12 +26,14 @@ public class RangeBehaviour : MonsterBehaviour
             }
         }
 
+        Debug.Log(_monsterMain.PaCurrent);
         if (path.Count - 1 <= _monsterMain.Range)
         {
             _monsterMain.MonsterCapacity.Attack(_targetPlayer);
         }
         else
         {
+            Debug.Log("Move" + _targetPlayer);
             _monsterMain.MonsterCapacity.Move(_targetPlayer.Position);
         }
     }

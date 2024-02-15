@@ -48,18 +48,24 @@ public class MonsterCapacity : MonoBehaviour
         }
 
         List<WayPoint> path = new List<WayPoint>();
-        if (this._monsterMain.PaCurrent > 0)
+        if (this._monsterMain.PaCurrent > 0 && destination != this._monsterMain.Position)
         {
-            path = _mapMain.aStar.GiveThePath(this._monsterMain.Position, destination);
-            if (path.Count <= this._monsterMain.PaCurrent)
+            if(destination.obstacle)
+            {
+                Debug.Log("Destination is an obstacle");
+                return;
+            }
+
+            path = _mapMain.UseAStar(this._monsterMain.Position, destination);
+            if (path.Count <= this._monsterMain.PaCurrent && path.Count > 0)
             {
                 this._monsterMain.Position.obstacle = false;
                 for (int i = 0; i < path.Count; i++)
                 {
                     ChangeWaypoint(path[i]);
 
-                    this._monsterMain.Position = path[i];
-                    this.transform.position = path[i].transform.position;
+                    //this._monsterMain.Position = path[i];
+                    //this.transform.position = path[i].transform.position;
                     this._monsterMain.PaCurrent--;
                     if (i == path.Count - 1)
                     {
@@ -79,6 +85,7 @@ public class MonsterCapacity : MonoBehaviour
         else
         {
             Debug.Log("No more PA");
+            Debug.Log("Destination is the same as the current position");
         }
     }
 
