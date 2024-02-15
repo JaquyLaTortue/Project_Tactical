@@ -1202,6 +1202,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7145427241061444948}
+  - component: {fileID: -1334112075775589956}
+  - component: {fileID: 7339597641774567387}
+  - component: {fileID: 3887038342922171124}
+  - component: {fileID: 6750506886151191811}
   m_Layer: 0
   m_Name: The_Evil_Tank
   m_TagString: Ennemy
@@ -1223,52 +1227,16 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8194412134589235781}
-  - {fileID: 7379690022895623912}
   - {fileID: 332785983277792886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7064413111369326609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7379690022895623912}
-  - component: {fileID: 5991815878627201494}
-  - component: {fileID: 304466490621503385}
-  - component: {fileID: 1255049980526425748}
-  - component: {fileID: 3796743631220454560}
-  m_Layer: 0
-  m_Name: Script_Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7379690022895623912
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7064413111369326609}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7145427241061444948}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5991815878627201494
+--- !u!114 &-1334112075775589956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7064413111369326609}
+  m_GameObject: {fileID: 6214038596817421854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d93bad0aeee47e4ca0eb90995a52cc8, type: 3}
@@ -1276,53 +1244,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Position>k__BackingField: {fileID: 0}
   <Spawnpoint>k__BackingField: {fileID: 0}
-  <MonsterCapacity>k__BackingField: {fileID: 304466490621503385}
-  <MonsterHealth>k__BackingField: {fileID: 1255049980526425748}
+  <MonsterCapacity>k__BackingField: {fileID: 7339597641774567387}
+  <MonsterHealth>k__BackingField: {fileID: 3887038342922171124}
   <MonsterBase>k__BackingField: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1,
     type: 2}
---- !u!114 &304466490621503385
+--- !u!114 &7339597641774567387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7064413111369326609}
+  m_GameObject: {fileID: 6214038596817421854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0dbfe3192597b54396f748519d36fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterMain: {fileID: 5991815878627201494}
+  _monsterMain: {fileID: -1334112075775589956}
   _capacity: {fileID: 11400000, guid: 23a0f35e8d8792142a2d69a854b440ae, type: 2}
   _mapMain: {fileID: 0}
   HasAttacked: 0
   HasMoved: 0
---- !u!114 &1255049980526425748
+--- !u!114 &3887038342922171124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7064413111369326609}
+  m_GameObject: {fileID: 6214038596817421854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f3b0709deb88984b985d51c3a228e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterMain: {fileID: 5991815878627201494}
---- !u!114 &3796743631220454560
+  _monsterMain: {fileID: -1334112075775589956}
+--- !u!114 &6750506886151191811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7064413111369326609}
+  m_GameObject: {fileID: 6214038596817421854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e222c0d9e7f09e498ff309582190983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterMain: {fileID: 5991815878627201494}
+  _monsterMain: {fileID: -1334112075775589956}
   _targetPlayer: {fileID: 0}
   _entitiesManager: {fileID: 0}
   _turnManager: {fileID: 0}
