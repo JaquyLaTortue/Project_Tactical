@@ -1098,7 +1098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerMain: {fileID: 0}
   <Character>k__BackingField: {fileID: 0}
-  <InputManager>k__BackingField: {fileID: 0}
+  <InputManager>k__BackingField: {fileID: 769557679}
 --- !u!114 &901211731
 MonoBehaviour:
   m_ObjectHideFlags: 0
