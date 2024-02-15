@@ -464,7 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26aeefa3b684994280d1240e708b20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managerMain: {fileID: 0}
   <Character>k__BackingField: {fileID: 0}
   <InputManager>k__BackingField: {fileID: 0}
 --- !u!114 &150339001
@@ -1123,7 +1122,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 150339001}
         m_TargetAssemblyTypeName: Select, Assembly-CSharp
         m_MethodName: OnInput
         m_Mode: 0
@@ -1157,6 +1156,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5121bb74-0839-45da-812a-5ed1421058b5
     m_ActionName: Select/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dd524718-41f1-4afe-9c55-198ddf5760e3
+    m_ActionName: Game/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a7fce17-a969-4d84-ba6f-76708990addd
+    m_ActionName: Pause/Resume[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Game
