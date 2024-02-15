@@ -28,11 +28,11 @@ public class EntitiesManager : MonoBehaviour
     private void CreateEntities()
     {
         // Chara part.
-        foreach (GameObject obj in charactersPrefabs)
+        for (int i = 0; i < charactersPrefabs.Count; i++)
         {
-            GameObject newObj = Instantiate(obj);
+            GameObject newObj = Instantiate(charactersPrefabs[i]);
             CharacterMain newCharacter = newObj.GetComponent<CharacterMain>();
-            newCharacter.InitCharacter(managerMain);
+            newCharacter.InitCharacter(managerMain.mapMain, managerMain.uiManager._list[i]);
             allCharacters.Add(newCharacter);
         }
 
