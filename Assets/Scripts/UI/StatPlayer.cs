@@ -38,6 +38,7 @@ public class StatPlayer : MonoBehaviour
 
     private void SetStat()
     {
+
         _atk.text = "" + _characterMain.Atk;
         _def.text = "" + _characterMain.Def;
         _pa.text = "" + _characterMain.PaCurrent;
