@@ -1132,7 +1132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26aeefa3b684994280d1240e708b20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managerMain: {fileID: 0}
   <Character>k__BackingField: {fileID: 0}
   <InputManager>k__BackingField: {fileID: 0}
 --- !u!114 &901211731
@@ -1324,6 +1323,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 675539767499005060, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: monstersPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5928453962258033453, guid: 3b1c4182070fa974f807fde41fe22241,
+        type: 3}
+    - target: {fileID: 675539767499005060, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: monstersPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 179847714532225029, guid: 8df3acbd67cf2e74784d18b28ad53596,
+        type: 3}
+    - target: {fileID: 675539767499005060, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: monstersPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6214038596817421854, guid: 8895d57c8eef1cd4495e53da9a65293f,
+        type: 3}
+    - target: {fileID: 675539767499005060, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: charactersPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1853756638270477618, guid: ea0af009999677849aa280a576042f37,
+        type: 3}
+    - target: {fileID: 675539767499005060, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: charactersPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6625952247603245439, guid: 5f27eba1dbdb53f4b85163682dfea984,
+        type: 3}
+    - target: {fileID: 675539767499005060, guid: 3d660544971745c468768192b05944fe,
+        type: 3}
+      propertyPath: charactersPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2976458565757551499, guid: c7373be3aa9f447488428c354c0bcea3,
+        type: 3}
     - target: {fileID: 1119768445240343667, guid: 3d660544971745c468768192b05944fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1392,12 +1427,12 @@ PrefabInstance:
     - target: {fileID: 6086932007936883147, guid: 3d660544971745c468768192b05944fe,
         type: 3}
       propertyPath: _widthCase
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6086932007936883147, guid: 3d660544971745c468768192b05944fe,
         type: 3}
       propertyPath: _lengthCase
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6968274519126772774, guid: 3d660544971745c468768192b05944fe,
         type: 3}

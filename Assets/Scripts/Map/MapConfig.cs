@@ -4,7 +4,7 @@ using UnityEngine;
 public class MapConfig : MonoBehaviour
 {
 
-    [SerializeField, Range(0, 10)]
+    [SerializeField, Range(4, 10)]
     private int _lengthCase;
 
     public int LengthCase
@@ -12,7 +12,7 @@ public class MapConfig : MonoBehaviour
         get { return _lengthCase; }
     }
 
-    [SerializeField, Range(0, 10)]
+    [SerializeField, Range(4, 10)]
     private int _widthCase;
 
     public List<WayPoint> allWayPoints = new List<WayPoint>();

@@ -24,7 +24,7 @@ public class InitMap : MonoBehaviour
         Camera mainCam = Camera.main;
         float pourcentY = mainCam.transform.rotation.eulerAngles.x / 90;
         float pourcentZ = 1 - pourcentY;
-        mainCam.transform.position = new Vector3((totalSizeLength / 2) + 0.5f, (lengthCase + widthCase) * pourcentY * 2, ((lengthCase + widthCase) * -pourcentZ) / 3);
+        mainCam.transform.position = new Vector3((totalSizeLength / 2) + 1, (lengthCase + widthCase) * pourcentY * 2, ((lengthCase + widthCase) * -pourcentZ));
         List<WayPoint> map = new List<WayPoint>();
         for (int i = 0; i < lengthCase; i++)
         {
