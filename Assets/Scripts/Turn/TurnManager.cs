@@ -86,7 +86,11 @@ public class TurnManager : MonoBehaviour
         }
 
         Character = character.GetComponent<CharacterMain>();
-        Character.gameObject.layer = 7;
+        foreach (Transform child in character.transform)
+        {
+            child.gameObject.layer = 7;
+        }
+
         ManagerMain.mapMain.wayPointStart = Character.Position;
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
@@ -120,7 +124,11 @@ public class TurnManager : MonoBehaviour
         }
 
         Target = target.GetComponent<MonsterMain>();
-        Target.gameObject.layer = 6;
+        foreach (Transform child in target.transform)
+        {
+            child.gameObject.layer = 6;
+        }
+
         Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
         OnEnnemySelected?.Invoke(Target);
         TargetSelection = false;
