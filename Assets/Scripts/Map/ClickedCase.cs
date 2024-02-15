@@ -28,33 +28,41 @@ public class ClickedCase : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 10000))
         {
-            ChangeColorOfWaypointToRed(hit.collider.GetComponent<MeshRenderer>());
+            ChangeColorOfWaypointToRed(hit.collider.GetComponent<WayPoint>().showPath);
             _mapMain.Test(hit.collider.GetComponent<WayPoint>());
             //Debug.Log(_hit.collider.gameObject.name);
         }
     }
 
-    public void ChangeColorOfWaypointToRed(MeshRenderer waypointToColor)
+    public void ChangeColorOfWaypointToRed(SpriteRenderer showPath)
     {
-        waypointToColor.gameObject.layer = 6;
+        Color alpha = showPath.color;
+        alpha.a = 1;
+        showPath.color = alpha;
+        showPath.color = Color.red;
        // waypointToColor.material = _red;
     }
 
-    public void ChangeColorOfWaypointToBlue(MeshRenderer waypointToColor)
+    public void ChangeColorOfWaypointToBlue(SpriteRenderer showPath)
     {
-        waypointToColor.gameObject.layer = 7;
-       // waypointToColor.material = _blue;
+        Color alpha = showPath.color;
+        alpha.a = 1;
+        showPath.color = alpha;
+        showPath.color = Color.blue;
+        // waypointToColor.material = _blue;
     }
 
-    public void ChangeColorOfWaypointToOld(MeshRenderer waypointToColor)
+    public void ChangeColorOfWaypointToOld(SpriteRenderer showPath)
     {
-        waypointToColor.gameObject.layer = 0;
+        Color alpha = showPath.color;
+        alpha.a = 0;
+        showPath.color = alpha;
         //waypointToColor.material = _old;
     }
 
     IEnumerator DelayToStopError()
     {
         yield return new WaitForSeconds(0.1f);
-        ChangeColorOfWaypointToRed(_mapMain.wayPointStart.GetComponent<MeshRenderer>());
+        ChangeColorOfWaypointToRed(_mapMain.wayPointStart.showPath);
     }
 }

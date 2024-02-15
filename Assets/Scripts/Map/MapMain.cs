@@ -49,16 +49,16 @@ public class MapMain : MonoBehaviour
         {
             List<WayPoint> aStartWaypoint = new List<WayPoint>();
             aStartWaypoint = aStar.GiveThePath(wayPointStart, end);
-            _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.meshRenderer);
+            _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.showPath);
             for (int i = 0; i < aStartWaypoint.Count; i++)
             {
                 if (i > PAMax)
                 {
-                    _clickedCase.ChangeColorOfWaypointToRed(aStartWaypoint[i].meshRenderer);
+                    _clickedCase.ChangeColorOfWaypointToRed(aStartWaypoint[i].showPath);
                 }
                 else
                 {
-                    _clickedCase.ChangeColorOfWaypointToBlue(aStartWaypoint[i].meshRenderer);
+                    _clickedCase.ChangeColorOfWaypointToBlue(aStartWaypoint[i].showPath);
                 }
             }
 
@@ -77,7 +77,7 @@ public class MapMain : MonoBehaviour
         Debug.Log(end.name);*/
         List<WayPoint> aStartWaypoint = new List<WayPoint>();
         aStartWaypoint = aStar.GiveThePath(start, end);
-        _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.meshRenderer);
+        _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.showPath);
         wayPointStart = aStartWaypoint[aStartWaypoint.Count - 1];
         //foreach (WayPoint wayPoint in aStartWaypoint)
         //{

@@ -30,6 +30,7 @@ public class Select : MonoBehaviour
 
     public void OnMoveTheMouse()
     {
+        Debug.Log("_turnManager.DestinationSelection " + _turnManager.DestinationSelection);
         if (_turnManager.DestinationSelection)
         {
             _ray = Camera.main.ScreenPointToRay(Input.mousePosition);

@@ -10,10 +10,14 @@ public class WayPoint : MonoBehaviour
     public int caseCost;
     public MeshRenderer meshRenderer;
     public Entity entity;
+    public SpriteRenderer showPath;
 
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        Color alpha = showPath.color;
+        alpha.a = 0;
+        showPath.color = alpha;
     }
 
     private void OnMouseOver()

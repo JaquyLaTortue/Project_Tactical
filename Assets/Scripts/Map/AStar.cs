@@ -43,7 +43,7 @@ public class AStar : MonoBehaviour
         {
             path.parent = null;
             path.caseCost = 0;
-            _map._clickedCase.ChangeColorOfWaypointToOld(path.GetComponent<MeshRenderer>());
+            _map._clickedCase.ChangeColorOfWaypointToOld(path.showPath);
         }
 
         _path.Clear();
