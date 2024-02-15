@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 7339597641774567387}
   - component: {fileID: 3887038342922171124}
   - component: {fileID: 6750506886151191811}
+  - component: {fileID: 6704882442304772839}
   m_Layer: 0
   m_Name: The_Evil_Tank
   m_TagString: Ennemy
@@ -1007,7 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Position>k__BackingField: {fileID: 0}
   <Spawnpoint>k__BackingField: {fileID: 0}
-  entitiesManager: {fileID: 0}
+  EntitiesManager: {fileID: 0}
   <MonsterCapacity>k__BackingField: {fileID: 7339597641774567387}
   <MonsterHealth>k__BackingField: {fileID: 3887038342922171124}
   <MonsterBase>k__BackingField: {fileID: 11400000, guid: 757ae99617dabaf43ace3156911fe8d1,
@@ -1058,6 +1059,27 @@ MonoBehaviour:
   _targetPlayer: {fileID: 0}
   _entitiesManager: {fileID: 0}
   _turnManager: {fileID: 0}
+--- !u!65 &6704882442304772839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214038596817421854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 5, z: 4}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &7335022121247012749
 GameObject:
   m_ObjectHideFlags: 0
