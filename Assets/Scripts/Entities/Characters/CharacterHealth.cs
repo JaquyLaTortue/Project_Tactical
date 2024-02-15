@@ -23,8 +23,7 @@ public class CharacterHealth : MonoBehaviour
     public void Die()
     {
         Debug.Log("Die");
-        this.transform.position = _characterMain.Spawnpoint.transform.position;     // TP to spawn point
-        this.gameObject.SetActive(false);                                           // Desactivate the character
+        Destroy(gameObject);
     }
 
     public void HealHealth(int heal)

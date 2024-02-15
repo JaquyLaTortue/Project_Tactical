@@ -990,6 +990,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7449536011013999799}
+  - component: {fileID: 8498595417845929414}
+  - component: {fileID: 1580781739822489139}
+  - component: {fileID: 8186027358309664404}
   m_Layer: 0
   m_Name: The_Heal_Mecha
   m_TagString: Character
@@ -1011,10 +1014,55 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8485721870245638383}
-  - {fileID: 932848825787263500}
   - {fileID: 6122250332786019649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8498595417845929414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976458565757551499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c31bbbbbf31e4d448e6f6a62b56af0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Position>k__BackingField: {fileID: 0}
+  <Spawnpoint>k__BackingField: {fileID: 0}
+  <CharacterCapacity>k__BackingField: {fileID: 1580781739822489139}
+  <CharacterHealth>k__BackingField: {fileID: 8186027358309664404}
+  <CharacterBase>k__BackingField: {fileID: 11400000, guid: a5a3c1b0297d32543b9da8e147957c77,
+    type: 2}
+--- !u!114 &1580781739822489139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976458565757551499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e5d9f2f574bbb42a564584b22f7df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterMain: {fileID: 8498595417845929414}
+  _capacity: {fileID: 11400000, guid: 7cf2f65ff18cb514ab0d7c7caba9b5b3, type: 2}
+  _map: {fileID: 0}
+--- !u!114 &8186027358309664404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976458565757551499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3695df7ef95095f48b8a50c35809b9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterMain: {fileID: 8498595417845929414}
 --- !u!1 &2978274778821589742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,86 +1693,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &4780121183835330494
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 932848825787263500}
-  - component: {fileID: 8872272511831585514}
-  - component: {fileID: 533780021740303409}
-  - component: {fileID: 8574836072920656813}
-  m_Layer: 0
-  m_Name: ScriptHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &932848825787263500
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780121183835330494}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7449536011013999799}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8872272511831585514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780121183835330494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c31bbbbbf31e4d448e6f6a62b56af0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Position>k__BackingField: {fileID: 0}
-  <Spawnpoint>k__BackingField: {fileID: 0}
-  <CharacterCapacity>k__BackingField: {fileID: 533780021740303409}
-  <CharacterHealth>k__BackingField: {fileID: 8574836072920656813}
-  <CharacterBase>k__BackingField: {fileID: 11400000, guid: a5a3c1b0297d32543b9da8e147957c77,
-    type: 2}
---- !u!114 &533780021740303409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780121183835330494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e5d9f2f574bbb42a564584b22f7df0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterMain: {fileID: 8872272511831585514}
-  _capacity: {fileID: 11400000, guid: 7cf2f65ff18cb514ab0d7c7caba9b5b3, type: 2}
-  _map: {fileID: 0}
---- !u!114 &8574836072920656813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780121183835330494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3695df7ef95095f48b8a50c35809b9d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterMain: {fileID: 8872272511831585514}
 --- !u!1 &5450693231380049243
 GameObject:
   m_ObjectHideFlags: 0
