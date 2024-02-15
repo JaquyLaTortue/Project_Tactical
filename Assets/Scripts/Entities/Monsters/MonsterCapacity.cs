@@ -22,7 +22,6 @@ public class MonsterCapacity : MonoBehaviour
     {
         if (HasAttacked)
         {
-            Debug.Log("Already attacked");
             return;
         }
 
@@ -45,7 +44,6 @@ public class MonsterCapacity : MonoBehaviour
     {
         if (HasMoved)
         {
-            Debug.Log("Already moved");
             return;
         }
 
@@ -66,6 +64,7 @@ public class MonsterCapacity : MonoBehaviour
                     if (i == path.Count - 1)
                     {
                         path[i].obstacle = true;
+                        path[i].entity = _monsterMain;
                     }
                 }
             }

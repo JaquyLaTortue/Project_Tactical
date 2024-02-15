@@ -31,7 +31,7 @@ public class EntitiesManager : MonoBehaviour
         foreach (GameObject obj in charactersPrefabs)
         {
             GameObject newObj = Instantiate(obj);
-            CharacterMain newCharacter = newObj.GetComponentInChildren<CharacterMain>();
+            CharacterMain newCharacter = newObj.GetComponent<CharacterMain>();
             newCharacter.InitCharacter(managerMain.mapMain);
             allCharacters.Add(newCharacter);
         }
@@ -44,6 +44,7 @@ public class EntitiesManager : MonoBehaviour
             int waypointRandom = Random.Range(0, wayPointsToSpawn.Count);
             chara.CharacterCapacity.ChangeWaypoint(wayPointsToSpawn[waypointRandom]);
             wayPointsToSpawn[waypointRandom].obstacle = true;
+            wayPointsToSpawn[waypointRandom].entity = chara;
             wayPointsToSpawn.Remove(wayPointsToSpawn[waypointRandom]);
         }
 
@@ -51,9 +52,9 @@ public class EntitiesManager : MonoBehaviour
         foreach (GameObject obj in monstersPrefabs)
         {
             GameObject newObj = Instantiate(obj);
-            MonsterMain newMonster = newObj.GetComponentInChildren<MonsterMain>();
+            MonsterMain newMonster = newObj.GetComponent<MonsterMain>();
             newMonster.InitMonster(managerMain.mapMain);
-            MonsterBehaviour monsterBehaviour = newObj.GetComponentInChildren<MonsterBehaviour>();
+            MonsterBehaviour monsterBehaviour = newObj.GetComponent<MonsterBehaviour>();
             monsterBehaviour.InitBehaviour(managerMain);
             allMonsters.Add(newMonster);
         }
@@ -65,6 +66,7 @@ public class EntitiesManager : MonoBehaviour
             int waypointRandom = Random.Range(0, wayPointsToSpawn.Count);
             monster.MonsterCapacity.ChangeWaypoint(wayPointsToSpawn[waypointRandom]);
             wayPointsToSpawn[waypointRandom].obstacle = true;
+            wayPointsToSpawn[waypointRandom].entity = monster;
             wayPointsToSpawn.Remove(wayPointsToSpawn[waypointRandom]);
         }
     }

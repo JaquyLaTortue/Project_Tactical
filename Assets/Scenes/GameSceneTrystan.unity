@@ -744,7 +744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 769557678}
-  - component: {fileID: 769557677}
+  - component: {fileID: 769557679}
   m_Layer: 0
   m_Name: Turn_input_holder
   m_TagString: Untagged
@@ -752,73 +752,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &769557677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769557676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 3b53a42a808f9494083746a78792d5f7,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 901211731}
-        m_TargetAssemblyTypeName: Select, Assembly-CSharp
-        m_MethodName: OnInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 5a01a2c0-6a67-4e14-a481-6dfac6286b60
-    m_ActionName: Select/Select[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: aec8ac99-97e0-4afc-947f-e3f3dcc14a1b
-    m_ActionName: Astar/ClickOnCase[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 901211731}
-        m_TargetAssemblyTypeName: Select, Assembly-CSharp
-        m_MethodName: OnMoveTheMouse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 5121bb74-0839-45da-812a-5ed1421058b5
-    m_ActionName: Select/New action
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: Select
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!4 &769557678
 Transform:
   m_ObjectHideFlags: 0
@@ -834,6 +767,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769557679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769557676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 3b53a42a808f9494083746a78792d5f7,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &801791008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerMain: {fileID: 0}
   <Character>k__BackingField: {fileID: 0}
-  <InputManager>k__BackingField: {fileID: 769557677}
+  <InputManager>k__BackingField: {fileID: 0}
 --- !u!114 &901211731
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -853,105 +853,6 @@ Transform:
   - {fileID: 8940411584349995072}
   m_Father: {fileID: 8095849814881766785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4447628246070667964
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9076118230819797218}
-  - component: {fileID: 8902170476518528486}
-  - component: {fileID: 3296394261111335584}
-  - component: {fileID: 2372766090321581998}
-  - component: {fileID: 5338533324765144821}
-  m_Layer: 0
-  m_Name: ScriptHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9076118230819797218
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447628246070667964}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 837562759118993157}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8902170476518528486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447628246070667964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d93bad0aeee47e4ca0eb90995a52cc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Position>k__BackingField: {fileID: 0}
-  <Spawnpoint>k__BackingField: {fileID: 0}
-  <MonsterCapacity>k__BackingField: {fileID: 3296394261111335584}
-  <MonsterHealth>k__BackingField: {fileID: 2372766090321581998}
-  <MonsterBase>k__BackingField: {fileID: 11400000, guid: f5de4698d9eec3e4986aaad1b64fdc0c,
-    type: 2}
---- !u!114 &3296394261111335584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447628246070667964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0dbfe3192597b54396f748519d36fc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _monsterMain: {fileID: 8902170476518528486}
-  _capacity: {fileID: 11400000, guid: 0520d21967345b044b74e39eb7e5cb96, type: 2}
-  _mapMain: {fileID: 0}
-  HasAttacked: 0
-  HasMoved: 0
---- !u!114 &2372766090321581998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447628246070667964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3b0709deb88984b985d51c3a228e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _monsterMain: {fileID: 8902170476518528486}
---- !u!114 &5338533324765144821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447628246070667964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4235086e879acfc4ca55484b896d9bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _monsterMain: {fileID: 8902170476518528486}
-  _targetPlayer: {fileID: 0}
-  _entitiesManager: {fileID: 0}
-  _turnManager: {fileID: 0}
 --- !u!1 &4471330040284903907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1371,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837562759118993157}
+  - component: {fileID: 2592269239858081828}
+  - component: {fileID: 4426446397659677932}
+  - component: {fileID: 2490516839836435591}
+  - component: {fileID: 6579378751344909301}
   m_Layer: 0
   m_Name: The_Evil_DPS_Close
   m_TagString: Ennemy
@@ -1491,10 +1396,73 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1235361706660668883}
-  - {fileID: 9076118230819797218}
   - {fileID: 8095849814881766785}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2592269239858081828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928453962258033453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d93bad0aeee47e4ca0eb90995a52cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Position>k__BackingField: {fileID: 0}
+  <Spawnpoint>k__BackingField: {fileID: 0}
+  <MonsterCapacity>k__BackingField: {fileID: 4426446397659677932}
+  <MonsterHealth>k__BackingField: {fileID: 2490516839836435591}
+  <MonsterBase>k__BackingField: {fileID: 11400000, guid: f5de4698d9eec3e4986aaad1b64fdc0c,
+    type: 2}
+--- !u!114 &4426446397659677932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928453962258033453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0dbfe3192597b54396f748519d36fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterMain: {fileID: 2592269239858081828}
+  _capacity: {fileID: 11400000, guid: 0520d21967345b044b74e39eb7e5cb96, type: 2}
+  _mapMain: {fileID: 0}
+  HasAttacked: 0
+  HasMoved: 0
+--- !u!114 &2490516839836435591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928453962258033453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3b0709deb88984b985d51c3a228e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterMain: {fileID: 2592269239858081828}
+--- !u!114 &6579378751344909301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928453962258033453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4235086e879acfc4ca55484b896d9bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterMain: {fileID: 2592269239858081828}
+  _targetPlayer: {fileID: 0}
+  _entitiesManager: {fileID: 0}
+  _turnManager: {fileID: 0}
 --- !u!1 &6374437253852730668
 GameObject:
   m_ObjectHideFlags: 0
