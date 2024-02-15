@@ -66,6 +66,7 @@ public class MonsterCapacity : MonoBehaviour
                     if (i == path.Count - 1)
                     {
                         path[i].obstacle = true;
+                        path[i].entity = _monsterMain;
                     }
                 }
             }
