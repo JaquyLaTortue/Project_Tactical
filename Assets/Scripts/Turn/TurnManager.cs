@@ -187,6 +187,16 @@ public class TurnManager : MonoBehaviour
         TargetSelection = false;
         DestinationSelection = false;
 
+        foreach (Transform child in Character.transform)
+        {
+            child.gameObject.layer = 0;
+        }
+
+        foreach (Transform child in Target.transform)
+        {
+            child.gameObject.layer = 0;
+        }
+
         Turnindex++;
         DetermineTurn();
     }
