@@ -21,6 +21,7 @@ public class CharacterMain : Entity
         CharacterCapacity._turnManager = ManagerMain.turnManager;
         EntitiesManager = ManagerMain.entitiesManager;
         Spawnpoint = Position;
+    }
     public void InitCharacter(MapMain map, StatPlayer stat)
     {
         CharacterCapacity._map = map;
