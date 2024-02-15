@@ -3,11 +3,17 @@ using UnityEngine;
 
 public class RangeBehaviour : MonsterBehaviour
 {
+    /// <summary>
+    /// Est appelé avec l'event dans le turnManager pour faire les actions du monstre.
+    /// </summary>
     private void Start()
     {
-       _turnManager.OnMonsterTurn += DetectePlayer;
+        _turnManager.OnMonsterTurn += DetectePlayer;
     }
 
+    /// <summary>
+    /// Permet de faire les actions du monstre en lui indiquant de se déplacer ou d'attaquer suivant la distance avec le joueur qui lui est le plus proche.
+    /// </summary>
     private void DetectePlayer()
     {
         _monsterMain.MonsterCapacity.HasAttacked = false;
@@ -33,7 +39,6 @@ public class RangeBehaviour : MonsterBehaviour
         }
         else
         {
-            Debug.Log("Move" + _targetPlayer);
             _monsterMain.MonsterCapacity.Move(_targetPlayer.Position);
         }
     }

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Permet les refenrences de base pour les monstres.
+/// </summary>
 public class MonsterMain : Entity
 {
     [field: SerializeField]

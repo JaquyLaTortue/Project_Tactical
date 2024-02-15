@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Permet les références de base pour les comportements des monstres.
+/// </summary>
 public abstract class MonsterBehaviour : MonoBehaviour
 {
     [SerializeField]
@@ -14,9 +17,9 @@ public abstract class MonsterBehaviour : MonoBehaviour
     [SerializeField]
     protected TurnManager _turnManager;
 
-    public void InitBehaviour(ManagerMain MM)
+    public void InitBehaviour(ManagerMain mM)
     {
-        _entitiesManager = MM.entitiesManager;
-        _turnManager = MM.turnManager;
+        _entitiesManager = mM.entitiesManager;
+        _turnManager = mM.turnManager;
     }
 }

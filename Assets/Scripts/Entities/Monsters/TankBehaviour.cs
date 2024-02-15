@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class TankBehaviour : MonsterBehaviour
 {
+    /// <summary>
+    /// Est appelé avec l'event dans le turnManager pour faire les actions du monstre.
+    /// </summary>
     private void Start()
     {
         _turnManager.OnMonsterTurn += DetectePlayer;
     }
 
+    /// <summary>
+    /// Permet de faire les actions du monstre en lui indiquant de se déplacer ou d'attaquer suivant la distance avec le joueur qui lui est le plus proche.
+    /// Si il se déplace il se déplacera vers un autre monstre si il n'est pas à portée du joueur.
+    /// </summary>
     private void DetectePlayer()
     {
         _monsterMain.MonsterCapacity.HasAttacked = false;

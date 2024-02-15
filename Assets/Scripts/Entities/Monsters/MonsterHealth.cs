@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Permet de gérer la vie des monstres.
+/// </summary>
 public class MonsterHealth : MonoBehaviour
 {
     [SerializeField]
