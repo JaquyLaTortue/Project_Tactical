@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class TurnManager : MonoBehaviour
 {
-    public ManagerMain managerMain;
 
     public event Action OnPlayerTurn;
 
@@ -13,6 +12,8 @@ public class TurnManager : MonoBehaviour
     public event Action<CharacterMain> OnCharacterSelected;
 
     public event Action<MonsterMain> OnEnnemySelected;
+
+    public ManagerMain ManagerMain { get; set; }
 
     public int Turnindex { get; private set; } = 0;
 
@@ -37,7 +38,7 @@ public class TurnManager : MonoBehaviour
     public void InitManager(ManagerMain MM)
     {
         MM.turnManager = this;
-        managerMain = MM;
+        ManagerMain = MM;
     }
 
     public void CharacterSelectionPhase()
@@ -86,7 +87,7 @@ public class TurnManager : MonoBehaviour
 
         Character = character.GetComponent<CharacterMain>();
         Character.gameObject.layer = 7;
-        managerMain.mapMain.wayPointStart = Character.Position;
+        ManagerMain.mapMain.wayPointStart = Character.Position;
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
         CharacterSelection = false;
@@ -97,7 +98,7 @@ public class TurnManager : MonoBehaviour
     {
         string oldcharacter = Character == null ? "null" : Character.name;
         Character = character.GetComponent<CharacterMain>();
-        managerMain.mapMain.wayPointStart = Character.Position;
+        ManagerMain.mapMain.wayPointStart = Character.Position;
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
         CharacterSelection = false;
