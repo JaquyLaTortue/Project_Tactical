@@ -52,6 +52,12 @@ public class CharacterCapacity : MonoBehaviour
             return;
         }
 
+        if (destination.obstacle)
+        {
+            Debug.Log("Obstacle");
+            return;
+        }
+
         List<WayPoint> path = new List<WayPoint>();
         Debug.Log("Move to : " + destination);
         if (this._characterMain.PaCurrent > 0)
@@ -78,13 +84,13 @@ public class CharacterCapacity : MonoBehaviour
             {
                 Debug.Log("Not enough PA to finish");
             }
+
             _hasMoved = true;
         }
         else
         {
             Debug.Log("Not enough PA to start");
         }
-
     }
 
     public void ChangeWaypoint(WayPoint waypointToMoveTo)

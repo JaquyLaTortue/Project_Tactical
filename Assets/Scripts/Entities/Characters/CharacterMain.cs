@@ -14,6 +14,7 @@ public class CharacterMain : Entity
     public void InitCharacter(MapMain map)
     {
         CharacterCapacity._map = map;
+        Spawnpoint = Position;
     }
 
     private void Awake()
@@ -25,5 +26,10 @@ public class CharacterMain : Entity
         Atk = CharacterBase.Atk;
         Def = CharacterBase.Def;
         Range = CharacterBase.Range;
+    }
+
+    private void OnDestroy()
+    {
+        entitiesManager.allCharacters.Remove(this);
     }
 }
