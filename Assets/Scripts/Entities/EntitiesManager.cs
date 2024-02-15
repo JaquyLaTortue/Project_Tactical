@@ -32,7 +32,7 @@ public class EntitiesManager : MonoBehaviour
         {
             GameObject newObj = Instantiate(charactersPrefabs[i]);
             CharacterMain newCharacter = newObj.GetComponent<CharacterMain>();
-            newCharacter.InitCharacter(managerMain.mapMain, managerMain.uiManager._list[i]);
+            newCharacter.InitCharacter(managerMain, managerMain.uiManager._list[i]);
             allCharacters.Add(newCharacter);
         }
 
