@@ -7,8 +7,8 @@ public class CharacterCapacity : MonoBehaviour
     [SerializeField]
     private CharacterMain _characterMain;
 
-    [SerializeField]
-    private Capacity _capacity;
+    [field: SerializeField]
+    public Capacity Capacity { get; private set; }
 
     public TurnManager _turnManager;
 
@@ -124,14 +124,14 @@ public class CharacterCapacity : MonoBehaviour
         }
 
         Debug.Log("Special: " + target);
-        if (_capacity.isHealing)
+        if (Capacity.isHealing)
         {
             if (target is CharacterMain tmp)
             {
                 if (this._characterMain.PaCurrent > 0)
                 {
-                    tmp.CharacterHealth.HealHealth(_capacity.damage);
-                    this._characterMain.PaCurrent -= _capacity.cost;
+                    tmp.CharacterHealth.HealHealth(Capacity.damage);
+                    this._characterMain.PaCurrent -= Capacity.cost;
                     OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
                 }
@@ -141,12 +141,12 @@ public class CharacterCapacity : MonoBehaviour
                 }
             }
         }
-        else if (_capacity.isShielding)
+        else if (Capacity.isShielding)
         {
             if (this._characterMain.PaCurrent > 0)
             {
-                _characterMain.Def += _capacity.damage;
-                this._characterMain.PaCurrent -= _capacity.cost;
+                _characterMain.Def += Capacity.damage;
+                this._characterMain.PaCurrent -= Capacity.cost;
                 OnPAChanged.Invoke(this._characterMain.PaCurrent);
                 _hasSpecial = true;
             }
@@ -161,8 +161,8 @@ public class CharacterCapacity : MonoBehaviour
             {
                 if (this._characterMain.PaCurrent > 0)
                 {
-                    tmp.MonsterHealth.TakeDamage(_capacity.damage);
-                    this._characterMain.PaCurrent -= _capacity.cost;
+                    tmp.MonsterHealth.TakeDamage(Capacity.damage);
+                    this._characterMain.PaCurrent -= Capacity.cost;
                     OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
                 }

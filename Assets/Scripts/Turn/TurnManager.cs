@@ -37,6 +37,8 @@ public class TurnManager : MonoBehaviour
 
     public bool CharacterSelectionToAttack { get; private set; } = false;
 
+    public bool CharacterSelection { get; private set; } = false;
+
     public bool TargetSelection { get; private set; } = false;
 
     public bool DestinationSelection { get; private set; } = false;
@@ -53,73 +55,87 @@ public class TurnManager : MonoBehaviour
     {
         ResetVariables();
         CharacterSelectionToMove = true;
-        _turnText.text = "Select a character";
         EndTargetSelectionPhase();
         EndDestinationSelectionPhase();
         EndAllySelectionPhase();
+        SetUIText("Select a character");
     }
 
     public void CharacterSelectionToAttackPhase()
     {
         ResetVariables();
         CharacterSelectionToAttack = true;
-        _turnText.text = "Select a character";
         EndTargetSelectionPhase();
         EndDestinationSelectionPhase();
         EndAllySelectionPhase();
+        SetUIText("Select a character");
+    }
+
+    public void CharacterSpecialSelectionPhase()
+    {
+        ResetVariables();
+        CharacterSelection = true;
+        EndTargetSelectionPhase();
+        EndDestinationSelectionPhase();
+        EndAllySelectionPhase();
+        SetUIText("Select a character");
     }
 
     public void EndCharacterSelectionPhase()
     {
         CharacterSelectionToAttack = false;
         CharacterSelectionToMove = false;
+        CharacterSelection = false;
+        SetUIText(string.Empty);
     }
 
     public void TargetSelectionPhase()
     {
         TargetSelection = true;
-        _turnText.text = "Select a target";
         EndCharacterSelectionPhase();
         EndDestinationSelectionPhase();
         EndAllySelectionPhase();
+        _turnText.text = "Select a target";
     }
 
     public void EndTargetSelectionPhase()
     {
         TargetSelection = false;
+        SetUIText(string.Empty);
     }
 
     public void DestinationSelectionPhase()
     {
         DestinationSelection = true;
-        _turnText.text = "Select a destination";
         EndCharacterSelectionPhase();
         EndTargetSelectionPhase();
         EndAllySelectionPhase();
+        _turnText.text = "Select a destination";
     }
 
     public void EndDestinationSelectionPhase()
     {
         DestinationSelection = false;
+        SetUIText(string.Empty);
     }
 
     public void AllySelectionPhase()
     {
         AllySelection = true;
-        _turnText.text = "Select an ally";
         EndCharacterSelectionPhase();
         EndTargetSelectionPhase();
         EndDestinationSelectionPhase();
+        _turnText.text = "Select an ally";
     }
 
     public void EndAllySelectionPhase()
     {
         AllySelection = false;
+        SetUIText(string.Empty);
     }
 
     public void SetCharacter(GameObject character)
     {
-        Debug.Log("setcharra");
         string oldcharacter;
         switch (Character)
         {
@@ -154,6 +170,10 @@ public class TurnManager : MonoBehaviour
         {
             EndCharacterSelectionPhase();
             TargetSelectionPhase();
+        }
+        else
+        {
+            return;
         }
     }
 
@@ -190,6 +210,7 @@ public class TurnManager : MonoBehaviour
     {
         Ally = ally.GetComponent<CharacterMain>();
         EndAllySelectionPhase();
+        SetUIText("You can Cast the Special");
     }
 
     public void SetDestination(WayPoint targetPosition)
@@ -197,6 +218,24 @@ public class TurnManager : MonoBehaviour
         Destination = targetPosition;
         Debug.Log($"Target Position changement, new position : {targetPosition.name}");
         DestinationSelection = false;
+    }
+
+    public void SetUpSpecial()
+    {
+        switch (Character.CharacterCapacity.Capacity.name)
+        {
+            case "Heal":
+                AllySelectionPhase();
+                break;
+            case "Shield":
+                SetUIText("You can Cast the Special");
+                break;
+            case "Ultimate Attack":
+                TargetSelectionPhase();
+                break;
+            default:
+                break;
+        }
     }
 
     public void ResetVariables()
@@ -223,6 +262,12 @@ public class TurnManager : MonoBehaviour
         Ally = null;
 
         _turnText.text = string.Empty;
+    }
+
+    public void SetUIText(string desiredText)
+    {
+        Debug.Log($"Setting UI Text: {desiredText}");
+        _turnText.text = desiredText;
     }
 
     public void EndTurn()
