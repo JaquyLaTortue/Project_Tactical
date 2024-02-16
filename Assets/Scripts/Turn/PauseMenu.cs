@@ -10,8 +10,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private PlayerInput _playerInput;
 
-    private bool isPaused = false;
+    private bool _isPaused = false;
 
+    /// <summary>
+    /// Pause the game display the pause menu & Switch the action map to avoid the player to do something unwanted.
+    /// </summary>
+    /// <param name="ctx">the callbackcontext needed.</param>
     public void OnPause(InputAction.CallbackContext ctx)
     {
         if (!ctx.started)
@@ -19,13 +23,13 @@ public class PauseMenu : MonoBehaviour
             return;
         }
 
-        isPaused = !isPaused;
-        _pauseMenu.SetActive(isPaused);
+        _isPaused = !_isPaused;
+        _pauseMenu.SetActive(_isPaused);
         _managerMain.turnManager.EndCharacterSelectionPhase();
         _managerMain.turnManager.EndTargetSelectionPhase();
         _managerMain.turnManager.EndDestinationSelectionPhase();
         _managerMain.turnManager.EndAllySelectionPhase();
-        switch (isPaused)
+        switch (_isPaused)
         {
             case true:
                 _playerInput.SwitchCurrentActionMap("Pause");
@@ -36,10 +40,21 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resume the game and switch the action map to the game one.
+    /// </summary>
     public void Resume()
     {
-        isPaused = false;
+        _isPaused = false;
         _pauseMenu.SetActive(false);
         _managerMain.turnManager.InputManager.SwitchCurrentActionMap("Game");
+    }
+
+    /// <summary>
+    /// Quit the game.
+    /// </summary>
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
