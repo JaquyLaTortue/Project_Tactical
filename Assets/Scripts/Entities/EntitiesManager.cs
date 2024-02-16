@@ -71,11 +71,11 @@ public class EntitiesManager : MonoBehaviour
         }
 
         // Monster part.
-        foreach (GameObject obj in monstersPrefabs)
+        for (int i = 0; i < monstersPrefabs.Count; i++)
         {
-            GameObject newObj = Instantiate(obj);
+            GameObject newObj = Instantiate(monstersPrefabs[i]);
             MonsterMain newMonster = newObj.GetComponent<MonsterMain>();
-            newMonster.InitMonster(managerMain);
+            newMonster.InitMonster(managerMain, managerMain.uiManager._monsterList[i]);
             MonsterBehaviour monsterBehaviour = newObj.GetComponent<MonsterBehaviour>();
             monsterBehaviour.InitBehaviour(managerMain);
             allMonsters.Add(newMonster);

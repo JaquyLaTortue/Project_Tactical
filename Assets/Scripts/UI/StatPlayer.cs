@@ -6,6 +6,8 @@ public class StatPlayer : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _atk;
     [SerializeField]
+    private TextMeshProUGUI _hp;
+    [SerializeField]
     private TextMeshProUGUI _def;
     [SerializeField]
     private TextMeshProUGUI _pa;
@@ -20,13 +22,12 @@ public class StatPlayer : MonoBehaviour
         _characterMain.CharacterHealth.OnHealthChanged += OnHealthChanged;
         _characterMain.CharacterCapacity.OnPAChanged += OnPAChanged;
         _gauge = GetComponentInParent<Gauge>();
-        _gauge._characterMain = _characterMain;
         SetStat();
     }
 
     private void OnHealthChanged(int hp)
     {
-        _gauge.ChangeGauge();
+        _gauge.ChangeGauge(_characterMain.HpMax, _characterMain.HpCurrent);
     }
 
     private void OnPAChanged(int pa)

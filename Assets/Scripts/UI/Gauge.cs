@@ -4,46 +4,28 @@ using UnityEngine.UI;
 
 public class Gauge : MonoBehaviour
 {
-    public ManagerMain ManagerMain;
-    public CharacterMain _characterMain;
+    [SerializeField]
+    private int _duration;
 
-    /*public float health = 75f;
-    public float maxHealth = 100f;*/
+    [SerializeField]
+    private Image _healthBarFill;
 
-    public int _duration;
+    [SerializeField]
+    private Image _healthBarEmpty;
 
-    public Image healthBarImage;
-    public Image healthBarImage1;
-
-    //public TextMeshProUGUI healthText;
-
-    // Update is called once per frame
-    void Update()
+    public void ChangeGauge(int hpMax, int hpCurrent)
     {
-       // _characterMain.HpCurrent = Mathf.Clamp(_characterMain.HpCurrent, 0, _characterMain.HpMax);
-    }
-
-    public void DamageButton(int damageAmount)
-    {
-        _characterMain.HpCurrent -= damageAmount;
-        ChangeGauge();
-    }
-
-    public void ChangeGauge()
-    {
-        _characterMain = ManagerMain.turnManager.Character;
-        float targetFillAmount = Mathf.InverseLerp(0, _characterMain.HpMax, _characterMain.HpCurrent);
-
+        Debug.Log(hpCurrent + " " + hpMax);
+        float targetFillAmount = Mathf.InverseLerp(0, hpMax, hpCurrent);
+        //_healthBarFill.DOFillAmount(targetFillAmount, _duration).SetEase(Ease.Linear);
         DOTween.Sequence()
             .Append(
-                healthBarImage.DOFillAmount(targetFillAmount, _duration / 2f)
-                    .SetEase(Ease.OutQuad)
-            )
+                _healthBarFill.DOFillAmount(targetFillAmount, _duration / 2f)
+                    .SetEase(Ease.OutQuad))
+
             .AppendInterval(0.5f)
             .Append(
-                healthBarImage1.DOFillAmount(targetFillAmount, _duration)
-                    .SetEase(Ease.OutQuad)
-            );
-
+                _healthBarEmpty.DOFillAmount(targetFillAmount, _duration)
+                    .SetEase(Ease.OutQuad));
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public List<StatPlayer> _list;
+    public List<StatMonster> _monsterList;
     [SerializeField]
     private LoadingScene sceneLoader;
 

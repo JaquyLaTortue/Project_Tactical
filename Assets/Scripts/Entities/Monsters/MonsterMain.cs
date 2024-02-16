@@ -16,11 +16,12 @@ public class MonsterMain : Entity
 
     private ManagerMain _managerMain;
 
-    public void InitMonster(ManagerMain managerMain)
+    public void InitMonster(ManagerMain managerMain, StatMonster stat)
     {
         _managerMain = managerMain;
         MonsterCapacity._mapMain = _managerMain.mapMain;
         EntitiesManager = _managerMain.entitiesManager;
+        stat.InitUI(this);
     }
 
     private void Awake()

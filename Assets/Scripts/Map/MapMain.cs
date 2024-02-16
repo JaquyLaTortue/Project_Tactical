@@ -52,7 +52,7 @@ public class MapMain : MonoBehaviour
             _clickedCase.ChangeColorOfWaypointToOld(wayPointStart.showPath);
             for (int i = 0; i < aStartWaypoint.Count; i++)
             {
-                if (i > PAMax)
+                if (i >= PAMax)
                 {
                     _clickedCase.ChangeColorOfWaypointToRed(aStartWaypoint[i].showPath);
                 }
