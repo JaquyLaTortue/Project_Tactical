@@ -20,7 +20,7 @@ public class Gauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _characterMain.HpCurrent = Mathf.Clamp(_characterMain.HpCurrent, 0, _characterMain.HpMax);
+       // _characterMain.HpCurrent = Mathf.Clamp(_characterMain.HpCurrent, 0, _characterMain.HpMax);
     }
 
     public void DamageButton(int damageAmount)
