@@ -117,7 +117,7 @@ public class TurnManager : MonoBehaviour
         AllySelection = false;
     }
 
-    public void SetCharacterToMove(GameObject character)
+    public void SetCharacter(GameObject character)
     {
         Debug.Log("setcharra");
         string oldcharacter;
@@ -145,39 +145,16 @@ public class TurnManager : MonoBehaviour
         ManagerMain.mapMain.wayPointStart = Character.Position;
         Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
-        EndCharacterSelectionPhase();
-        DestinationSelectionPhase();
-    }
-
-    public void SetCharacterToAttack(GameObject character)
-    {
-        string oldcharacter;
-        switch (Character)
+        if (CharacterSelectionToMove)
         {
-            case null:
-                oldcharacter = null;
-                break;
-            case not null:
-                foreach (Transform child in Character.transform)
-                {
-                    child.gameObject.layer = 0;
-                }
-
-                oldcharacter = Character.name;
-                break;
+            EndCharacterSelectionPhase();
+            DestinationSelectionPhase();
         }
-
-        Character = character.GetComponent<CharacterMain>();
-        foreach (Transform child in character.transform)
+        else if (CharacterSelectionToAttack)
         {
-            child.gameObject.layer = 7;
+            EndCharacterSelectionPhase();
+            TargetSelectionPhase();
         }
-
-        ManagerMain.mapMain.wayPointStart = Character.Position;
-        Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
-        OnCharacterSelected?.Invoke(Character);
-        EndCharacterSelectionPhase();
-        TargetSelectionPhase();
     }
 
     public void SetTarget(GameObject target)
