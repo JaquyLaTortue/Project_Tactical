@@ -17,13 +17,9 @@ public class Select : MonoBehaviour
     {
         if (ctx.started && _turnManager.PlayerTurn)
         {
-            if (_turnManager.CharacterSelectionToMove)
+            if (_turnManager.CharacterSelectionToMove || _turnManager.CharacterSelectionToAttack)
             {
-                SelectCharacterToMove();
-            }
-            else if (_turnManager.CharacterSelectionToAttack)
-            {
-                SelectCharacterToAttack();
+                SelectCharacter();
             }
             else if (_turnManager.TargetSelection)
             {
@@ -59,7 +55,7 @@ public class Select : MonoBehaviour
         }
     }
 
-    public void SelectCharacterToMove()
+    public void SelectCharacter()
     {
         Debug.Log("Selecting Player");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -77,52 +73,19 @@ public class Select : MonoBehaviour
             {
                 case null:
                     Debug.Log("Setting character");
-                    _turnManager.SetCharacterToMove(current);
+                    _turnManager.SetCharacter(current);
                     break;
                 case not null:
                     if (_turnManager.Character.gameObject != current)
                     {
                         Debug.Log("Changing character");
-                        _turnManager.SetCharacterToMove(current);
+                        _turnManager.SetCharacter(current);
                     }
 
                     break;
             }
         }
     }
-
-    public void SelectCharacterToAttack()
-    {
-        Debug.Log("Selecting Player");
-        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(_ray, out _hit, 1000, entityMask))
-        {
-            GameObject current = _hit.transform.gameObject;
-            if (!current.CompareTag("Character"))
-            {
-                Debug.Log("Not a character");
-                return;
-            }
-
-            switch (_turnManager.Character)
-            {
-                case null:
-                    Debug.Log("Setting character");
-                    _turnManager.SetCharacterToAttack(current);
-                    break;
-                case not null:
-                    if (_turnManager.Character.gameObject != current)
-                    {
-                        Debug.Log("Changing character");
-                        _turnManager.SetCharacterToAttack(current);
-                    }
-
-                    break;
-            }
-        }
-    }
-
 
     public void SelectTarget()
     {
