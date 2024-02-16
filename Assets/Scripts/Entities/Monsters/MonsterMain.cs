@@ -36,7 +36,7 @@ public class MonsterMain : Entity
 
     private void OnDestroy()
     {
-        EntitiesManager.allMonsters.Remove(this);
+        EntitiesManager.RemoveEntity(this);
         _managerMain.turnManager.Target = null;
     }
 }
