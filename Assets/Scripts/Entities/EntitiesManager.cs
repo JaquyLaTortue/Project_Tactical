@@ -25,6 +25,26 @@ public class EntitiesManager : MonoBehaviour
         CreateEntities();
     }
 
+    public void RemoveEntity(Entity entity)
+    {
+        if (entity is CharacterMain)
+        {
+            allCharacters.Remove((CharacterMain)entity);
+            if (allCharacters.Count == 0)
+            {
+                managerMain.uiManager.Lose();
+            }
+        }
+        else if (entity is MonsterMain)
+        {
+            allMonsters.Remove((MonsterMain)entity);
+            if (allMonsters.Count == 0)
+            {
+                managerMain.uiManager.Win();
+            }
+        }
+    }
+
     private void CreateEntities()
     {
         // Chara part.

@@ -47,7 +47,7 @@ public class CharacterMain : Entity
 
     private void OnDestroy()
     {
-        EntitiesManager.allCharacters.Remove(this);
+        EntitiesManager.RemoveEntity(this);
         ManagerMain.turnManager.Character = null;
     }
 }

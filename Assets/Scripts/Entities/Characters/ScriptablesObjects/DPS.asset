@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe5e79c639f11145939a714153d25cb, type: 3}
   m_Name: DPS
   m_EditorClassIdentifier: 
-  Atk: 30
-  Def: 30
+  Atk: 40
+  Def: 25
   Range: 1
   HpMax: 100
   HpCurrent: 100

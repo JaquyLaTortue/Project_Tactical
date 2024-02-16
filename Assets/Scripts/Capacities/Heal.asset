@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: heal
   name: Heal
-  description: Heal 5 HP
+  description: Heal 20 HP
   cost: 2
-  damage: 5
-  range: 0
-  isHealing: 0
+  damage: 20
+  range: 10
+  isHealing: 1
   isShielding: 0

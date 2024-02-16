@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169922451fb6d3d47b5633bbe5ada3d2, type: 3}
   m_Name: Classic
   m_EditorClassIdentifier: 
-  Atk: 25
-  Def: 25
+  Atk: 30
+  Def: 30
   Range: 1
   HpMax: 100
   HpCurrent: 100

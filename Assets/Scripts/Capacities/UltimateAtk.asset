@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: uAtk
   name: Ultimate Attack
-  description: Deals 200 damage with 10 units of range
+  description: Deals 200 damage with 5 units of range
   cost: 3
   damage: 200
-  range: 10
+  range: 5
   isHealing: 0
   isShielding: 0

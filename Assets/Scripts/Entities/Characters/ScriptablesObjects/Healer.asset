@@ -15,7 +15,7 @@ MonoBehaviour:
   Atk: 10
   Def: 10
   Range: 1
-  HpMax: 100
-  HpCurrent: 100
-  PaMax: 6
-  PaCurrent: 6
+  HpMax: 80
+  HpCurrent: 80
+  PaMax: 8
+  PaCurrent: 8

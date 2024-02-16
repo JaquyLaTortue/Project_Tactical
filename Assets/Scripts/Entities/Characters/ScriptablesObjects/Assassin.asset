@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe5e79c639f11145939a714153d25cb, type: 3}
   m_Name: Assassin
   m_EditorClassIdentifier: 
-  Atk: 50
-  Def: 10
+  Atk: 70
+  Def: 20
   Range: 1
-  HpMax: 100
-  HpCurrent: 100
+  HpMax: 70
+  HpCurrent: 70
   PaMax: 7
   PaCurrent: 7
