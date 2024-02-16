@@ -3,9 +3,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Class used to manage the turns phases & variables.
+/// </summary>
 public class TurnManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _turnText;
+    [SerializeField]
+    private TMP_Text _turnText;
 
     public event Action OnPlayerTurn;
 
@@ -21,7 +25,6 @@ public class TurnManager : MonoBehaviour
 
     public bool PlayerTurn { get; private set; } = true;
 
-    [field: SerializeField]
     public CharacterMain Character { get; set; }
 
     public MonsterMain Target { get; set; }
@@ -33,16 +36,22 @@ public class TurnManager : MonoBehaviour
     [field: SerializeField]
     public PlayerInput InputManager { get; private set; }
 
+    // bool to start the character selection in order to move then
     public bool CharacterSelectionToMove { get; private set; } = false;
 
+    // bool to start the character selection in order to attack then
     public bool CharacterSelectionToAttack { get; private set; } = false;
 
+    // bool to start the character selection in order to use the special then
     public bool CharacterSelection { get; private set; } = false;
 
+    // bool to start the target selection in order to attack or use the special
     public bool TargetSelection { get; private set; } = false;
 
+    // bool to start the destination selection in order to move
     public bool DestinationSelection { get; private set; } = false;
 
+    // bool to start the ally selection for the heal special
     public bool AllySelection { get; private set; } = false;
 
     public void InitManager(ManagerMain mM)
@@ -51,6 +60,7 @@ public class TurnManager : MonoBehaviour
         ManagerMain = mM;
     }
 
+    // Start the character selection in order to move then & end all the other phases
     public void CharacterSelectionToMovePhase()
     {
         ResetVariables();
@@ -61,6 +71,7 @@ public class TurnManager : MonoBehaviour
         SetUIText("Select a character");
     }
 
+    // Start the character selection in order to attack then & end all the other phases
     public void CharacterSelectionToAttackPhase()
     {
         ResetVariables();
@@ -71,6 +82,7 @@ public class TurnManager : MonoBehaviour
         SetUIText("Select a character");
     }
 
+    // Start the character selection in order to use the special then & end all the other phases
     public void CharacterSpecialSelectionPhase()
     {
         ResetVariables();
@@ -81,6 +93,7 @@ public class TurnManager : MonoBehaviour
         SetUIText("Select a character");
     }
 
+    // End the character selection phase & reset the variables and the UI text
     public void EndCharacterSelectionPhase()
     {
         CharacterSelectionToAttack = false;
@@ -89,6 +102,7 @@ public class TurnManager : MonoBehaviour
         SetUIText(string.Empty);
     }
 
+    // Start the target selection in order to attack or use the special then & end all the other phases
     public void TargetSelectionPhase()
     {
         TargetSelection = true;
@@ -98,12 +112,14 @@ public class TurnManager : MonoBehaviour
         _turnText.text = "Select a target";
     }
 
+    // End the target selection phase & reset the variables and the UI text
     public void EndTargetSelectionPhase()
     {
         TargetSelection = false;
         SetUIText(string.Empty);
     }
 
+    // Start the destination selection in order to move then & end all the other phases
     public void DestinationSelectionPhase()
     {
         DestinationSelection = true;
@@ -113,12 +129,14 @@ public class TurnManager : MonoBehaviour
         _turnText.text = "Select a destination";
     }
 
+    // End the destination selection phase & reset the variables and the UI text
     public void EndDestinationSelectionPhase()
     {
         DestinationSelection = false;
         SetUIText(string.Empty);
     }
 
+    // Start the ally selection for the heal special then & end all the other phases
     public void AllySelectionPhase()
     {
         AllySelection = true;
@@ -128,12 +146,17 @@ public class TurnManager : MonoBehaviour
         _turnText.text = "Select an ally";
     }
 
+    // End the ally selection phase & reset the variables and the UI text
     public void EndAllySelectionPhase()
     {
         AllySelection = false;
         SetUIText(string.Empty);
     }
 
+    /// <summary>
+    /// Set the character selected and call the character selection event & then start the destination selection or the target selection depending on wich bool is true.
+    /// </summary>
+    /// <param name="character">Will be used as the selected character.</param>
     public void SetCharacter(GameObject character)
     {
         string oldcharacter;
@@ -159,7 +182,6 @@ public class TurnManager : MonoBehaviour
         }
 
         ManagerMain.mapMain.wayPointStart = Character.Position;
-        Debug.Log($"Character changement: old character : {oldcharacter} and new character : {Character.name}");
         OnCharacterSelected?.Invoke(Character);
         if (CharacterSelectionToMove)
         {
@@ -177,6 +199,10 @@ public class TurnManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set the character selected and call the target selection event.
+    /// </summary>
+    /// <param name="target">Will be used as the selected Target.</param>
     public void SetTarget(GameObject target)
     {
         string oldtarget;
@@ -201,11 +227,14 @@ public class TurnManager : MonoBehaviour
             child.gameObject.layer = 6;
         }
 
-        Debug.Log($"Target changement: old Target: {oldtarget} and new character : {target.name}");
         OnEnnemySelected?.Invoke(Target);
         EndTargetSelectionPhase();
     }
 
+    /// <summary>
+    /// Set the ally selected.
+    /// </summary>
+    /// <param name="ally">Will be used as the selected ally</param>
     public void SetAlly(GameObject ally)
     {
         Ally = ally.GetComponent<CharacterMain>();
@@ -213,13 +242,19 @@ public class TurnManager : MonoBehaviour
         SetUIText("You can Cast the Special");
     }
 
+    /// <summary>
+    /// Set the destination selected.
+    /// </summary>
+    /// <param name="targetPosition">The given waypoint will be used as the selected destination.</param>
     public void SetDestination(WayPoint targetPosition)
     {
         Destination = targetPosition;
-        Debug.Log($"Target Position changement, new position : {targetPosition.name}");
         DestinationSelection = false;
     }
 
+    /// <summary>
+    /// Switch on the phase that is needed to cast the special.
+    /// </summary>
     public void SetUpSpecial()
     {
         switch (Character.CharacterCapacity.Capacity.name)
@@ -238,6 +273,9 @@ public class TurnManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reset all the variables, the UI text & take off the outline of the character and the target.
+    /// </summary>
     public void ResetVariables()
     {
         if (Character != null)
@@ -263,13 +301,18 @@ public class TurnManager : MonoBehaviour
 
         _turnText.text = string.Empty;
     }
-
+    /// <summary>
+    /// Used to set the UI text.
+    /// </summary>
+    /// <param name="desiredText">The given string will be used to fill the UI text.</param>
     public void SetUIText(string desiredText)
     {
-        Debug.Log($"Setting UI Text: {desiredText}");
         _turnText.text = desiredText;
     }
 
+    /// <summary>
+    /// End the turn and reset all the variables and the UI text.
+    /// </summary>
     public void EndTurn()
     {
         ResetVariables();
@@ -283,17 +326,18 @@ public class TurnManager : MonoBehaviour
         DetermineTurn();
     }
 
+    /// <summary>
+    /// Determine wich turn is next (Player or Monster).
+    /// </summary>
     private void DetermineTurn()
     {
         switch (Turnindex % 2)
         {
             case 0:
-                Debug.Log("Player's Turn");
                 PlayerTurn = true;
                 OnPlayerTurn?.Invoke();
                 break;
             case 1:
-                Debug.Log("Monster's Turn");
                 PlayerTurn = false;
                 OnMonsterTurn?.Invoke();
                 break;
@@ -302,6 +346,7 @@ public class TurnManager : MonoBehaviour
 
     private void Start()
     {
+        // Set the first turn to the player's turn
         OnPlayerTurn?.Invoke();
     }
 }
