@@ -18,6 +18,9 @@ public class CharacterCapacity : MonoBehaviour
     private bool _hasMoved = false;
     private bool _hasSpecial = false;
 
+    /// <summary>
+    /// Évènement déclenché lorsque les PA d'un personnage change.
+    /// </summary>
     public event Action<int> OnPAChanged;
 
     public void Start()
@@ -42,32 +45,22 @@ public class CharacterCapacity : MonoBehaviour
     /// <param name="target">Cible de l'attaque (MonsterMain).</param>
     public void Attack(MonsterMain target)
     {
-        Debug.Log("Has already attacked: " + _hasAttacked);
         // Attack with normal attack
         if (_hasAttacked)
         {
             return;
         }
 
-        Debug.Log("Attack: " + target);
-        List<WayPoint> path = new List<WayPoint>();
         if (this._characterMain.PaCurrent > 0)
         {
-            path = _map.aStar.GiveThePath(_characterMain.Position, target.Position);
-            Debug.Log("Path count: " + (path.Count - 1));
-            Debug.Log("Range: " + this._characterMain.Range);
+            List<WayPoint> path = _map.aStar.GiveThePath(_characterMain.Position, target.Position);
             if (path.Count - 1 <= this._characterMain.Range)
             {
-                Debug.Log("In Range !");
                 target.MonsterHealth.TakeDamage(_characterMain.Atk);
                 this._characterMain.PaCurrent--;
                 OnPAChanged.Invoke(this._characterMain.PaCurrent);
                 _hasAttacked = true;
             }
-        }
-        else
-        {
-            Debug.Log("Not enough PA");
         }
     }
 
@@ -84,15 +77,12 @@ public class CharacterCapacity : MonoBehaviour
 
         if (destination.obstacle)
         {
-            Debug.Log("Obstacle");
             return;
         }
 
-        List<WayPoint> path = new List<WayPoint>();
-        Debug.Log("Move to : " + destination);
         if (this._characterMain.PaCurrent > 0)
         {
-            path = _map.UseAStar(_characterMain.Position, destination);
+            List<WayPoint> path = _map.UseAStar(_characterMain.Position, destination);
             if (path.Count <= this._characterMain.PaCurrent)
             {
                 _characterMain.Position.obstacle = false;
@@ -110,14 +100,6 @@ public class CharacterCapacity : MonoBehaviour
 
                 _hasMoved = true;
             }
-            else
-            {
-                Debug.Log("Not enough PA to reach the destination");
-            }
-        }
-        else
-        {
-            Debug.Log("No PA");
         }
     }
 
@@ -142,7 +124,6 @@ public class CharacterCapacity : MonoBehaviour
             return;
         }
 
-        Debug.Log("Special: " + target);
         if (Capacity.isHealing)
         {
             if (target is CharacterMain tmp)
@@ -153,10 +134,6 @@ public class CharacterCapacity : MonoBehaviour
                     this._characterMain.PaCurrent -= Capacity.cost;
                     OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
-                }
-                else
-                {
-                    Debug.Log("Not enough PA");
                 }
             }
         }
@@ -169,10 +146,6 @@ public class CharacterCapacity : MonoBehaviour
                 OnPAChanged.Invoke(this._characterMain.PaCurrent);
                 _hasSpecial = true;
             }
-            else
-            {
-                Debug.Log("Not enough PA");
-            }
         }
         else
         {
@@ -184,10 +157,6 @@ public class CharacterCapacity : MonoBehaviour
                     this._characterMain.PaCurrent -= Capacity.cost;
                     OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
-                }
-                else
-                {
-                    Debug.Log("Not enough PA");
                 }
             }
         }
