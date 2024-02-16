@@ -8,7 +8,9 @@ public class Select : MonoBehaviour
     [SerializeField]
     private LayerMask mapMask;
     [SerializeField]
-    private LayerMask entityMask;
+    private LayerMask ennemiesMask;
+    [SerializeField]
+    private LayerMask alliesMask;
     private Ray _ray;
     private RaycastHit _hit;
 
@@ -16,7 +18,7 @@ public class Select : MonoBehaviour
     {
         if (ctx.started && _turnManager.PlayerTurn)
         {
-            if (_turnManager.CharacterSelectionToMove || _turnManager.CharacterSelectionToAttack)
+            if (_turnManager.CharacterSelectionToMove || _turnManager.CharacterSelectionToAttack ||_turnManager.CharacterSelection)
             {
                 SelectCharacter();
             }
@@ -59,7 +61,7 @@ public class Select : MonoBehaviour
         Debug.Log("Selecting Player");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit, 1000, entityMask))
+        if (Physics.Raycast(_ray, out _hit, 1000, alliesMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (!current.CompareTag("Character"))
@@ -91,7 +93,7 @@ public class Select : MonoBehaviour
         Debug.Log("Selecting Target");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit, 1000, entityMask))
+        if (Physics.Raycast(_ray, out _hit, 1000, ennemiesMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (!current.CompareTag("Ennemy"))
@@ -154,7 +156,7 @@ public class Select : MonoBehaviour
         Debug.Log("Selecting Ally");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out _hit, 1000, mapMask))
+        if (Physics.Raycast(_ray, out _hit, 1000, alliesMask))
         {
             GameObject current = _hit.transform.gameObject;
             if (current.CompareTag("Character"))

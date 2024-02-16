@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using DG.Tweening;
-using UnityEngine.TextCore.Text;
 
 public class Gauge : MonoBehaviour
 {
+    public ManagerMain ManagerMain;
     public CharacterMain _characterMain;
 
     /*public float health = 75f;
@@ -32,6 +31,7 @@ public class Gauge : MonoBehaviour
 
     public void ChangeGauge()
     {
+        _characterMain = ManagerMain.turnManager.Character;
         float targetFillAmount = Mathf.InverseLerp(0, _characterMain.HpMax, _characterMain.HpCurrent);
 
         DOTween.Sequence()
