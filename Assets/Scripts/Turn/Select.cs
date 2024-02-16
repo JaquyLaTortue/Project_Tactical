@@ -5,20 +5,29 @@ public class Select : MonoBehaviour
 {
     [SerializeField]
     private TurnManager _turnManager;
+
+    [Header("Masks & raycast Variables")]
     [SerializeField]
     private LayerMask mapMask;
+
     [SerializeField]
     private LayerMask ennemiesMask;
+
     [SerializeField]
     private LayerMask alliesMask;
+
     private Ray _ray;
     private RaycastHit _hit;
 
+    /// <summary>
+    /// Event triggered when the player click the input to select. Depending on the current phase, it will select the character, the target, the destination or the ally.
+    /// </summary>
+    /// <param name="ctx">The callbackContext for the method.</param>
     public void OnInput(InputAction.CallbackContext ctx)
     {
         if (ctx.started && _turnManager.PlayerTurn)
         {
-            if (_turnManager.CharacterSelectionToMove || _turnManager.CharacterSelectionToAttack ||_turnManager.CharacterSelection)
+            if (_turnManager.CharacterSelectionToMove || _turnManager.CharacterSelectionToAttack || _turnManager.CharacterSelection)
             {
                 SelectCharacter();
             }
@@ -39,6 +48,9 @@ public class Select : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Event triggered when the player move the mouse. It will check if the player is in the destination selection phase and if so, it will use the A* algorithm to premove the player.
+    /// </summary>
     public void OnMoveTheMouse()
     {
         if (_turnManager.DestinationSelection)
@@ -56,6 +68,9 @@ public class Select : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Select the character with a raycast to check if the target is an ally.
+    /// </summary>
     public void SelectCharacter()
     {
         Debug.Log("Selecting Player");
@@ -88,6 +103,9 @@ public class Select : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Select the target with a raycast to check if the target is an ennemy.
+    /// </summary>
     public void SelectTarget()
     {
         Debug.Log("Selecting Target");
@@ -121,6 +139,9 @@ public class Select : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Select the destination with a raycast to check if the target is a map.
+    /// </summary>
     public void SelectDestination()
     {
         Debug.Log("Selecting Destination");
@@ -151,6 +172,9 @@ public class Select : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Select the ally with a raycast to check if the target is an ally.
+    /// </summary>
     public void SelectAlly()
     {
         Debug.Log("Selecting Ally");
