@@ -14,6 +14,11 @@ public class CharacterMain : Entity
     [field: SerializeField]
     public ManagerMain ManagerMain { get; private set; }
 
+    /// <summary>
+    /// Initialise le personnage et le lie au manager.
+    /// </summary>
+    /// <param name="manager">Manager principal.</param>
+    /// <param name="stat">Widget de statistique.</param>
     public void InitCharacter(ManagerMain manager, StatPlayer stat)
     {
         ManagerMain = manager;
@@ -21,12 +26,6 @@ public class CharacterMain : Entity
         CharacterCapacity._turnManager = ManagerMain.turnManager;
         EntitiesManager = ManagerMain.entitiesManager;
         Spawnpoint = Position;
-        stat.InitUI(this);
-    }
-
-    public void InitCharacter(MapMain map, StatPlayer stat)
-    {
-        CharacterCapacity._map = map;
         stat.InitUI(this);
     }
 

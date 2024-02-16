@@ -23,6 +23,8 @@ public class StatPlayer : MonoBehaviour
         _characterMain = characterMain;
         _characterMain.CharacterHealth.OnHealthChanged += OnHealthChanged;
         _characterMain.CharacterCapacity.OnPAChanged += OnPAChanged;
+        _gauge = GetComponentInParent<Gauge>();
+        _gauge._characterMain = _characterMain;
         SetStat();
     }
 
