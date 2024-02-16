@@ -14,17 +14,20 @@ public class CharacterCapacity : MonoBehaviour
 
     public MapMain _map;
 
-    public event Action<int> OnPAChanged;
-
     private bool _hasAttacked = false;
     private bool _hasMoved = false;
     private bool _hasSpecial = false;
+
+    public event Action<int> OnPAChanged;
 
     public void Start()
     {
         _turnManager.OnPlayerTurn += ResetCharacter;
     }
 
+    /// <summary>
+    /// Réinitialise le personnage.
+    /// </summary>
     public void ResetCharacter()
     {
         _characterMain.PaCurrent = _characterMain.PaMax;
@@ -33,6 +36,10 @@ public class CharacterCapacity : MonoBehaviour
         _hasSpecial = false;
     }
 
+    /// <summary>
+    /// Utilise l'attaque normale du personnage.
+    /// </summary>
+    /// <param name="target">Cible de l'attaque (MonsterMain).</param>
     public void Attack(MonsterMain target)
     {
         Debug.Log("Has already attacked: " + _hasAttacked);
@@ -64,6 +71,10 @@ public class CharacterCapacity : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Déplace le personnage.
+    /// </summary>
+    /// <param name="destination">Destination du personnage.</param>
     public void Move(WayPoint destination)
     {
         if (_hasMoved)
@@ -110,12 +121,20 @@ public class CharacterCapacity : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Change le waypoint du personnage.
+    /// </summary>
+    /// <param name="waypointToMoveTo">Waypoint d'arrivée.</param>
     public void ChangeWaypoint(WayPoint waypointToMoveTo)
     {
         this._characterMain.Position = waypointToMoveTo;
         this.transform.position = waypointToMoveTo.transform.position;
     }
 
+    /// <summary>
+    /// Utilise la capacité spéciale du personnage.
+    /// </summary>
+    /// <param name="target">Cible de la compétence spéciale (Entity).</param>
     public void Special(Entity target)
     {
         if (_hasSpecial)
