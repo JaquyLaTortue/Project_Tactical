@@ -7942,6 +7942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221274733}
+  - component: {fileID: 1221274734}
   m_Layer: 5
   m_Name: StatsPlayer3
   m_TagString: Untagged
@@ -7974,6 +7975,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1221274734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221274732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320de15d3e143a342b0a745ece16144b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManagerMain: {fileID: 0}
+  _characterMain: {fileID: 0}
+  _duration: 1
+  healthBarImage: {fileID: 767808475}
+  healthBarImage1: {fileID: 1211189347}
 --- !u!1 &1229857853
 GameObject:
   m_ObjectHideFlags: 0
@@ -8402,6 +8420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270787650}
   - component: {fileID: 1270787651}
+  - component: {fileID: 1270787652}
   m_Layer: 5
   m_Name: StatsPlayer1
   m_TagString: Untagged
@@ -8450,6 +8469,23 @@ MonoBehaviour:
   _player2: {fileID: 2031071378}
   _player3: {fileID: 1221274732}
   _player4: {fileID: 1879450073}
+--- !u!114 &1270787652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270787649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320de15d3e143a342b0a745ece16144b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManagerMain: {fileID: 0}
+  _characterMain: {fileID: 0}
+  _duration: 1
+  healthBarImage: {fileID: 1482467976}
+  healthBarImage1: {fileID: 972835361}
 --- !u!1 &1279839658
 GameObject:
   m_ObjectHideFlags: 0
@@ -11672,6 +11708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879450074}
+  - component: {fileID: 1879450075}
   m_Layer: 5
   m_Name: StatsPlayer4
   m_TagString: Untagged
@@ -11704,6 +11741,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1879450075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879450073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320de15d3e143a342b0a745ece16144b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManagerMain: {fileID: 0}
+  _characterMain: {fileID: 0}
+  _duration: 1
+  healthBarImage: {fileID: 9537765}
+  healthBarImage1: {fileID: 960935275}
 --- !u!1 &1903579841
 GameObject:
   m_ObjectHideFlags: 0
@@ -12135,6 +12189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031071379}
+  - component: {fileID: 2031071380}
   m_Layer: 5
   m_Name: StatsPlayer2
   m_TagString: Untagged
@@ -12167,6 +12222,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2031071380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031071378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320de15d3e143a342b0a745ece16144b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManagerMain: {fileID: 0}
+  _characterMain: {fileID: 0}
+  _duration: 1
+  healthBarImage: {fileID: 1156253462}
+  healthBarImage1: {fileID: 1208622879}
 --- !u!1 &2057772247
 GameObject:
   m_ObjectHideFlags: 0
