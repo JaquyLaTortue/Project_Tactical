@@ -43,10 +43,6 @@ public class MonsterCapacity : MonoBehaviour
                 HasAttacked = true;
                 Special(target);
             }
-            else
-            {
-                Debug.Log("No more PA");
-            }
         }
     }
 
@@ -66,7 +62,6 @@ public class MonsterCapacity : MonoBehaviour
         {
             if (destination.obstacle)
             {
-                Debug.Log("Destination is an obstacle");
                 return;
             }
 
@@ -86,17 +81,9 @@ public class MonsterCapacity : MonoBehaviour
                     }
                 }
             }
-            else
-            {
-                Debug.Log("No more PA");
-            }
 
             HasMoved = true;
             AttackAfterMove();
-        }
-        else
-        {
-            Debug.Log("Destination is the same as the current position");
         }
     }
 
@@ -108,8 +95,6 @@ public class MonsterCapacity : MonoBehaviour
 
     public void Special(Entity target)
     {
-        Debug.Log("Special");
-
         if (_hasSpecial)
         {
             return;
@@ -123,10 +108,6 @@ public class MonsterCapacity : MonoBehaviour
                 this._monsterMain.PaCurrent -= _capacity.cost;
                 _hasSpecial = true;
             }
-            else
-            {
-                Debug.Log("Not enough PA");
-            }
         }
         else
         {
@@ -137,10 +118,6 @@ public class MonsterCapacity : MonoBehaviour
                     tmp.MonsterHealth.TakeDamage(_capacity.damage);
                     this._monsterMain.PaCurrent -= _capacity.cost;
                     _hasSpecial = true;
-                }
-                else
-                {
-                    Debug.Log("Not enough PA");
                 }
             }
         }
