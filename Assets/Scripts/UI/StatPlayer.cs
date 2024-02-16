@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
-using DG.Tweening;
-
 
 public class StatPlayer : MonoBehaviour
 {
@@ -16,7 +12,7 @@ public class StatPlayer : MonoBehaviour
 
     public CharacterMain _characterMain;
 
-    Gauge _gauge;
+    private Gauge _gauge;
 
     public void InitUI(CharacterMain characterMain)
     {

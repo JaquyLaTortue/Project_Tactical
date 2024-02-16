@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DG.Tweening;
 using UnityEngine;
-
-using DG.Tweening;
 
 public class UIPlayerScale : MonoBehaviour
 {
-    Vector3 _orignalScale;
-    Vector3 _scaleTo;
+    private Vector3 _orignalScale;
+    private Vector3 _scaleTo;
 
-    int truc;
+    private int truc;
 
     [SerializeField]
     private GameObject _player1;
@@ -22,7 +19,6 @@ public class UIPlayerScale : MonoBehaviour
 
     public void Player1()
     {
-
         /*_orignalScale = transform.localScale;
         _scaleTo = _orignalScale * 1.5f;
 
@@ -49,11 +45,10 @@ public class UIPlayerScale : MonoBehaviour
          _player2.transform.position = new Vector3(45, 925, 0);
          _player3.transform.position = new Vector3(45, 850, 0);
          _player4.transform.position = new Vector3(45, 775, 0);*/
-     }
+    }
 
-     public void Player2()
-     {
-
+    public void Player2()
+    {
         _player1.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
         _player2.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f);
         _player3.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
@@ -69,8 +64,6 @@ public class UIPlayerScale : MonoBehaviour
          _player2.transform.localScale = new Vector3(1.5f, 1.5f, 0);
          _player3.transform.localScale = new Vector3(1, 1, 0);
          _player4.transform.localScale = new Vector3(1, 1, 0);*/
-
-         
     }
 
     public void Player3()
@@ -85,17 +78,14 @@ public class UIPlayerScale : MonoBehaviour
         _player2.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
         _player4.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
 
-
         /*_player1.transform.localScale = new Vector3(1, 1, 0);
         _player2.transform.localScale = new Vector3(1, 1, 0);
         _player3.transform.localScale = new Vector3(1.5f, 1.5f, 0);
         _player4.transform.localScale = new Vector3(1, 1, 0);*/
+    }
 
-
-   }
-
-   public void Player4()
-   {
+    public void Player4()
+    {
         _player1.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
         _player4.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f);
         _player2.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
@@ -109,7 +99,7 @@ public class UIPlayerScale : MonoBehaviour
         /* _player1.transform.localScale = new Vector3(1, 1, 0);
          _player2.transform.localScale = new Vector3(1, 1, 0);
          _player3.transform.localScale = new Vector3(1, 1, 0);
-         _player4.transform.localScale = new Vector3(1.5f, 1.5f, 0);  
+         _player4.transform.localScale = new Vector3(1.5f, 1.5f, 0);
 
          */
     }
