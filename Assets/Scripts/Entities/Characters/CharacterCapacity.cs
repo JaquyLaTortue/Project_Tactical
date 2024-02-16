@@ -62,6 +62,12 @@ public class CharacterCapacity : MonoBehaviour
                 _hasAttacked = true;
             }
         }
+        else
+        {
+            _turnManager.SetUIText("Not enough PA to use this special");
+            return;
+        }
+
     }
 
     /// <summary>
@@ -100,6 +106,11 @@ public class CharacterCapacity : MonoBehaviour
 
                 _hasMoved = true;
             }
+            else
+            {
+                _turnManager.SetUIText("Not enough PA to move there");
+                return;
+            }
         }
     }
 
@@ -135,6 +146,11 @@ public class CharacterCapacity : MonoBehaviour
                     OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
                 }
+                else
+                {
+                    _turnManager.SetUIText("Not enough PA to use this special");
+                    return;
+                }
             }
         }
         else if (Capacity.isShielding)
@@ -146,6 +162,12 @@ public class CharacterCapacity : MonoBehaviour
                 OnPAChanged.Invoke(this._characterMain.PaCurrent);
                 _hasSpecial = true;
             }
+            else
+            {
+                _turnManager.SetUIText("Not enough PA to use this special");
+                return;
+            }
+
         }
         else
         {
@@ -158,6 +180,12 @@ public class CharacterCapacity : MonoBehaviour
                     OnPAChanged.Invoke(this._characterMain.PaCurrent);
                     _hasSpecial = true;
                 }
+                else
+                {
+                    _turnManager.SetUIText("Not enough PA to use this special");
+                    return;
+                }
+
             }
         }
     }

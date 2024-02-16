@@ -73,7 +73,6 @@ public class Select : MonoBehaviour
     /// </summary>
     public void SelectCharacter()
     {
-        Debug.Log("Selecting Player");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(_ray, out _hit, 1000, alliesMask))
@@ -81,20 +80,18 @@ public class Select : MonoBehaviour
             GameObject current = _hit.transform.gameObject;
             if (!current.CompareTag("Character"))
             {
-                Debug.Log("Not a character");
+                _turnManager.SetUIText("This is not a character");
                 return;
             }
 
             switch (_turnManager.Character)
             {
                 case null:
-                    Debug.Log("Setting character");
                     _turnManager.SetCharacter(current);
                     break;
                 case not null:
                     if (_turnManager.Character.gameObject != current)
                     {
-                        Debug.Log("Changing character");
                         _turnManager.SetCharacter(current);
                     }
 
@@ -108,7 +105,6 @@ public class Select : MonoBehaviour
     /// </summary>
     public void SelectTarget()
     {
-        Debug.Log("Selecting Target");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(_ray, out _hit, 1000, ennemiesMask))
@@ -116,18 +112,16 @@ public class Select : MonoBehaviour
             GameObject current = _hit.transform.gameObject;
             if (!current.CompareTag("Ennemy"))
             {
-                Debug.Log("Not an ennemy");
+                _turnManager.SetUIText("This is not an ennemy");
                 return;
             }
 
             switch (_turnManager.Target)
             {
                 case null:
-                    Debug.Log("Setting target");
                     _turnManager.SetTarget(current);
                     break;
                 case not null:
-                    Debug.Log("Changing target");
                     if (_turnManager.Target.gameObject != current)
                     {
                         _turnManager.SetTarget(current);
@@ -144,7 +138,6 @@ public class Select : MonoBehaviour
     /// </summary>
     public void SelectDestination()
     {
-        Debug.Log("Selecting Destination");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(_ray, out _hit, 1000, mapMask))
@@ -155,19 +148,22 @@ public class Select : MonoBehaviour
                 switch (_turnManager.Destination)
                 {
                     case null:
-                        Debug.Log("Setting destination");
                         _turnManager.SetDestination(current.GetComponent<WayPoint>());
                         break;
                     case not null:
                         if (_turnManager.Destination.gameObject != current)
                         {
-                            Debug.Log("Changing destination");
                             _turnManager.SetDestination(current.GetComponent<WayPoint>());
                         }
 
                         _turnManager.EndDestinationSelectionPhase();
                         break;
                 }
+            }
+            else
+            {
+                _turnManager.SetUIText("This is not a case of the map");
+                return;
             }
         }
     }
@@ -177,7 +173,6 @@ public class Select : MonoBehaviour
     /// </summary>
     public void SelectAlly()
     {
-        Debug.Log("Selecting Ally");
         _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(_ray, out _hit, 1000, alliesMask))
@@ -188,19 +183,22 @@ public class Select : MonoBehaviour
                 switch (_turnManager.Ally)
                 {
                     case null:
-                        Debug.Log("Setting ally");
                         _turnManager.SetAlly(current);
                         break;
                     case not null:
                         if (_turnManager.Ally.gameObject != current)
                         {
-                            Debug.Log("Changing ally");
                             _turnManager.SetAlly(current);
                         }
 
                         _turnManager.EndAllySelectionPhase();
                         break;
                 }
+            }
+            else
+            {
+                _turnManager.SetUIText("This is not an ally");
+                return;
             }
         }
     }

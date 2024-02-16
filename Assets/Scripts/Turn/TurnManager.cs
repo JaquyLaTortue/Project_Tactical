@@ -299,7 +299,6 @@ public class TurnManager : MonoBehaviour
         Destination = null;
         Ally = null;
 
-        _turnText.text = string.Empty;
     }
     /// <summary>
     /// Used to set the UI text.
