@@ -8,6 +8,10 @@ public class CharacterHealth : MonoBehaviour
 
     public event Action<int> OnHealthChanged;
 
+    /// <summary>
+    /// Prend des dégats et les applique à la vie du personnage.
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDamage(int damage)
     {
         Debug.Log("HP before attack : " + _characterMain.HpCurrent);
@@ -20,12 +24,19 @@ public class CharacterHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Tue le personnage.
+    /// </summary>
     public void Die()
     {
         Debug.Log("Die");
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Soigne le personnage.
+    /// </summary>
+    /// <param name="heal"></param>
     public void HealHealth(int heal)
     {
         if (_characterMain.HpCurrent == _characterMain.HpMax)
