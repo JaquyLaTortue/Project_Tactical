@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tests/Alban.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/ScenesFinales/VictoryScene.unity
+    guid: 99da7d056edfe5045a63a6d015e593f8
+  - enabled: 1
+    path: Assets/Scenes/ScenesFinales/DefeatScene.unity
+    guid: 27b3524736fb8fa47a287c82e267b48c
   m_configObjects: {}

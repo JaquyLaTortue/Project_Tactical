@@ -5,6 +5,8 @@ public class EntitiesManager : MonoBehaviour
 {
     private ManagerMain managerMain;
 
+    public bool ManualSceneChangement = false;
+
     public List<MonsterMain> allMonsters = new List<MonsterMain>();
     public List<CharacterMain> allCharacters = new List<CharacterMain>();
 
@@ -27,6 +29,10 @@ public class EntitiesManager : MonoBehaviour
 
     public void RemoveEntity(Entity entity)
     {
+        if (ManualSceneChangement)
+        {
+            return;
+        }
         if (entity is CharacterMain)
         {
             allCharacters.Remove((CharacterMain)entity);
