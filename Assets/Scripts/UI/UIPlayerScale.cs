@@ -30,7 +30,6 @@ public class UIPlayerScale : MonoBehaviour
         _player3.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
         _player4.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
 
-
         _player1.transform.position = new Vector3(70, 1010, 0);
         _player2.transform.position = new Vector3(45, 925, 0);
         _player3.transform.position = new Vector3(45, 850, 0);
