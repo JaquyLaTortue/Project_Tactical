@@ -7,12 +7,12 @@ public class CharacterCapacity : MonoBehaviour
     [SerializeField]
     private CharacterMain _characterMain;
 
-    [field: SerializeField]
-    public Capacity Capacity { get; private set; }
-
     public TurnManager _turnManager;
 
     public MapMain _map;
+
+    [field: SerializeField]
+    public Capacity Capacity { get; private set; }
 
     private bool _hasAttacked = false;
     private bool _hasMoved = false;
