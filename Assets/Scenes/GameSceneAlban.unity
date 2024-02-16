@@ -1645,6 +1645,7 @@ MonoBehaviour:
   - {fileID: 240866814}
   - {fileID: 762535746}
   - {fileID: 43386576}
+  sceneLoader: {fileID: 1117628821}
 --- !u!1 &381214818
 GameObject:
   m_ObjectHideFlags: 0
@@ -3642,16 +3643,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1013077035}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1117628821}
+        m_TargetAssemblyTypeName: LoadingScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &607292260
@@ -6765,12 +6766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbeb9a9612e07ca48aed530c49211b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1013077035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3572087819155890383, guid: 3d660544971745c468768192b05944fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 1013077032}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1080280865
 GameObject:
   m_ObjectHideFlags: 0
@@ -7312,7 +7307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c867d810ac2924ea0d2fccb09bc84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameScene: 
 --- !u!4 &1117628822
 Transform:
   m_ObjectHideFlags: 0
@@ -10987,7 +10981,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1013077032}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013077035}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8e82c5360424842b4bd57c55bb6fd0, type: 3}
